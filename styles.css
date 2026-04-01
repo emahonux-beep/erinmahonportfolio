@@ -872,6 +872,11 @@ hr {
   padding: var(--card-padding-desktop);
 }
 
+/* Cards on lavender sections get a lav-tinted border */
+.bg-lav .card {
+  border-color: var(--lav-300);
+}
+
 .card__eyebrow {
   font-family: var(--font-ui);
   font-size: var(--text-title-4);             /* 14px */
@@ -1230,19 +1235,19 @@ img {
   white-space: nowrap;
   line-height: 1.5;
 
-  /* Default: rose */
-  background-color: var(--rose-100);
-  color: var(--rose-600);            /* rose-600 on rose-100 = 5.8:1 ✓ */
+  /* Default: sage */
+  background-color: var(--sage-100);
+  color: var(--sage-600);
 }
 
 .tag--sage {
   background-color: var(--sage-100);
-  color: var(--sage-600);            /* sage-600 on sage-100 = 5.2:1 ✓ */
+  color: var(--sage-600);
 }
 
 .tag--lav {
-  background-color: var(--lav-100);
-  color: var(--lav-600);             /* lav-600 on lav-100 = 5.1:1 ✓ */
+  background-color: var(--sage-100);
+  color: var(--sage-600);
 }
 
 .tag--slate {
@@ -3681,8 +3686,8 @@ section.hero.bg-lav .meta {
    ============================================================ */
 
 .tag--rose {
-  background: var(--rose-200);
-  color: var(--rose-600);
+  background: var(--sage-100);
+  color: var(--sage-600);
 }
 
 .tag--sage {
@@ -3691,8 +3696,8 @@ section.hero.bg-lav .meta {
 }
 
 .tag--lav {
-  background: var(--lav-200);
-  color: var(--lav-600);
+  background: var(--sage-100);
+  color: var(--sage-600);
 }
 
 
