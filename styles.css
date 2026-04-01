@@ -1152,6 +1152,20 @@ img {
     padding: var(--card-padding-mobile);
   }
 
+  /* Card anatomy spacing — tighter on mobile */
+  .card__body .icon-badge {
+    margin-bottom: var(--space-4);   /* 16px */
+  }
+
+  .card__body > div[style*="flex-wrap"],
+  .card__body > .tag-group {
+    margin-top: var(--space-4);      /* 16px */
+  }
+
+  .card--link .card__body > *:last-child {
+    margin-top: var(--space-4);      /* 16px */
+  }
+
   .card--project .card__content {
     padding: var(--card-padding-mobile);
   }
@@ -3464,18 +3478,30 @@ section.hero.bg-lav .meta {
   height: 100%;
 }
 
-/* Push card body to fill remaining space so image stays top
-   and text aligns at the bottom across all cards in a row */
+/* Push card body to fill remaining space so image stays top */
 .card--link .card__body {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Push the last element in a card body (CTA / "View case study") to the bottom */
-.card--link .card__body > *:last-child {
-  margin-top: auto;
-  padding-top: var(--space-4);
+/* ============================================================
+   CARD ANATOMY — fixed spacing per design spec
+   Icon badge → text group: 24px
+   Title → body copy: 8px
+   Body copy → badge group: 24px
+   Badge group → CTA: 24px
+   ============================================================ */
+
+/* Icon badge bottom margin */
+.card__body .icon-badge {
+  margin-bottom: var(--space-6);
+}
+
+/* Title → body: 8px */
+.card__body .title-1,
+.card__body .title-2 {
+  margin-bottom: var(--space-2);
 }
 
 
@@ -3499,16 +3525,18 @@ section.hero.bg-lav .meta {
   flex-direction: column;
 }
 
-/* Tags/pills inside any card — push to consistent vertical position
-   with breathing room above them from the body text */
+/* Tags/pills inside any card — fixed 24px above per card anatomy spec */
 .card__body > div[style*="flex-wrap"] {
-  margin-top: auto;
-  padding-top: var(--space-5);
+  margin-top: var(--space-6);
 }
 
 .card__body > .tag-group {
-  margin-top: auto;
-  padding-top: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+/* CTA / "View case study" — fixed 24px above */
+.card--link .card__body > *:last-child {
+  margin-top: var(--space-6);
 }
 
 
