@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Erin Mahon</title>
+  <link rel="stylesheet" href="design-tokens.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="section hero bg-lav">
+    <div class="section__inner">
+      <div class="grid">
+        <div class="col-12 col-md-8">
+          <p class="label label--upper" style="margin-bottom: var(--space-4);">Contact</p>
+          <h1>Let's talk.</h1>
+          <p class="body-xl" style="margin-top: var(--space-6); max-width: 55ch;">
+            Whether you have a project in mind, a role to fill, or just want to connect — I'd love to hear from you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM + INFO -->
+  <section class="section">
+    <div class="section__inner">
+      <div class="grid">
+
+        <!-- INFO SIDEBAR -->
+        <div class="col-12 col-md-5">
+          <div style="padding-top: var(--space-4);">
+
+            <div style="margin-bottom: var(--space-10);">
+              <p class="label label--upper" style="margin-bottom: var(--space-5);">Direct</p>
+              <div style="display:flex; align-items:center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                <div class="icon-badge icon-badge--rose icon-badge--sm"><i class="ph ph-envelope" aria-hidden="true"></i></div>
+                <a href="mailto:emahonux@gmail.com" class="body-sm" style="color: var(--text-body);">emahonux@gmail.com</a>
+              </div>
+              <div style="display:flex; align-items:center; gap: var(--space-3);">
+                <div class="icon-badge icon-badge--rose icon-badge--sm"><i class="ph ph-phone" aria-hidden="true"></i></div>
+                <p class="body-sm">(203) 482-0166</p>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-10);">
+              <p class="label label--upper" style="margin-bottom: var(--space-5);">Resources</p>
+              <div style="display:flex; align-items:center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                <div class="icon-badge icon-badge--rose icon-badge--sm"><i class="ph ph-file-text" aria-hidden="true"></i></div>
+                <a href="https://drive.google.com/file/d/114j7N9Djo3wzvWJrzw8mImS6576LUo3C/view?usp=sharing" class="body-sm" target="_blank" rel="noopener">View Résumé</a>
+              </div>
+              <div style="display:flex; align-items:center; gap: var(--space-3);">
+                <div class="icon-badge icon-badge--rose icon-badge--sm"><i class="ph ph-newspaper-clipping" aria-hidden="true"></i></div>
+                <a href="https://substack.com/@erinmahon1" class="body-sm" target="_blank" rel="noopener">Substack</a>
+              </div>
+            </div>
+
+            <div>
+              <p class="label label--upper" style="margin-bottom: var(--space-5);">Location</p>
+              <div style="display:flex; align-items:center; gap: var(--space-3);">
+                <div class="icon-badge icon-badge--rose icon-badge--sm"><i class="ph ph-map-pin" aria-hidden="true"></i></div>
+                <p class="body-sm">Charleston, SC</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="col-12 col-md-7">
+          <form class="contact-form" action="https://formspree.io/f/xjgpvoqv" method="POST" novalidate>
+
+            <div class="form-group">
+              <label class="form-label" for="name">Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <input
+                class="form-input"
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What's this about?"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea
+                class="form-input form-input--textarea"
+                id="message"
+                name="message"
+                placeholder="Tell me about your project, role, or just say hi."
+                rows="6"
+                required
+              ></textarea>
+            </div>
+
+            <div style="margin-top: var(--space-8);">
+              <button type="submit" class="btn btn--primary" style="width:100%;">
+                <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i>
+                Send Message
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const toggle = document.querySelector('.nav__toggle');
+    const links  = document.querySelector('.nav__links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // Simple form success handling
+    const form = document.querySelector('.contact-form');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+          if (res.ok) {
+            form.innerHTML = '<div style="padding: var(--space-12); text-align:center;"><i class="ph ph-check-circle" style="font-size:3rem; color:var(--sage-500); display:block; margin:0 auto var(--space-4);"></i><h3>Message sent!</h3><p class="body-md" style="margin-top:var(--space-3);">Thanks for reaching out. I\'ll be in touch soon.</p></div>';
+          } else {
+            throw new Error();
+          }
+        } catch {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          alert('Something went wrong. Please email emahonux@gmail.com directly.');
+        }
+      });
+    }
+  </script>
+  <script src="components.js" defer></script>
+</body>
+</html>

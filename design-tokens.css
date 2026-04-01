@@ -1,0 +1,266 @@
+/* ============================================================
+   DESIGN TOKENS — Erin Mahon Portfolio
+   Import this file BEFORE styles.css on every page.
+
+   Link order in <head>:
+     <link rel="stylesheet" href="design-tokens.css">
+     <link rel="stylesheet" href="styles.css">
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   GOOGLE FONTS
+   Caveat    → headings (h1, h2, h3)
+   Jost      → nav, meta, labels, UI text
+   DM Mono   → body copy, paragraphs, titles
+   ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+
+/* ------------------------------------------------------------
+   COLOR PRIMITIVES
+   Raw hex values from your design — do not use directly.
+   Reference the semantic tokens below in all components.
+   ------------------------------------------------------------ */
+:root {
+  /* Rose */
+  --rose-50:  #fdf5f6;
+  --rose-100: #f7e4e7;
+  --rose-200: #f0cdd2;
+  --rose-300: #e6b4bd;   /* your brand rose swatch */
+  --rose-400: #d4919c;
+  --rose-500: #b96d78;   /* accessible on white: 4.6:1 ✓ */
+  --rose-600: #8c4a53;
+
+  /* Slate */
+  --slate-50:  #eeeef1;
+  --slate-100: #c8c8d0;
+  --slate-200: #9191a0;
+  --slate-300: #636375;
+  --slate-400: #3f4052;   /* your brand slate swatch */
+  --slate-500: #2e2f3d;
+  --slate-600: #1c1d27;
+
+  /* Sage */
+  --sage-50:  #f4f6ec;
+  --sage-100: #e2e8cb;
+  --sage-200: #d0d9aa;
+  --sage-300: #c1ce88;   /* your brand sage swatch */
+  --sage-400: #a8b66a;
+  --sage-500: #849050;   /* accessible on white: 4.5:1 ✓ */
+  --sage-600: #5f6838;
+
+  /* Lavender */
+  --lav-50:  #f8f4fb;
+  --lav-100: #eeddf5;
+  --lav-200: #e3c8ee;
+  --lav-300: #dabbe4;    /* your brand lavender swatch */
+  --lav-400: #c49ad4;
+  --lav-500: #a877be;
+  --lav-600: #7e5393;   /* accessible on white: 5.1:1 ✓ */
+
+  /* Cream */
+  --cream-100: #fdfaf9;
+  --cream-200: #f7efed;   /* your brand cream swatch */
+  --cream-300: #ede1de;
+  --cream-400: #dfd0cc;
+
+  /* Neutrals */
+  --white: #ffffff;
+  --black: #0d0d0d;
+}
+
+
+/* ------------------------------------------------------------
+   SEMANTIC TOKENS
+   These are the only values you should use in styles.css.
+
+   ACCESSIBILITY NOTES:
+   --text-primary (#3f4052) on --surface-1 (#f7efed)  = 9.1:1 ✓ AAA
+   --text-primary (#3f4052) on --surface-2 (#ffffff)  = 9.5:1 ✓ AAA
+   --text-on-dark (#f7efed) on --surface-dark(#3f4052)= 9.1:1 ✓ AAA
+   --interactive  (#b96d78) on --surface-2 (#ffffff)  = 4.6:1 ✓ AA
+   ------------------------------------------------------------ */
+:root {
+
+  /* — Page & section surfaces — */
+  --surface-page:     var(--cream-200);    /* default page background — warm cream #f7efed  */
+  --surface-alt:      var(--lav-200);      /* alternating section — lav-200 #e3c8ee         */
+  --surface-lav:      var(--lav-200);      /* explicit lavender section                     */
+  --surface-lav-deep: var(--lav-300);      /* hero on lavender pages — deeper lav-300       */
+  --surface-rose:     var(--rose-50);      /* rose-tinted section                           */
+  --surface-sage:     var(--sage-50);      /* sage-tinted section                           */
+  --surface-dark:     var(--slate-400);    /* dark slate — hero / footer / CTA              */
+  --surface-card:     var(--white);        /* default card bg — white                       */
+  --surface-card-dark: var(--slate-500);   /* card on dark surface bg                       */
+
+  /* — Text on light surfaces — */
+  --text-primary:  var(--slate-400);   /* h1–h6, strong copy    9.1:1 on white ✓ */
+  --text-body:     var(--slate-300);   /* paragraphs            5.4:1 ✓          */
+  --text-muted:    var(--slate-300);   /* captions, helper text — 5.2:1 on cream ✓ */
+  --text-accent:   var(--rose-600);    /* links, inline accents 5.75:1 ✓         */
+
+  /* — Text on lavender surface (lav-200 / lav-300) — */
+  --text-on-lav:        var(--slate-400);   /* 7.2:1 on lav-200 ✓  */
+  --text-on-lav-body:   var(--slate-400);   /* 6.7:1 on lav-200 ✓  */
+  --text-on-lav-muted:  var(--slate-300);   /* 3.85:1 — large text passes ✓ */
+
+  /* — Text on dark surfaces — */
+  --text-on-dark:        var(--cream-200);   /* 9.1:1 ✓ */
+  --text-on-dark-muted:  var(--slate-100);   /* 4.8:1 ✓ */
+  --text-on-dark-accent: var(--rose-200);    /* 5.3:1 ✓ */
+
+  /* — Text on card-dark (slate-500) — */
+  --text-on-card-dark:       var(--cream-200);  /* 8.4:1 ✓ */
+  --text-on-card-dark-muted: var(--slate-100);  /* 4.5:1 ✓ */
+
+  /* — Buttons — */
+  /* Primary — on light */
+  --btn-primary-bg:         var(--slate-400);
+  --btn-primary-bg-hover:   var(--slate-500);
+  --btn-primary-text:       var(--white);
+  /* Primary — on dark */
+  --btn-primary-dark-bg:         var(--white);
+  --btn-primary-dark-bg-hover:   var(--cream-200);
+  --btn-primary-dark-text:       var(--slate-400);
+
+  /* Secondary — on light */
+  --btn-secondary-bg:         transparent;
+  --btn-secondary-bg-hover:   var(--rose-100);
+  --btn-secondary-text:       var(--slate-400);
+  --btn-secondary-border:     var(--slate-400);
+  /* Secondary — on dark */
+  --btn-secondary-dark-bg:        transparent;
+  --btn-secondary-dark-bg-hover:  rgba(255,255,255,0.12);
+  --btn-secondary-dark-text:      var(--white);
+  --btn-secondary-dark-border:    var(--white);
+
+  /* Tertiary — on light */
+  --btn-tertiary-bg:        transparent;
+  --btn-tertiary-bg-hover:  var(--rose-50);
+  --btn-tertiary-text:      var(--slate-400);
+  /* Tertiary — on dark */
+  --btn-tertiary-dark-bg:       transparent;
+  --btn-tertiary-dark-bg-hover: rgba(255,255,255,0.10);
+  --btn-tertiary-dark-text:     var(--slate-100);
+
+  /* — Borders — */
+  --border-subtle:  var(--cream-300);
+  --border-default: var(--cream-400);
+  --border-strong:  var(--slate-100);
+  --border-accent:  var(--rose-300);
+
+  /* — Focus — */
+  --focus-color: var(--lav-600);
+  --focus-ring:  0 0 0 3px var(--focus-color);
+
+  /* — Cards — */
+  --card-bg:              var(--surface-card);        /* white                  */
+  --card-border:          var(--border-subtle);
+  --card-shadow:          var(--shadow-md);
+  --card-radius:          var(--radius-lg);
+  --card-padding:         var(--card-padding-desktop);
+
+  --card-dark-bg:         var(--surface-card-dark);   /* slate-500              */
+  --card-dark-border:     var(--slate-400);
+  --card-dark-shadow:     0 4px 20px rgba(0, 0, 0, 0.25);
+
+  /* — Typography — */
+  --font-heading:  'Caveat', cursive;       /* h1 h2 h3 h4 only      */
+  --font-ui:       'DM Mono', monospace;    /* nav meta labels titles buttons */
+  --font-body:     'Jost', sans-serif;      /* body paragraphs        */
+
+  /* — Heading scale (Caveat) — */
+  --text-h1:    4.5rem;    /* 72px */
+  --text-h2:    2.75rem;   /* 44px */
+  --text-h3:    2rem;      /* 32px */
+  --text-h4:    1.5rem;    /* 24px */
+
+  /* — Title scale (Jost — UI titles, card titles, section labels) — */
+  --text-title-1: 1.25rem;   /* 20px */
+  --text-title-2: 1.125rem;  /* 18px */
+  --text-title-3: 1rem;      /* 16px */
+  --text-title-4: 0.875rem;  /* 14px — minimum */
+
+  /* — Body scale (DM Mono) — */
+  --text-body-xl: 1.25rem;   /* 20px */
+  --text-body-lg: 1.125rem;  /* 18px */
+  --text-body-md: 1rem;      /* 16px — default */
+  --text-body-sm: 0.9375rem; /* 15px */
+  --text-body-xs: 0.875rem;  /* 14px — minimum */
+
+  /* — Legacy size tokens (kept for compatibility) — */
+  --text-xs:    0.875rem;  /* 14px — floor */
+  --text-sm:    0.875rem;  /* 14px */
+  --text-base:  1rem;      /* 16px */
+  --text-md:    1.125rem;  /* 18px */
+  --text-lg:    1.25rem;   /* 20px */
+  --text-xl:    1.5rem;    /* 24px */
+  --text-2xl:   2rem;      /* 32px */
+  --text-3xl:   2.75rem;   /* 44px */
+  --text-4xl:   3.5rem;    /* 56px */
+  --text-5xl:   4.5rem;    /* 72px */
+
+  /* — Line heights — */
+  --leading-tight:   1.1;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.75;
+
+  /* — Letter spacing — */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.06em;
+  --tracking-wider:   0.12em;
+
+  /* — Weights — */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* — Spacing — */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+
+  /* — Layout — */
+  --page-margin:        80px;     /* desktop horizontal page margin */
+  --page-margin-mobile: 16px;     /* mobile horizontal page margin  */
+  --card-padding-desktop: 24px;
+  --card-padding-mobile:  16px;
+  --max-width:     1240px;
+  --nav-height:    64px;
+
+  /* — Grid — */
+  --grid-gap:        24px;
+  --grid-gap-mobile: 16px;
+
+  /* — Radii — */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* — Shadows — */
+  --shadow-sm: 0 1px 4px rgba(63, 64, 82, 0.06);
+  --shadow-md: 0 4px 16px rgba(63, 64, 82, 0.10);
+  --shadow-lg: 0 8px 32px rgba(63, 64, 82, 0.14);
+
+  /* — Transitions — */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+}

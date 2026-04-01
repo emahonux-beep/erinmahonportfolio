@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Erin Mahon</title>
+  <link rel="stylesheet" href="design-tokens.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="section hero bg-lav">
+    <div class="section__inner">
+      <div class="grid">
+        <div class="col-12 col-md-9">
+          <p class="label label--upper" style="margin-bottom: var(--space-4);">The Work</p>
+          <h1>From hot mess to heck yes — that's the job.</h1>
+          <p class="body-xl" style="margin-top: var(--space-6); max-width: 60ch;">Complex systems, high-stakes decisions, messy information architecture. I take the overwhelming and make it navigable. Eight years of doing exactly that across healthcare, government, and connected devices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="section" style="padding-top: var(--space-6); padding-bottom: 0;">
+    <div class="section__inner">
+      <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="healthcare" role="tab" aria-selected="false">Healthcare</button>
+        <button class="filter-btn" data-filter="government" role="tab" aria-selected="false">Government</button>
+        <button class="filter-btn" data-filter="connected-devices" role="tab" aria-selected="false">Connected Devices</button>
+        <button class="filter-btn" data-filter="early-work" role="tab" aria-selected="false">Early Work</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEALTHCARE -->
+  <section class="section" style="padding-top: var(--space-6);" id="healthcare">
+    <div class="section__inner">
+      <p class="label label--upper" style="margin-bottom: var(--space-3);">Healthcare</p>
+      <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Product design work at Cigna / Evernorth from 2022 to 2025. Member-facing experiences across prescription management, benefits, and digital health.</p>
+      <div class="grid">
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <a href="case-studies/check-coverage.html" class="card card--link">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"><i class="ph ph-image" style="font-size:2.5rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Check Coverage</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Three years of research, analytics, and design decisions. What started as a compliance obligation became one of the most-used tools in the member portal.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <a href="case-studies/cost-optimization.html" class="card card--link">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"><i class="ph ph-image" style="font-size:2.5rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Cost Optimization</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">A legacy savings UI rebuilt into a decision platform across three phases — 320% conversion gain, 10-point sentiment lift.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <a href="case-studies/digital-id.html" class="card card--link">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"><i class="ph ph-image" style="font-size:2.5rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Digital ID</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">The digital version existed. It just wasn't useful — a partial SVG buried in an Account menu, competing with a physical card still arriving in the mail.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Benefits Overview</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Simplifying benefits comprehension for new and existing members. Making the first encounter with a complex plan feel navigable.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Pharmacy Locator</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Helping members find in-network pharmacies based on coverage and location. The kind of task that should take seconds and often didn't.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Open Enrollment</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Streamlining the annual benefits selection process for Cigna members. High-stakes decisions on a deadline.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Claims</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Transparent, easy-to-understand claims status and history. Designed so members spend less time confused.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="healthcare">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Annual Cost Summary</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">A receipt-style pharmacy cost breakdown that fulfilled public transparency commitments.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Express Scripts</span><span class="tag">Responsive</span><span class="tag">Native</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNMENT -->
+  <section class="section" id="government">
+    <div class="section__inner">
+      <p class="label label--upper" style="margin-bottom: var(--space-3);">Government</p>
+      <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Civic technology design at Servos from 2021 to 2022. ServiceNow-powered digital transformation for state and county government portals.</p>
+      <div class="grid">
+
+        <div class="col-12 col-md-4" data-category="government">
+          <a href="case-studies/sd-gov.html" class="card card--link">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"><i class="ph ph-image" style="font-size:2.5rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">SD.gov</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">ServiceNow digital transformation for South Dakota citizens — custom UX, intuitive IA, single sign-on, and mobile-first case management.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">State of South Dakota</span><span class="tag">Responsive</span></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="government">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Harris County 311</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Modernizing citizen service request systems for Harris County residents. Faster routing, clearer status, less friction.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">City of Austin</span><span class="tag">Responsive</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="government">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Educator Certification</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Streamlining the educator certification process for state education departments. Reducing administrative burden.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">State of South Dakota</span><span class="tag">Responsive</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="government">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Content Management</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Internal CMS redesign for state government content administrators. Built for the people maintaining the system day-to-day.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">State of South Dakota</span><span class="tag">Responsive</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED DEVICES -->
+  <section class="section" id="connected-devices">
+    <div class="section__inner">
+      <p class="label label--upper" style="margin-bottom: var(--space-3);">Connected Devices</p>
+      <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Mobile app and device design at C+A Global from 2020 to 2021. End-to-end product design across both the physical hardware and the companion app.</p>
+      <div class="grid">
+
+        <div class="col-12 col-md-4" data-category="connected-devices">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Kodak Smile</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Companion app and device design for the Kodak Smile instant print camera.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Kodak</span><span class="tag">Native</span><span class="tag">IoT</span><span class="tag">Hardware + App</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="connected-devices">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Logia Weather Station</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Device and companion app for the Logia personal weather station. Turning raw sensor data into something readable and useful.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Logia</span><span class="tag">Native</span><span class="tag">IoT</span><span class="tag">Hardware + App</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="connected-devices">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Iviation Wine Cooler</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Device and companion app for the Iviation smart wine cooler. Precision temperature control, designed for clarity.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Iviation</span><span class="tag">Native</span><span class="tag">IoT</span><span class="tag">Hardware + App</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="connected-devices">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Lifeprint Digital Frame</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Device and app design for the Lifeprint connected digital frame. Sharing and displaying memories, from the frame to the app.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Lifeprint</span><span class="tag">Native</span><span class="tag">IoT</span><span class="tag">Hardware + App</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="connected-devices">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">LiveFine Pill Dispenser</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Device and app design for the LiveFine smart pill dispenser. The right information at the right time, for people who can't afford a miss.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">LiveFine</span><span class="tag">Native</span><span class="tag">IoT</span><span class="tag">Hardware + App</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="connected-devices">
+          <div class="card" style="opacity:0.8;">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0; background:var(--cream-300);"><i class="ph ph-lock" style="font-size:2rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Truvitals Thermometer</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Device and app design for the Truvitals connected thermometer. Health tracking and family sharing, from device to data.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">GE</span><span class="tag">Native</span><span class="tag">IoT</span><span class="tag">Hardware + App</span></div>
+              <p class="body-xs" style="color:var(--text-muted);">Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY WORK -->
+  <section class="section" id="early-work">
+    <div class="section__inner">
+      <p class="label label--upper" style="margin-bottom: var(--space-3);">Early Work</p>
+      <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Certification projects, freelance clients, and internship work completed between 2019 and 2021. Full design process from research through high-fidelity prototype.</p>
+      <div class="grid">
+
+        <div class="col-12 col-md-4" data-category="early-work">
+          <a href="case-studies/spotivity.html" class="card card--link">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"><i class="ph ph-image" style="font-size:2.5rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Spotivity</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Redesigning a youth activity platform to drive re-engagement — without overhauling the existing framework. One CTA change changed everything.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Native</span><span class="tag">Responsive</span></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="early-work">
+          <a href="case-studies/bon-voyage.html" class="card card--link">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"><i class="ph ph-image" style="font-size:2.5rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Bon Voyage</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">A solo 6-week project designing the travel planning app the market was missing — budget-conscious and itinerary-first.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Native</span><span class="tag">Responsive</span></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="early-work">
+          <a href="case-studies/evento-adesso.html" class="card card--link">
+            <div class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"><i class="ph ph-image" style="font-size:2.5rem; color:var(--slate-100);" aria-hidden="true"></i></div>
+            <div class="card__body">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Evento Adesso</p>
+              <p class="body-sm" style="margin-bottom:var(--space-4);">Remote event platform designed to not just replicate — but measure and increase — real-world engagement.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><span class="tag">Native</span><span class="tag">Responsive</span></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="components.js" defer></script>
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => { b.classList.remove('filter-btn--active'); b.setAttribute('aria-selected','false'); });
+        btn.classList.add('filter-btn--active');
+        btn.setAttribute('aria-selected','true');
+        const filter = btn.dataset.filter;
+        ['healthcare','government','connected-devices','early-work'].forEach(id => {
+          const s = document.getElementById(id);
+          if (s) s.style.display = (filter === 'all' || filter === id) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
