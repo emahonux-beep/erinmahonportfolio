@@ -391,7 +391,6 @@ hr {
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--slate-500);
-  box-shadow: var(--shadow-sm);
 }
 
 .nav__inner {
@@ -3207,8 +3206,8 @@ html {
   font-size: var(--text-title-4);
   font-weight: var(--weight-regular);
   letter-spacing: var(--tracking-wide);
-  color: var(--slate-400);
-  background: var(--cream-400);
+  color: var(--sage-600);
+  background: var(--sage-100);
   border-radius: var(--radius-full);
   padding: 2px var(--space-3);
 }
@@ -3327,7 +3326,7 @@ html {
 
 /* --- Nav active state --- */
 .nav__link--active {
-  color: var(--text-primary);
+  color: var(--text-on-dark);
   font-weight: var(--weight-medium);
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -3343,9 +3342,7 @@ html {
   overflow: hidden;
 }
 
-.card__body {
-  padding: var(--card-padding);
-}
+/* card__body padding is inherited from the .card wrapper — no extra padding needed */
 
 /* --- Mobile: col-md overrides at 768px --- */
 @media (min-width: 768px) {
@@ -3500,6 +3497,18 @@ section.hero.bg-lav .meta {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+/* Tags/pills inside any card — push to consistent vertical position
+   with breathing room above them from the body text */
+.card__body > div[style*="flex-wrap"] {
+  margin-top: auto;
+  padding-top: var(--space-5);
+}
+
+.card__body > .tag-group {
+  margin-top: auto;
+  padding-top: var(--space-5);
 }
 
 
