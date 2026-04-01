@@ -1159,11 +1159,12 @@ img {
 
   .card__body > div[style*="flex-wrap"],
   .card__body > .tag-group {
-    margin-top: var(--space-4);      /* 16px */
+    margin-top: auto;
+    padding-top: var(--space-4);     /* 16px */
   }
 
   .card--link .card__body > *:last-child {
-    margin-top: var(--space-4);      /* 16px */
+    padding-top: var(--space-3);     /* 12px */
   }
 
   .card--project .card__content {
@@ -3514,12 +3515,13 @@ section.hero.bg-lav .meta {
   margin-bottom: var(--space-2);
 }
 
-/* When tags follow a title directly (no body copy between them) — 16px gap */
+/* When tags follow a title directly (no body copy) — override auto with fixed gap */
 .card__body .title-1 + div[style*="flex-wrap"],
 .card__body .title-2 + div[style*="flex-wrap"],
 .card__body .title-1 + .tag-group,
 .card__body .title-2 + .tag-group {
   margin-top: var(--space-4);
+  padding-top: 0;
 }
 
 
@@ -3543,18 +3545,22 @@ section.hero.bg-lav .meta {
   flex-direction: column;
 }
 
-/* Tags/pills inside any card — fixed 24px above per card anatomy spec */
+/* Tags/pills — pin to consistent vertical position across all cards in a row.
+   margin-top: auto pushes them to the same line regardless of body text length.
+   padding-top adds the fixed gap above. */
 .card__body > div[style*="flex-wrap"] {
-  margin-top: var(--space-6);
+  margin-top: auto;
+  padding-top: var(--space-6);
 }
 
 .card__body > .tag-group {
-  margin-top: var(--space-6);
+  margin-top: auto;
+  padding-top: var(--space-6);
 }
 
-/* CTA / "View case study" — fixed 24px above */
+/* CTA — always pins below tags with fixed gap */
 .card--link .card__body > *:last-child {
-  margin-top: var(--space-6);
+  padding-top: var(--space-4);
 }
 
 
