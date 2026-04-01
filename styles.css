@@ -3874,7 +3874,7 @@ section.hero.bg-lav .meta {
 }
 
 .card--meta .icon-badge {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 .card--meta .label {
@@ -3965,7 +3965,7 @@ section.hero.bg-lav .meta {
 
 /* Icon badge spacing inside card__body */
 .card__body .icon-badge {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 
 /* Full-width card (fills grid col) */
@@ -4005,10 +4005,17 @@ section.hero.bg-lav .meta {
    Used in two-col layout alongside body text.
    ============================================================ */
 .quote-card {
-  background: var(--surface-card);
+  background: var(--lav-100);
+  border: 1px solid var(--lav-200);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   height: 100%;
+}
+
+/* On lavender sections, use a white card instead */
+.bg-lav .quote-card {
+  background: var(--surface-card);
+  border-color: transparent;
 }
 
 .quote-card__body {
