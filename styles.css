@@ -489,13 +489,15 @@ hr {
   color: var(--text-on-dark);
 }
 
-.nav__link.active {
+.nav__link.active,
+.nav__link--active {
   color: var(--text-on-dark);
   font-weight: var(--weight-regular);
 }
 
 .nav__link:hover::after,
-.nav__link.active::after {
+.nav__link.active::after,
+.nav__link--active::after {
   width: 100%;
 }
 
@@ -524,7 +526,7 @@ hr {
   display: block;
   width: 22px;
   height: 2px;
-  background-color: var(--text-primary);
+  background-color: var(--text-on-dark);   /* cream-200 — visible on dark nav bg */
   border-radius: var(--radius-full);
   transition: all var(--duration-base) var(--ease-out);
 }
@@ -1186,7 +1188,7 @@ img {
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: var(--surface-white);
+    background: var(--surface-dark);         /* slate-400 — matches nav bar */
     padding: var(--space-6) var(--page-margin-mobile);
     border-bottom: 1px solid var(--slate-500);
     gap: var(--space-5);
@@ -1197,8 +1199,32 @@ img {
     display: flex;
   }
 
+  /* Nav links in dropdown — need explicit on-dark colors */
+  .nav__links .nav__link {
+    color: var(--text-on-dark-muted);        /* slate-100 — 4.8:1 on slate-400 ✓ */
+    font-size: var(--text-title-3);          /* 16px — larger touch target */
+    padding-block: var(--space-2);
+  }
+
+  .nav__links .nav__link:hover,
+  .nav__links .nav__link--active {
+    color: var(--text-on-dark);              /* cream-200 — 9.1:1 on slate-400 ✓ */
+  }
+
   .nav__toggle {
     display: flex;
+  }
+
+  /* Animated hamburger → X on open */
+  .nav__toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav__toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav__toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   /* Section padding shrinks */
