@@ -493,6 +493,7 @@ hr {
 .nav__link--active {
   color: var(--text-on-dark);
   font-weight: var(--weight-regular);
+  text-decoration: none;
 }
 
 .nav__link:hover::after,
@@ -3340,9 +3341,7 @@ html {
 .nav__link--active {
   color: var(--text-on-dark);
   font-weight: var(--weight-medium);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: var(--rose-300);
+  text-decoration: none;
 }
 
 /* --- Card without link variant --- */
