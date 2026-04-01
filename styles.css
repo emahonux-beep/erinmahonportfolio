@@ -466,7 +466,7 @@ hr {
   font-weight: var(--weight-light);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--text-on-dark-muted);
+  color: var(--white);
   text-decoration: none;
   position: relative;
   padding-bottom: 3px;
@@ -515,20 +515,26 @@ hr {
 .nav__toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
   padding: var(--space-2);
   background: none;
   border: none;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .nav__toggle span {
   display: block;
   width: 22px;
   height: 2px;
-  background-color: var(--text-on-dark);   /* cream-200 — visible on dark nav bg */
+  background-color: var(--white);   /* pure white — maximum contrast on dark nav */
   border-radius: var(--radius-full);
   transition: all var(--duration-base) var(--ease-out);
+  pointer-events: none;
 }
 
 
@@ -1087,19 +1093,71 @@ img {
     gap: 20px;
   }
 
-  /* Narrow cols (1–4) → half width on tablet */
+  /* Narrow cols (1-4) - half width on tablet */
   .col-1, .col-2, .col-3, .col-4 { grid-column: span 6; }
 
-  /* Mid cols (5–7) → keep their span, they still fit */
+  /* Mid cols (5-7) - keep their span, they still fit */
   .col-5 { grid-column: span 5; }
   .col-6 { grid-column: span 6; }
   .col-7 { grid-column: span 7; }
 
-  /* Wide cols (8–11) → full width on tablet */
+  /* Wide cols (8-11) - full width on tablet */
   .col-8, .col-9, .col-10, .col-11 { grid-column: span 12; }
 
   /* col-12 always full */
   .col-12 { grid-column: span 12; }
+
+  /* NAV: show hamburger, collapse inline links */
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--surface-dark);
+    padding: var(--space-6) var(--space-8);
+    border-bottom: 1px solid var(--slate-500);
+    gap: var(--space-5);
+    z-index: 99;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav__links.is-open {
+    display: flex;
+  }
+
+  /* Override global a:visited so visited nav links stay contrast-safe */
+  .nav__links .nav__link,
+  .nav__links .nav__link:visited {
+    color: var(--white);               /* white on slate — 13.5:1 ✓ AAA */
+    font-size: var(--text-title-3);
+    padding-block: var(--space-2);
+  }
+
+  .nav__links .nav__link:hover,
+  .nav__links .nav__link--active,
+  .nav__links .nav__link--active:visited {
+    color: var(--rose-200);            /* soft rose on hover/active — distinguishes state */
+  }
+
+  /* Show hamburger */
+  .nav__toggle {
+    display: flex;
+  }
+
+  /* Animated hamburger to X */
+  .nav__toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav__toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav__toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
 
 
@@ -1177,54 +1235,6 @@ img {
   .img--hero {
     max-height: 280px;
     border-radius: var(--radius-lg);
-  }
-
-  /* Nav mobile */
-  .nav__links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    background: var(--surface-dark);         /* slate-400 — matches nav bar */
-    padding: var(--space-6) var(--page-margin-mobile);
-    border-bottom: 1px solid var(--slate-500);
-    gap: var(--space-5);
-    z-index: 99;
-  }
-
-  .nav__links.is-open {
-    display: flex;
-  }
-
-  /* Nav links in dropdown — need explicit on-dark colors */
-  .nav__links .nav__link {
-    color: var(--text-on-dark-muted);        /* slate-100 — 4.8:1 on slate-400 ✓ */
-    font-size: var(--text-title-3);          /* 16px — larger touch target */
-    padding-block: var(--space-2);
-  }
-
-  .nav__links .nav__link:hover,
-  .nav__links .nav__link--active {
-    color: var(--text-on-dark);              /* cream-200 — 9.1:1 on slate-400 ✓ */
-  }
-
-  .nav__toggle {
-    display: flex;
-  }
-
-  /* Animated hamburger → X on open */
-  .nav__toggle[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  .nav__toggle[aria-expanded="true"] span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  .nav__toggle[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
   }
 
   /* Section padding shrinks */
@@ -1743,7 +1753,7 @@ img {
   font-family: var(--font-ui);
   font-size: var(--text-title-4);
   font-weight: var(--weight-light);
-  color: var(--text-on-dark-muted);
+  color: var(--white);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
 }
@@ -1755,7 +1765,7 @@ img {
   font-weight: var(--weight-light);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--text-on-dark-muted);
+  color: var(--slate-100);
   margin-bottom: var(--space-5);
 }
 
@@ -1770,7 +1780,7 @@ img {
   font-family: var(--font-ui);
   font-size: var(--text-title-3);
   font-weight: var(--weight-light);
-  color: var(--text-on-dark-muted);
+  color: var(--white);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out);
 }
@@ -1790,7 +1800,7 @@ img {
   font-family: var(--font-ui);
   font-size: var(--text-title-3);
   font-weight: var(--weight-light);
-  color: var(--text-on-dark-muted);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -1815,7 +1825,7 @@ img {
   font-family: var(--font-ui);
   font-size: var(--text-title-4);
   font-weight: var(--weight-light);
-  color: var(--text-on-dark-muted);
+  color: var(--white);
   letter-spacing: var(--tracking-wide);
 }
 
@@ -1823,7 +1833,7 @@ img {
   font-family: var(--font-ui);
   font-size: var(--text-title-4);
   font-weight: var(--weight-light);
-  color: var(--text-on-dark-muted);
+  color: var(--white);
   letter-spacing: var(--tracking-wide);
 }
 
@@ -3950,6 +3960,12 @@ section.hero.bg-lav .meta {
   display: flex;
 }
 
+/* Quote card column — aligns card to top so it hugs content, not the full row height */
+.col--quote {
+  display: flex;
+  align-items: flex-start;
+}
+
 /* Content section spacing helpers */
 .section-label {
   margin-bottom: var(--space-4);
@@ -4009,7 +4025,7 @@ section.hero.bg-lav .meta {
   border: 1px solid var(--lav-200);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
-  height: 100%;
+  align-self: flex-start;
 }
 
 /* On lavender sections, use a white card instead */
