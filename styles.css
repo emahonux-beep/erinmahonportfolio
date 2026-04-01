@@ -946,7 +946,6 @@ hr {
 /* Project card (image on top) */
 .card--project {
   padding: 0;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -960,6 +959,7 @@ hr {
   background-color: var(--cream-300);
   flex-shrink: 0;
   transition: transform var(--duration-slow) var(--ease-out);
+  border-radius: var(--card-radius) var(--card-radius) 0 0;  /* top corners round, bottom flat */
 }
 
 .card--project:hover .card__image {
