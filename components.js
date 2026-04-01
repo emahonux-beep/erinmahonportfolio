@@ -15,6 +15,9 @@
   // If the last folder segment is "case-studies" we're one level deep
   const prefix = depth.includes('case-studies') ? '../' : '';
 
+  // Absolute base for assets (works from any page depth)
+  const assetBase = '/erinmahonportfolio/assets/';
+
   /* ----------------------------------------------------------
      Determine active nav link based on current page
   ---------------------------------------------------------- */
@@ -36,7 +39,7 @@
   <div class="nav__inner page-wrapper">
     <a href="${prefix}index.html" class="nav__logo" aria-label="Erin Mahon home">
       <img
-        src="${prefix}assets/logo.svg"
+        src="${assetBase}logo.svg"
         alt="EM icon mark"
         class="nav__logo-img"
       />
@@ -65,7 +68,7 @@
     <!-- Brand -->
     <div class="footer__brand">
       <a href="${prefix}index.html" class="footer__logo">
-        <img src="${prefix}assets/logo-footer.svg" alt="EM icon mark" class="footer__logo-img" />
+        <img src="${assetBase}logo-footer.svg" alt="EM icon mark" class="footer__logo-img" />
         <span class="footer__logo-name">Erin Mahon</span>
       </a>
       <p class="footer__tagline">Product Designer</p>
