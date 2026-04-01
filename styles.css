@@ -3860,3 +3860,171 @@ section.hero.bg-lav .meta {
   background-color: var(--btn-primary-dark-bg-hover);
   color: var(--btn-primary-dark-text);
 }
+
+
+/* ============================================================
+   CASE STUDY — Component classes
+   Replaces inline styles across all case study pages.
+   ============================================================ */
+
+/* Hero meta cards — compact variant */
+.card--meta {
+  width: 100%;
+  padding: var(--space-5);
+}
+
+.card--meta .icon-badge {
+  margin-bottom: var(--space-4);
+}
+
+.card--meta .label {
+  margin-bottom: var(--space-2);
+}
+
+.card--meta .title-2 {
+  margin-top: 0;
+}
+
+/* Hero layout helpers */
+.hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.hero__title {
+  margin-bottom: var(--space-5);
+}
+
+.hero__body {
+  max-width: 65ch;
+  margin-bottom: var(--space-6);
+}
+
+.hero__tags {
+  margin-bottom: var(--space-8);
+}
+
+/* Numbered list rows — process pattern on lav */
+.numbered-row {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--lav-400);
+}
+
+.numbered-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.numbered-row__num {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  color: var(--rose-600);
+  line-height: 1;
+}
+
+/* Numbered list rows on white bg */
+.numbered-row--light {
+  border-bottom-color: var(--border-subtle);
+}
+
+/* Nav strip — bottom page navigator */
+.nav-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* Section background — sage-300 brand green */
+.bg-sage-300 {
+  background-color: var(--sage-300);
+}
+
+/* Col flex helper — makes card fill grid cell height */
+.col--flex {
+  display: flex;
+}
+
+/* Content section spacing helpers */
+.section-label {
+  margin-bottom: var(--space-4);
+}
+
+.section-heading {
+  margin-bottom: var(--space-6);
+}
+
+.section-heading--lg {
+  margin-bottom: var(--space-10);
+}
+
+/* Icon badge spacing inside card__body */
+.card__body .icon-badge {
+  margin-bottom: var(--space-4);
+}
+
+/* Full-width card (fills grid col) */
+.card--full {
+  width: 100%;
+}
+
+/* Section label — large bottom margin variant */
+.section-label--lg {
+  margin-bottom: var(--space-10);
+}
+
+/* Col header row — spacing above card grid */
+.col--section-header {
+  margin-bottom: var(--space-10);
+}
+
+/* title-3 card heading spacing */
+.card__body .title-3 {
+  margin-bottom: var(--space-2);
+}
+
+/* Content width constraint */
+.body--constrained {
+  max-width: 65ch;
+}
+
+/* Blockquote italic body */
+.blockquote__body {
+  font-style: italic;
+  max-width: none;
+}
+
+
+/* ============================================================
+   QUOTE CARD — white card containing pull quote
+   Used in two-col layout alongside body text.
+   ============================================================ */
+.quote-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  height: 100%;
+}
+
+.quote-card__body {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.quote-card__attribution {
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+}
+
+.bg-lav .quote-card__attribution {
+  color: var(--text-on-lav-muted);
+}
