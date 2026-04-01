@@ -39,7 +39,7 @@
   <div class="nav__inner page-wrapper">
     <a href="${prefix}index.html" class="nav__logo" aria-label="Erin Mahon home">
       <img
-        src="${assetBase}logo.svg"
+        src="${assetBase}logo-footer.svg"
         alt="EM icon mark"
         class="nav__logo-img"
       />
