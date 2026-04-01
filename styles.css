@@ -434,14 +434,13 @@ hr {
 
 /* Footer logo */
 .footer__logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
+  display: block;
   text-decoration: none;
+  margin-bottom: var(--space-3);
 }
 
 .footer__logo-img {
-  height: 28px;
+  height: 56px;
   width: auto;
   display: block;
 }
@@ -452,6 +451,7 @@ hr {
   font-weight: var(--weight-semibold);
   color: var(--text-on-dark);
   line-height: 1;
+  margin-bottom: var(--space-1);
 }
 
 /* Nav links — Jost, uppercase, light weight */

@@ -69,8 +69,8 @@
     <div class="footer__brand">
       <a href="${prefix}index.html" class="footer__logo">
         <img src="${assetBase}logo-footer.svg" alt="EM icon mark" class="footer__logo-img" />
-        <span class="footer__logo-name">Erin Mahon</span>
       </a>
+      <p class="footer__logo-name">Erin Mahon</p>
       <p class="footer__tagline">Product Designer</p>
     </div>
 
