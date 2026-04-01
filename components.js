@@ -37,14 +37,10 @@
     <a href="${prefix}index.html" class="nav__logo" aria-label="Erin Mahon home">
       <img
         src="${prefix}assets/logo.svg"
-        alt="EM logo"
+        alt="EM icon mark"
         class="nav__logo-img"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
       />
-      <span
-        class="nav__logo-fallback"
-        style="display:none;font-family:var(--font-heading);font-size:1.5rem;color:var(--text-primary);"
-      >EM</span>
+      <span class="nav__logo-name">Erin Mahon</span>
     </a>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -68,7 +64,10 @@
 
     <!-- Brand -->
     <div class="footer__brand">
-      <a href="${prefix}index.html" class="footer__logo">Erin Mahon</a>
+      <a href="${prefix}index.html" class="footer__logo">
+        <img src="${prefix}assets/logo-footer.svg" alt="EM icon mark" class="footer__logo-img" />
+        <span class="footer__logo-name">Erin Mahon</span>
+      </a>
       <p class="footer__tagline">Product Designer</p>
     </div>
 
