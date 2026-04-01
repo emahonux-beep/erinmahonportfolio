@@ -3202,46 +3202,7 @@ html {
   }
 }
 
-/* Also add mobile nav toggle styles that were referenced earlier */
-@media (max-width: 600px) {
-  .nav__toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: var(--space-2);
-    background: none;
-    border: none;
-  }
 
-  .nav__toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: var(--text-primary);
-    border-radius: var(--radius-full);
-    transition: all var(--duration-base) var(--ease-out);
-  }
-
-  .nav__links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    background: var(--surface-page);
-    padding: var(--space-6) var(--page-margin-mobile);
-    border-bottom: 1px solid var(--slate-500);
-    gap: var(--space-5);
-    z-index: 99;
-  }
-
-  .nav__links.is-open {
-    display: flex;
-  }
-}
 
 
 
