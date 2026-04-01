@@ -3356,7 +3356,10 @@ html {
   overflow: hidden;
 }
 
-/* card__body padding is inherited from the .card wrapper — no extra padding needed */
+/* card--link: image flush to top, padding only in card__body */
+.card--link {
+  padding: 0;
+}
 
 /* --- Mobile: col-md overrides at 768px --- */
 @media (min-width: 768px) {
@@ -3483,6 +3486,13 @@ section.hero.bg-lav .meta {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: var(--card-padding-desktop);
+}
+
+@media (max-width: 600px) {
+  .card--link .card__body {
+    padding: var(--card-padding-mobile);
+  }
 }
 
 /* ============================================================
@@ -3502,6 +3512,14 @@ section.hero.bg-lav .meta {
 .card__body .title-1,
 .card__body .title-2 {
   margin-bottom: var(--space-2);
+}
+
+/* When tags follow a title directly (no body copy between them) — 16px gap */
+.card__body .title-1 + div[style*="flex-wrap"],
+.card__body .title-2 + div[style*="flex-wrap"],
+.card__body .title-1 + .tag-group,
+.card__body .title-2 + .tag-group {
+  margin-top: var(--space-4);
 }
 
 
