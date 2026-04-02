@@ -24,7 +24,22 @@
   </section>
 
   <!-- FILTER BAR — lives outside all sections so it never hides -->
-  <div style="background: var(--surface-card); padding: var(--space-6) var(--page-margin); position: sticky; top: var(--nav-height); z-index: 100; border-bottom: 1px solid var(--border-subtle);">
+  <style>
+    .filter-bar-wrap {
+      padding: var(--space-6) var(--page-margin);
+    }
+    .filter-bar-wrap .filter-bar {
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: 0;
+    }
+    @media (max-width: 768px) {
+      .filter-bar-wrap {
+        padding: var(--space-4) var(--page-margin-mobile);
+      }
+    }
+  </style>
+  <div style="background: var(--surface-card); position: sticky; top: var(--nav-height); z-index: 100; border-bottom: 1px solid var(--border-subtle);" class="filter-bar-wrap">
     <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
       <button class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">All</button>
       <button class="filter-btn" data-filter="healthcare" role="tab" aria-selected="false">Healthcare</button>
@@ -35,7 +50,7 @@
   </div>
 
   <!-- HEALTHCARE -->
-  <section class="section bg-white" id="healthcare">
+  <section class="section bg-white" id="healthcare" style="padding-top: var(--space-6);">
     <div class="section__inner">
       <p class="label label--upper" style="margin-bottom: var(--space-3);">Healthcare</p>
       <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Product design work at Cigna / Evernorth from 2022 to 2025. Member-facing experiences across prescription management, benefits, and digital health.</p>
