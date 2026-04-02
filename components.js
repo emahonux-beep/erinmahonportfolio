@@ -148,3 +148,65 @@
   }
 
 })();
+
+/* ----------------------------------------------------------
+   PAGE LOADER
+   Only appears if the page takes longer than 350ms to load.
+   Logo spins, then fades out once the page is ready.
+---------------------------------------------------------- */
+(function () {
+  var THRESHOLD = 350;
+  var shown = false;
+  var ready = false;
+  var loader = null;
+
+  // Inject loader styles
+  var style = document.createElement('style');
+  style.textContent = [
+    '@keyframes em-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}',
+    '.em-loader{position:fixed;inset:0;background:var(--cream-200,#f7efed);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:9999;opacity:1;transition:opacity 0.5s ease,transform 0.5s cubic-bezier(0.22,1,0.36,1);}',
+    '.em-loader.em-out{opacity:0;transform:scale(0.96);pointer-events:none;}',
+    '.em-loader-ring{width:72px;height:72px;border-radius:50%;border:2px solid transparent;border-top-color:var(--rose-400,#d4919c);border-right-color:var(--rose-200,#f0cdd2);animation:em-spin 1s linear infinite;position:absolute;}',
+    '.em-loader-wrap{width:72px;height:72px;position:relative;display:flex;align-items:center;justify-content:center;}',
+    '.em-loader-logo{width:42px;height:42px;object-fit:contain;}',
+    '.em-loader-name{font-family:var(--font-ui,"DM Mono",monospace);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--slate-200,#9191a0);}'
+  ].join('');
+  document.head.appendChild(style);
+
+  // Build loader element
+  function buildLoader() {
+    loader = document.createElement('div');
+    loader.className = 'em-loader';
+    loader.setAttribute('aria-hidden', 'true');
+    loader.innerHTML =
+      '<div class="em-loader-wrap">' +
+        '<div class="em-loader-ring"></div>' +
+        '<img class="em-loader-logo" src="/erinmahonportfolio/assets/logo-footer.svg" alt="" />' +
+      '</div>' +
+      '<span class="em-loader-name">Erin Mahon</span>';
+    document.body.appendChild(loader);
+    shown = true;
+  }
+
+  function dismiss() {
+    if (!shown || !loader) return;
+    loader.classList.add('em-out');
+    setTimeout(function () {
+      if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+    }, 520);
+  }
+
+  // Only show loader if page hasn't finished within threshold
+  var threshold = setTimeout(function () {
+    if (!ready) buildLoader();
+  }, THRESHOLD);
+
+  window.addEventListener('load', function () {
+    ready = true;
+    clearTimeout(threshold);
+    if (shown) {
+      // Give it a beat so it doesn't flash instantly
+      setTimeout(dismiss, 400);
+    }
+  });
+})();
