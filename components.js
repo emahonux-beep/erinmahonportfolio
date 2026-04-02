@@ -181,7 +181,7 @@
     loader.innerHTML =
       '<div class="em-loader-wrap">' +
         '<div class="em-loader-ring"></div>' +
-        '<img class="em-loader-logo" src="/erinmahonportfolio/assets/logo-footer.svg" alt="" />' +
+        '<img class="em-loader-logo" src="/erinmahonportfolio/assets/logoloader.svg" alt="" />' +
       '</div>' +
       '<span class="em-loader-name">Erin Mahon</span>';
     document.body.appendChild(loader);
