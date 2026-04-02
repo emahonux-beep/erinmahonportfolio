@@ -23,16 +23,20 @@
     </div>
   </section>
 
-  <!-- FILTER TABS + HEALTHCARE -->
-  <section class="section bg-white" style="padding-top: var(--space-6);" id="healthcare">
+  <!-- FILTER BAR — lives outside all sections so it never hides -->
+  <div style="background: var(--surface-card); padding: var(--space-6) var(--page-margin); position: sticky; top: var(--nav-height); z-index: 100; border-bottom: 1px solid var(--border-subtle);">
+    <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+      <button class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="healthcare" role="tab" aria-selected="false">Healthcare</button>
+      <button class="filter-btn" data-filter="government" role="tab" aria-selected="false">Government</button>
+      <button class="filter-btn" data-filter="connected-devices" role="tab" aria-selected="false">Connected Devices</button>
+      <button class="filter-btn" data-filter="early-work" role="tab" aria-selected="false">Early Work</button>
+    </div>
+  </div>
+
+  <!-- HEALTHCARE -->
+  <section class="section bg-white" id="healthcare">
     <div class="section__inner">
-      <div class="filter-bar" role="tablist" aria-label="Filter projects by category" style="margin-bottom: var(--space-8);">
-        <button class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter-btn" data-filter="healthcare" role="tab" aria-selected="false">Healthcare</button>
-        <button class="filter-btn" data-filter="government" role="tab" aria-selected="false">Government</button>
-        <button class="filter-btn" data-filter="connected-devices" role="tab" aria-selected="false">Connected Devices</button>
-        <button class="filter-btn" data-filter="early-work" role="tab" aria-selected="false">Early Work</button>
-      </div>
       <p class="label label--upper" style="margin-bottom: var(--space-3);">Healthcare</p>
       <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Product design work at Cigna / Evernorth from 2022 to 2025. Member-facing experiences across prescription management, benefits, and digital health.</p>
       <div class="grid">
@@ -143,7 +147,7 @@
   </section>
 
   <!-- GOVERNMENT -->
-  <section class="section bg-lav" id="government">
+  <section class="section bg-white" id="government">
     <div class="section__inner">
       <p class="label label--upper" style="margin-bottom: var(--space-3);">Government</p>
       <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Civic technology design at Servos from 2021 to 2022. ServiceNow-powered digital transformation for state and county government portals.</p>
@@ -294,7 +298,7 @@
   </section>
 
   <!-- EARLY WORK -->
-  <section class="section bg-lav" id="early-work">
+  <section class="section bg-white" id="early-work">
     <div class="section__inner">
       <p class="label label--upper" style="margin-bottom: var(--space-3);">Early Work</p>
       <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted); max-width: 70ch;">Certification projects, freelance clients, and internship work completed between 2019 and 2021. Full design process from research through high-fidelity prototype.</p>
@@ -302,7 +306,7 @@
 
         <div class="col-12 col-md-4" data-category="early-work">
           <a href="case-studies/spotivity.html" class="card card--project card--link">
-            <img src="/erinmahonportfolio/assets/thumb-bon-voyage.png" alt="Bon Voyage project preview" class="card__image" style="width:100%;object-fit:cover;" />
+            <img src="/erinmahonportfolio/assets/thumb-spotivity.png" alt="Bon Voyage project preview" class="card__image" style="width:100%;object-fit:cover;" />
             <div class="card__content">
               <p class="title-2" style="margin-bottom:var(--space-2);">Spotivity</p>
               <p class="body-sm" style="margin-bottom:var(--space-4);">Redesigning a youth activity platform to drive re-engagement — without overhauling the existing framework. One CTA change changed everything.</p>
@@ -314,7 +318,7 @@
 
         <div class="col-12 col-md-4" data-category="early-work">
           <a href="case-studies/bon-voyage.html" class="card card--project card--link">
-            <img src="/erinmahonportfolio/assets/thumb-evento-adesso.png" alt="Evento Adesso project preview" class="card__image" style="width:100%;object-fit:cover;" />
+            <img src="/erinmahonportfolio/assets/thumb-bon-voyage.png" alt="Evento Adesso project preview" class="card__image" style="width:100%;object-fit:cover;" />
             <div class="card__content">
               <p class="title-2" style="margin-bottom:var(--space-2);">Bon Voyage</p>
               <p class="body-sm" style="margin-bottom:var(--space-4);">A solo 6-week project designing the travel planning app the market was missing — budget-conscious and itinerary-first.</p>
