@@ -18,11 +18,11 @@
       <div class="grid">
         <div class="col-12 col-md-8">
           <p class="label label--upper" style="margin-bottom: var(--space-4);">Product Designer</p>
-          <h1>Complex systems deserve clear experiences.</h1>
-          <p class="body-xl" style="margin-top: var(--space-6); max-width: 60ch;">
+          <h1><span id="tw-typed"></span><span id="tw-cursor" style="display:inline-block;width:3px;height:0.8em;background:var(--rose-400);margin-left:3px;vertical-align:text-bottom;animation:tw-blink 0.7s step-end infinite;"></span></h1>
+          <p class="body-xl" id="tw-body" style="margin-top: var(--space-6); max-width: 60ch; opacity:0; transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22,1,0.36,1); transform: translateY(10px);">
             I design member-facing products in healthcare, government, and connected devices — the kind of work where getting it wrong means someone calls instead of clicks, or gives up entirely.
           </p>
-          <div class="btn-group" style="margin-top: var(--space-8); display:flex; gap: var(--space-4); flex-wrap: wrap;">
+          <div class="btn-group" id="tw-btns" style="margin-top: var(--space-8); display:flex; gap: var(--space-4); flex-wrap: wrap; opacity:0; transition: opacity 0.6s ease 0.15s, transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s; transform: translateY(10px);">
             <a href="work.html" class="btn btn--primary">View My Work</a>
             <a href="https://drive.google.com/file/d/114j7N9Djo3wzvWJrzw8mImS6576LUo3C/view?usp=sharing" class="btn btn--secondary" target="_blank" rel="noopener">
               <i class="ph ph-file-text" aria-hidden="true"></i> View Résumé
@@ -32,6 +32,81 @@
       </div>
     </div>
   </section>
+
+  <!-- ============================================================
+       MARQUEE TICKER
+       ============================================================ -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <div class="marquee-content" aria-hidden="true">
+        <span class="marquee-item">User Research <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Design Systems <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Information Architecture <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">AI Prototyping <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Healthcare UX <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Usability Testing <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Responsive Design <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Accessibility <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Component Architecture <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Stakeholder Alignment <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Journey Mapping <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Analytics <i class="ph ph-circle" aria-hidden="true"></i></span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span class="marquee-item">User Research <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Design Systems <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Information Architecture <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">AI Prototyping <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Healthcare UX <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Usability Testing <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Responsive Design <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Accessibility <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Component Architecture <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Stakeholder Alignment <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Journey Mapping <i class="ph ph-circle" aria-hidden="true"></i></span>
+        <span class="marquee-item">Analytics <i class="ph ph-circle" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+  <style>
+    .marquee-bar {
+      background: var(--slate-400);
+      overflow: hidden;
+      padding: 14px 0;
+      width: 100%;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 30s linear infinite;
+    }
+    .marquee-bar:hover .marquee-track { animation-play-state: paused; }
+    .marquee-content {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--sage-300);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 24px;
+    }
+    .marquee-item .ph-circle {
+      font-size: 0.5rem;
+      color: var(--rose-400);
+    }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+  </style>
 
   <!-- ============================================================
        STAT STRIP
@@ -284,5 +359,40 @@
     }
   </script>
   <script src="components.js" defer></script>
+  <style>
+    @keyframes tw-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  </style>
+  <script>
+    (function() {
+      var text = 'Complex systems deserve clear experiences.';
+      var speed = 65;
+      var typed = document.getElementById('tw-typed');
+      var cursor = document.getElementById('tw-cursor');
+      var body   = document.getElementById('tw-body');
+      var btns   = document.getElementById('tw-btns');
+      var i = 0;
+      function type() {
+        if (i < text.length) {
+          typed.textContent += text.charAt(i);
+          i++;
+          var v = speed * 0.4;
+          var next = speed + (Math.random() * v * 2 - v);
+          if (text.charAt(i - 1) === ' ') next *= 0.6;
+          if ('.!?'.indexOf(text.charAt(i - 1)) > -1) next += speed * 3;
+          setTimeout(type, next);
+        } else {
+          cursor.style.animation = 'none';
+          cursor.style.opacity = '0';
+          setTimeout(function() {
+            body.style.opacity = '1';
+            body.style.transform = 'translateY(0)';
+            btns.style.opacity = '1';
+            btns.style.transform = 'translateY(0)';
+          }, 400);
+        }
+      }
+      setTimeout(type, 300);
+    })();
+  </script>
 </body>
 </html>
