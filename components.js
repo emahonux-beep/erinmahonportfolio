@@ -183,7 +183,7 @@
         '<div class="em-loader-ring"></div>' +
         '<img class="em-loader-logo" src="/erinmahonportfolio/assets/logoloader.svg" alt="" />' +
       '</div>' +
-      '<span class="em-loader-name">Erin Mahon</span>';
+      '<span class="em-loader-name">Worth the wait.</span>';
     document.body.appendChild(loader);
     shown = true;
   }
