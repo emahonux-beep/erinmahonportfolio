@@ -16,7 +16,7 @@
   const prefix = depth.includes('case-studies') ? '../' : '';
 
   // Absolute base for assets (works from any page depth)
-  const assetBase = '/erinmahonportfolio/assets/';
+  const assetBase = '/assets/';
 
   /* ----------------------------------------------------------
      Determine active nav link based on current page
@@ -181,7 +181,7 @@
     loader.innerHTML =
       '<div class="em-loader-wrap">' +
         '<div class="em-loader-ring"></div>' +
-        '<img class="em-loader-logo" src="/erinmahonportfolio/assets/logoloader.svg" alt="" />' +
+        '<img class="em-loader-logo" src="/assets/logoloader.svg" alt="" />' +
       '</div>' +
       '<span class="em-loader-name">Worth the wait.</span>';
     document.body.appendChild(loader);
