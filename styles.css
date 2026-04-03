@@ -3985,7 +3985,6 @@ section.hero.bg-lav .meta {
   border: 1px solid var(--lav-200);
   border-radius: var(--radius-lg);
   padding: var(--space-8);
-  align-self: flex-start;
 }
 
 /* On lavender sections, use a white card instead */
