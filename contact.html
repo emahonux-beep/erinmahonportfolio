@@ -45,7 +45,7 @@
               <p class="label label--upper" style="margin-bottom: var(--space-5);">Direct</p>
               <div style="display:flex; align-items:center; gap: var(--space-3); margin-bottom: var(--space-4);">
                 <div class="icon-badge icon-badge--sage icon-badge--sm"><i class="ph ph-envelope" aria-hidden="true"></i></div>
-                <a href="/cdn-cgi/l/email-protection#1f7a727e7770716a675f78727e7673317c7072" class="body-sm" style="text-decoration: underline;"><span class="__cf_email__" data-cfemail="0b6e666a6364657e734b6c666a626725686466">[email&#160;protected]</span></a>
+                <a href="/cdn-cgi/l/email-protection#37525a565f5859424f77505a565e5b1954585a" class="body-sm" style="text-decoration: underline;"><span class="__cf_email__" data-cfemail="a4c1c9c5cccbcad1dce4c3c9c5cdc88ac7cbc9">[email&#160;protected]</span></a>
               </div>
               <div style="display:flex; align-items:center; gap: var(--space-3);">
                 <div class="icon-badge icon-badge--sage icon-badge--sm"><i class="ph ph-phone" aria-hidden="true"></i></div>
@@ -174,3 +174,13 @@
           }
         } catch {
           btn.text
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          alert('Something went wrong. Please email emahonux@gmail.com directly.');
+        }
+      });
+    }
+  </script>
+  <script src="components.js" defer></script>
+</body>
+</html>

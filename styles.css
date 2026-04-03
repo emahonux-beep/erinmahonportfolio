@@ -3923,7 +3923,7 @@ section.hero.bg-lav .meta {
 /* Quote card column — aligns card to top so it hugs content, not the full row height */
 .col--quote {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* Content section spacing helpers */
