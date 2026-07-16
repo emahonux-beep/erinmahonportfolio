@@ -12,8 +12,12 @@
    Caveat    → headings (h1, h2, h3)
    Jost      → nav, meta, labels, UI text
    DM Mono   → body copy, paragraphs, titles
+
+   Loaded via <link rel="preconnect"> + <link rel="stylesheet">
+   in each page's <head> instead of @import — @import blocks
+   CSS parsing and delays font discovery until this file itself
+   has been fetched and parsed.
    ------------------------------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap');
 
 
 /* ------------------------------------------------------------
