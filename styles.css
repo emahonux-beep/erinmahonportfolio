@@ -3377,6 +3377,12 @@ sl-card.card--project::part(base) {
   padding: 0;
 }
 
+/* Tinted card — colored surface instead of the default white */
+sl-card.card--tinted::part(base) {
+  background: var(--lav-100);
+  border-color: var(--lav-200);
+}
+
 sl-card.card--project::part(image) {
   margin: 0;
 }
@@ -3755,16 +3761,16 @@ section.hero.bg-lav .meta {
 
 
 /* ============================================================
-   EYEBROW / LABEL SIZE FIX
-   After font swap (body → Jost, ui → DM Mono), labels read
-   larger than body. Bring eyebrows down to 11px.
+   EYEBROW / LABEL SIZE
+   Eyebrows sit above display-scale (Thierry Leonie) headings, so
+   they need real presence — not a barely-legible caption.
    ============================================================ */
 
 .label,
 .meta,
 .label--upper {
-  font-size: 11px;
-  font-weight: var(--weight-light);
+  font-size: var(--text-title-3);   /* 16px */
+  font-weight: var(--weight-regular);
   letter-spacing: var(--tracking-wider);
 }
 
@@ -4028,7 +4034,7 @@ section.hero.bg-lav .meta {
 
 /* Content section spacing helpers */
 .section-label {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-2);
 }
 
 .section-heading {
