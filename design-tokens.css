@@ -136,7 +136,7 @@
   --surface-lav:      var(--lav-200);      /* explicit periwinkle section                    */
   --surface-lav-deep: var(--lav-300);      /* hero on periwinkle pages — deeper #dcccff      */
   --surface-rose:     var(--rose-50);      /* pink-tinted section                            */
-  --surface-sage:     var(--sage-50);      /* lime-tinted section                            */
+  --surface-sage:     var(--rose-50);      /* pink-tinted section                            */
   --surface-dark:     var(--slate-400);    /* carbon black — hero / footer / CTA             */
   --surface-card:     var(--white);        /* default card bg — white                        */
   --surface-card-dark: var(--slate-500);   /* card on dark surface bg                        */
