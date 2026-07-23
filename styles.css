@@ -469,7 +469,8 @@ hr {
   gap: var(--space-10);
 }
 
-.nav__link {
+.nav__link,
+.nav__link:visited {
   font-family: var(--font-ui);
   font-size: var(--text-title-4);          /* 14px */
   font-weight: var(--weight-light);
@@ -494,12 +495,15 @@ hr {
   transition: width var(--duration-base) var(--ease-out);
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.nav__link:visited:hover {
   color: var(--text-on-dark);
 }
 
 .nav__link.active,
-.nav__link--active {
+.nav__link--active,
+.nav__link:visited.active,
+.nav__link:visited.nav__link--active {
   color: var(--text-on-dark);
   font-weight: var(--weight-regular);
   text-decoration: none;
@@ -3199,6 +3203,14 @@ html {
   line-height: 1;
 }
 
+/* Thierry Leonie's % glyph renders with a broken white-stroke artifact —
+   fall back to the body font for just that character. */
+.pct {
+  font-family: var(--font-body);
+  font-size: 0.55em;
+  font-weight: var(--weight-bold);
+}
+
 .stat-strip__label {
   font-family: var(--font-ui);
   font-size: var(--text-title-4);
@@ -3345,6 +3357,17 @@ sl-card::part(base) {
   border-radius: var(--radius-lg);
   border-color: var(--card-border);
   box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+/* sl-card defaults to display:inline-block, so it won't stretch to fill a
+   grid row even though CSS Grid stretches the column div around it —
+   every card in a row (e.g. UX Research / UI Design / Workshop Experience)
+   should match the tallest card in that row. */
+.grid [class*="col-"] sl-card,
+.card-link {
+  display: block;
+  height: 100%;
 }
 
 sl-card.card--project::part(base) {
@@ -3651,7 +3674,14 @@ section.hero.bg-lav .meta {
   gap: var(--space-3);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  aspect-ratio: 4/3;
+  height: 100%;
+  min-height: 320px; /* fallback when the row has no stretched height to fill (e.g. mobile stacking) */
+}
+
+@media (min-width: 768px) {
+  .collage {
+    min-height: 0;
+  }
 }
 
 /* Hero image — spans both rows on the left */
@@ -3843,7 +3873,7 @@ section.hero.bg-lav .meta {
 .icon-badge--xl  { width: 56px; height: 56px; font-size: 1.75rem; border-radius: var(--radius-lg); }
 
 .icon-badge--rose  { background: var(--rose-100);  color: var(--rose-600);  }
-.icon-badge--sage  { background: var(--sage-50);   color: var(--sage-600);  }
+.icon-badge--sage  { background: var(--sage-50);   color: var(--slate-400); }
 .icon-badge--lav   { background: var(--lav-100);   color: var(--lav-600);   }
 .icon-badge--slate { background: var(--slate-100); color: var(--slate-500); }
 .icon-badge--dark  { background: var(--slate-500); color: var(--cream-200); }
@@ -3951,6 +3981,16 @@ section.hero.bg-lav .meta {
   line-height: 1;
 }
 
+/* Row heading — sized down to match card titles (.title-1), the
+   display h3 default reads oversized stacked five times in a row */
+.numbered-row h3 {
+  font-family: var(--font-ui);
+  text-transform: none;
+  font-size: var(--text-title-1);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
 /* Numbered list rows on white bg */
 .numbered-row--light {
   border-bottom-color: var(--border-subtle);
@@ -4049,13 +4089,11 @@ section.hero.bg-lav .meta {
 }
 
 .quote-card__body {
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  font-size: var(--text-h3);
-  font-weight: var(--weight-regular);
+  font-family: var(--font-body);
+  font-size: var(--text-title-1);
+  font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
   color: var(--text-primary);
-  font-style: italic;
 }
 
 .quote-card__attribution {
