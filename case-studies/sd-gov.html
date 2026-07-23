@@ -10,47 +10,53 @@
   <link rel="stylesheet" href="../design-tokens.css" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../assets/icons/phosphor.css" />
+  <link rel="stylesheet" href="../assets/shoelace/light.css" />
+  <link rel="stylesheet" href="../assets/shoelace/theme.css" />
+  <script type="module" src="../assets/shoelace/shoelace-bundle.js"></script>
 </head>
 <body>
 <section class="section hero bg-lav">
     <div class="section__inner">
-      <a href="../work.html" class="btn btn--tertiary hero__back"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back</a>
+      <sl-button href="../work.html" variant="text" class="hero__back">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            Back
+          </sl-button>
       <div class="grid">
         <div class="col-12">
           <h1 class="hero__title">SD.gov</h1>
           <p class="body-xl hero__body">South Dakota needed to modernize how citizens interacted with state government services. We delivered a ServiceNow-powered platform with custom UX, intuitive information architecture, single sign-on, and mobile-first case management.</p>
           <div class="tag-group hero__tags">
-            <span class="tag">Government</span>
-            <span class="tag">Servos</span>
-            <span class="tag">ServiceNow</span>
+            <sl-tag variant="neutral" size="small">Government</sl-tag>
+            <sl-tag variant="neutral" size="small">Servos</sl-tag>
+            <sl-tag variant="neutral" size="small">ServiceNow</sl-tag>
           </div>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-briefcase" aria-hidden="true"></i></div>
               <p class="label label--upper">Role</p>
               <p class="title-2">Lead Experience Designer</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-devices" aria-hidden="true"></i></div>
               <p class="label label--upper">Platform</p>
               <p class="title-2">Responsive · Native</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-buildings" aria-hidden="true"></i></div>
               <p class="label label--upper">Client</p>
               <p class="title-2">State of South Dakota</p>
               </div>
-          </div>
+          </sl-card>
         </div>
       </div>
     </div>
@@ -89,36 +95,36 @@
     <p class="label label--upper section-label">Platform Highlights</p>
     <h2 class="section-heading section-heading--lg">Built for the people who live there.</h2>
     <div class="grid">
-      <div class="col-12 col-md-4 col--flex"><div class="card"><div class="card__body">
+      <div class="col-12 col-md-4 col--flex"><sl-card><div class="card__body">
         <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-paint-brush" aria-hidden="true"></i></div>
         <p class="title-1">Custom UX</p>
         <p class="body-sm">A purpose-built visual design system on top of ServiceNow. SD.gov needed to feel like South Dakota — distinct, trustworthy, and built for the people who live there.</p>
-      </div></div></div>
-      <div class="col-12 col-md-4 col--flex"><div class="card"><div class="card__body">
+      </div></sl-card></div>
+      <div class="col-12 col-md-4 col--flex"><sl-card><div class="card__body">
         <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-tree-structure" aria-hidden="true"></i></div>
         <p class="title-1">Intuitive IA</p>
         <p class="body-sm">200+ services reorganized into a logical taxonomy derived from citizen mental models — not agency ownership.</p>
-      </div></div></div>
-      <div class="col-12 col-md-4 col--flex"><div class="card"><div class="card__body">
+      </div></sl-card></div>
+      <div class="col-12 col-md-4 col--flex"><sl-card><div class="card__body">
         <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-key" aria-hidden="true"></i></div>
         <p class="title-1">Single Sign-On</p>
         <p class="body-sm">One mySD account. Every state service. No starting over.</p>
-      </div></div></div>
-      <div class="col-12 col-md-4 col--flex"><div class="card"><div class="card__body">
+      </div></sl-card></div>
+      <div class="col-12 col-md-4 col--flex"><sl-card><div class="card__body">
         <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></div>
         <p class="title-1">Global Search</p>
         <p class="body-sm">Intelligent search surfaces relevant services, forms, and information from a single query.</p>
-      </div></div></div>
-      <div class="col-12 col-md-4 col--flex"><div class="card"><div class="card__body">
+      </div></sl-card></div>
+      <div class="col-12 col-md-4 col--flex"><sl-card><div class="card__body">
         <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-device-mobile" aria-hidden="true"></i></div>
         <p class="title-1">Mobile-First</p>
         <p class="body-sm">Designed mobile-first because the citizens who most need government services are often accessing them on a phone.</p>
-      </div></div></div>
-      <div class="col-12 col-md-4 col--flex"><div class="card"><div class="card__body">
+      </div></sl-card></div>
+      <div class="col-12 col-md-4 col--flex"><sl-card><div class="card__body">
         <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-clipboard-text" aria-hidden="true"></i></div>
         <p class="title-1">Case Management</p>
         <p class="body-sm">Citizens track submitted requests in real time — adding comments, attachments, and communicating directly with agents.</p>
-      </div></div></div>
+      </div></sl-card></div>
     </div>
   </div></section>
 
@@ -142,8 +148,14 @@
 
   <section class="section section--sm bg-sage-300"><div class="section__inner">
     <div class="nav-strip">
-      <a href="../work.html" class="btn btn--tertiary"><i class="ph ph-arrow-left" aria-hidden="true"></i> All Projects</a>
-      <a href="spotivity.html" class="btn btn--primary">Next: Spotivity <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      <sl-button href="../work.html" variant="text">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            All Projects
+          </sl-button>
+      <sl-button href="spotivity.html" variant="primary">
+            Next: Spotivity
+            <span slot="suffix"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </sl-button>
     </div>
   </div></section>
 

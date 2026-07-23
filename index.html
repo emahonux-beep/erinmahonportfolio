@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="design-tokens.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="assets/icons/phosphor.css" />
+  <link rel="stylesheet" href="assets/shoelace/light.css" />
+  <link rel="stylesheet" href="assets/shoelace/theme.css" />
+  <script type="module" src="assets/shoelace/shoelace-bundle.js"></script>
 </head>
 <body>
 
@@ -28,10 +31,11 @@
             I design member-facing products in healthcare, government, and connected devices. The kind of work where getting it wrong means someone calls instead of clicks, or gives up entirely.
           </p>
           <div class="btn-group" id="tw-btns" style="margin-top: var(--space-8); display:flex; gap: var(--space-4); flex-wrap: wrap; opacity:0; transition: opacity 0.6s ease 0.15s, transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s; transform: translateY(10px);">
-            <a href="work.html" class="btn btn--primary">View My Work</a>
-            <a href="https://drive.google.com/file/d/114j7N9Djo3wzvWJrzw8mImS6576LUo3C/view?usp=sharing" class="btn btn--secondary" target="_blank" rel="noopener">
-              <i class="ph ph-file-text" aria-hidden="true"></i> View Résumé
-            </a>
+            <sl-button href="work.html" variant="primary">View My Work</sl-button>
+            <sl-button href="https://drive.google.com/file/d/114j7N9Djo3wzvWJrzw8mImS6576LUo3C/view?usp=sharing" variant="default" target="_blank">
+            <span slot="prefix"><i class="ph ph-file-text" aria-hidden="true"></i></span>
+            View Résumé
+          </sl-button>
           </div>
         </div>
         <div class="col-12 col-md-5" style="display:flex;align-items:center;justify-content:center;">
@@ -194,7 +198,7 @@
           <p class="label label--upper" style="margin-bottom: var(--space-6);">How I Work</p>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
@@ -202,10 +206,10 @@
               <p class="title-1">Research Led</p>
               <p class="body-sm">Not as a phase but as infrastructure. The best design decisions are the ones built on understanding compounds over time, not a single round of testing before launch.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-chart-line-up" aria-hidden="true"></i>
@@ -213,10 +217,10 @@
               <p class="title-1">Data Informed</p>
               <p class="body-sm">Analytics don't validate design, they pressure-test it. I use behavioral data to find where experience breaks down, then design to close the gap.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-intersect-three" aria-hidden="true"></i>
@@ -224,7 +228,7 @@
               <p class="title-1">Systems Thinking</p>
               <p class="body-sm">Healthcare is never just one screen. I design for scale. Components, patterns, and shared foundations that hold together across teams, products, and lines of business.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
       </div>
     </div>
@@ -334,9 +338,10 @@
       <div class="grid">
         <div class="col-12" style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4);">
           <h2>Selected Work</h2>
-          <a href="work.html" class="btn btn--tertiary">
-            View all projects <i class="ph ph-arrow-right" aria-hidden="true"></i>
-          </a>
+          <sl-button href="work.html" variant="text">
+            View all projects
+            <span slot="suffix"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </sl-button>
         </div>
 
         <!-- Check Coverage -->
@@ -347,7 +352,7 @@
               <p class="title-1">Check Coverage</p>
               <p class="body-sm">Three years of research, analytics, and design decisions. What started as a compliance obligation became one of the most-used tools in the member portal.</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
-                <span class="tag">Healthcare</span><span class="tag">Express Scripts</span>
+                <sl-tag variant="neutral" size="small">Healthcare</sl-tag><sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
               </div>
               <p class="body-xs" style="color:var(--text-accent); display:flex; align-items:center; gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
             </div>
@@ -362,7 +367,7 @@
               <p class="title-1">Cost Optimization</p>
               <p class="body-sm">A legacy savings UI rebuilt into a decision platform across three phases. 320% conversion gain, 10-point sentiment lift.</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
-                <span class="tag">Healthcare</span><span class="tag">Express Scripts</span>
+                <sl-tag variant="neutral" size="small">Healthcare</sl-tag><sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
               </div>
               <p class="body-xs" style="color:var(--text-accent); display:flex; align-items:center; gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
             </div>
@@ -377,7 +382,7 @@
               <p class="title-1">Digital ID</p>
               <p class="body-sm">The digital version existed. It just wasn't useful. Ending the physical program was the precondition. Redesigning the experience was the work.</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
-                <span class="tag">Healthcare</span><span class="tag">Express Scripts</span>
+                <sl-tag variant="neutral" size="small">Healthcare</sl-tag><sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
               </div>
               <p class="body-xs" style="color:var(--text-accent); display:flex; align-items:center; gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
             </div>

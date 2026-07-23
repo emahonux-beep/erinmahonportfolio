@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="design-tokens.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="assets/icons/phosphor.css" />
+  <link rel="stylesheet" href="assets/shoelace/light.css" />
+  <link rel="stylesheet" href="assets/shoelace/theme.css" />
+  <script type="module" src="assets/shoelace/shoelace-bundle.js"></script>
 </head>
 <body>
 
@@ -53,12 +56,14 @@
             When I'm not designing, I'm being supervised by three cats: Gimli, Nala, and Stella who have strong opinions about my work.
           </p>
           <div style="display:flex; gap: var(--space-4); flex-wrap:wrap;">
-            <a href="https://drive.google.com/file/d/114j7N9Djo3wzvWJrzw8mImS6576LUo3C/view?usp=sharing" class="btn btn--primary" target="_blank" rel="noopener">
-              <i class="ph ph-file-text" aria-hidden="true"></i> View Résumé
-            </a>
-            <a href="https://substack.com/@erinmahon1" class="btn btn--secondary" target="_blank" rel="noopener">
-              <i class="ph ph-newspaper-clipping" aria-hidden="true"></i> Substack
-            </a>
+            <sl-button href="https://drive.google.com/file/d/114j7N9Djo3wzvWJrzw8mImS6576LUo3C/view?usp=sharing" variant="primary" target="_blank">
+            <span slot="prefix"><i class="ph ph-file-text" aria-hidden="true"></i></span>
+            View Résumé
+          </sl-button>
+            <sl-button href="https://substack.com/@erinmahon1" variant="default" target="_blank">
+            <span slot="prefix"><i class="ph ph-newspaper-clipping" aria-hidden="true"></i></span>
+            Substack
+          </sl-button>
           </div>
         </div>
 
@@ -84,7 +89,7 @@
         </div>
 
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-tree-structure" aria-hidden="true"></i>
@@ -92,11 +97,11 @@
               <h4 class="title-1">Clarity through structure</h4>
               <p class="body-sm">Information hierarchy isn't a visual exercise, it's a cognitive one. When the structure is right, users don't have to think. They just find. I obsess over how content is organized so every screen tells a coherent story from top to bottom.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
@@ -104,11 +109,11 @@
               <h4 class="title-1">Design as an iterative process</h4>
               <p class="body-sm">The first version is a hypothesis. I treat every design artifact as a test. Staying attached to outcomes, not outputs. Iteration isn't a sign of failure. It's the process working correctly.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-chart-bar" aria-hidden="true"></i>
@@ -116,11 +121,11 @@
               <h4 class="title-1">Data as a thinking tool</h4>
               <p class="body-sm">Qualitative research tells me what and why. Quantitative data tells me how much. Together, they give me the full picture to make confident decisions. It helps prove the impact of those decisions to the people who need to see it.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-shuffle" aria-hidden="true"></i>
@@ -128,11 +133,11 @@
               <h4 class="title-1">Organized chaos → intentional clarity</h4>
               <p class="body-sm">Healthcare systems, government portals, connected device ecosystems are inherently messy domains. My job is to find the threads of logic inside the chaos and surface them as clear, trustworthy experiences.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage icon-badge--lg">
                 <i class="ph ph-users-three" aria-hidden="true"></i>
@@ -140,7 +145,7 @@
               <h4 class="title-1">Leadership and mentorship</h4>
               <p class="body-sm">Design gets better when designers get better. I invest in mentorship, critique culture, and frameworks that make the whole team stronger. Teaching people how to think, not just what to do.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
       </div>
@@ -241,65 +246,65 @@
 
         <!-- Design -->
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage">
                 <i class="ph ph-figma-logo" aria-hidden="true"></i>
               </div>
               <p class="title-1">Design</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
-                <span class="tag tag--rose">Figma</span>
-                <span class="tag tag--rose">Prototyping</span>
-                <span class="tag tag--rose">Design Systems</span>
-                <span class="tag tag--rose">Component Architecture</span>
-                <span class="tag tag--rose">Visual Design</span>
-                <span class="tag tag--rose">Motion Design</span>
-                <span class="tag tag--rose">Accessibility</span>
-                <span class="tag tag--rose">Responsive Design</span>
+                <sl-tag variant="danger" size="small">Figma</sl-tag>
+                <sl-tag variant="danger" size="small">Prototyping</sl-tag>
+                <sl-tag variant="danger" size="small">Design Systems</sl-tag>
+                <sl-tag variant="danger" size="small">Component Architecture</sl-tag>
+                <sl-tag variant="danger" size="small">Visual Design</sl-tag>
+                <sl-tag variant="danger" size="small">Motion Design</sl-tag>
+                <sl-tag variant="danger" size="small">Accessibility</sl-tag>
+                <sl-tag variant="danger" size="small">Responsive Design</sl-tag>
               </div>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <!-- Research -->
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage">
                 <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
               </div>
               <p class="title-1">Research</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
-                <span class="tag tag--sage">User Interviews</span>
-                <span class="tag tag--sage">Usability Testing</span>
-                <span class="tag tag--sage">Competitive Analysis</span>
-                <span class="tag tag--sage">Journey Mapping</span>
-                <span class="tag tag--sage">Persona Development</span>
-                <span class="tag tag--sage">A/B Testing</span>
-                <span class="tag tag--sage">Analytics</span>
+                <sl-tag variant="primary" size="small">User Interviews</sl-tag>
+                <sl-tag variant="primary" size="small">Usability Testing</sl-tag>
+                <sl-tag variant="primary" size="small">Competitive Analysis</sl-tag>
+                <sl-tag variant="primary" size="small">Journey Mapping</sl-tag>
+                <sl-tag variant="primary" size="small">Persona Development</sl-tag>
+                <sl-tag variant="primary" size="small">A/B Testing</sl-tag>
+                <sl-tag variant="primary" size="small">Analytics</sl-tag>
               </div>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <!-- Collaboration -->
         <div class="col-12 col-md-4">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage">
                 <i class="ph ph-users-three" aria-hidden="true"></i>
               </div>
               <p class="title-1">Collaboration</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2);">
-                <span class="tag tag--lav">Cross-functional Teams</span>
-                <span class="tag tag--lav">Stakeholder Alignment</span>
-                <span class="tag tag--lav">Agile / Scrum</span>
-                <span class="tag tag--lav">Design Critiques</span>
-                <span class="tag tag--lav">Mentorship</span>
-                <span class="tag tag--lav">Design Strategy</span>
+                <sl-tag variant="neutral" size="small">Cross-functional Teams</sl-tag>
+                <sl-tag variant="neutral" size="small">Stakeholder Alignment</sl-tag>
+                <sl-tag variant="neutral" size="small">Agile / Scrum</sl-tag>
+                <sl-tag variant="neutral" size="small">Design Critiques</sl-tag>
+                <sl-tag variant="neutral" size="small">Mentorship</sl-tag>
+                <sl-tag variant="neutral" size="small">Design Strategy</sl-tag>
               </div>
             </div>
-          </div>
+          </sl-card>
         </div>
 
       </div>
@@ -557,53 +562,60 @@
       <div class="grid">
         <div class="col-12" style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom: var(--space-8); flex-wrap: wrap; gap: var(--space-4);">
           <h2>Selected Work</h2>
-          <a href="work.html" class="btn btn--tertiary">
-            View all projects <i class="ph ph-arrow-right" aria-hidden="true"></i>
-          </a>
+          <sl-button href="work.html" variant="text">
+            View all projects
+            <span slot="suffix"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </sl-button>
         </div>
 
         <!-- Check Coverage -->
         <div class="col-12 col-md-4">
-          <a href="case-studies/check-coverage.html" class="card card--project card--link">
-            <img src="/assets/thumb-check-coverage.webp" alt="Check Coverage project preview" class="card__image" style="width:100%;object-fit:cover;"  loading="lazy" decoding="async" />
-            <div class="card__content">
+          <a href="case-studies/check-coverage.html" class="card-link">
+            <sl-card class="card--project">
+              <img slot="image" src="/assets/thumb-check-coverage.webp" alt="Check Coverage project preview" class="card__image" style="width:100%;object-fit:cover;"  loading="lazy" decoding="async" />
+              <div class="card__content">
               <p class="title-2" style="margin-bottom:var(--space-2);">Check Coverage</p>
               <p class="body-sm" style="margin-bottom: var(--space-4);">Three years of research, analytics, and design decisions. What started as a compliance obligation became one of the most-used tools in the member portal.</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-4);">
-                <span class="tag">Healthcare</span><span class="tag">Express Scripts</span>
+                <sl-tag variant="neutral" size="small">Healthcare</sl-tag><sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
               </div>
               <p class="body-xs" style="color:var(--text-accent); display:flex; align-items:center; gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
             </div>
+            </sl-card>
           </a>
         </div>
 
         <!-- Cost Optimization -->
         <div class="col-12 col-md-4">
-          <a href="case-studies/cost-optimization.html" class="card card--project card--link">
-            <img src="/assets/thumb-cost-optimization.webp" alt="Cost Optimization project preview" class="card__image" style="width:100%;object-fit:cover;"  loading="lazy" decoding="async" />
-            <div class="card__content">
+          <a href="case-studies/cost-optimization.html" class="card-link">
+            <sl-card class="card--project">
+              <img slot="image" src="/assets/thumb-cost-optimization.webp" alt="Cost Optimization project preview" class="card__image" style="width:100%;object-fit:cover;"  loading="lazy" decoding="async" />
+              <div class="card__content">
               <p class="title-2" style="margin-bottom:var(--space-2);">Cost Optimization</p>
               <p class="body-sm" style="margin-bottom: var(--space-4);">A legacy savings UI rebuilt into a decision platform across three phases. 320% conversion gain, 10-point sentiment lift.</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-4);">
-                <span class="tag">Healthcare</span><span class="tag">Express Scripts</span>
+                <sl-tag variant="neutral" size="small">Healthcare</sl-tag><sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
               </div>
               <p class="body-xs" style="color:var(--text-accent); display:flex; align-items:center; gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
             </div>
+            </sl-card>
           </a>
         </div>
 
         <!-- Digital ID -->
         <div class="col-12 col-md-4">
-          <a href="case-studies/digital-id.html" class="card card--project card--link">
-            <img src="/assets/thumb-digital-id.webp" alt="Digital ID project preview" class="card__image" style="width:100%;object-fit:cover;"  loading="lazy" decoding="async" />
-            <div class="card__content">
+          <a href="case-studies/digital-id.html" class="card-link">
+            <sl-card class="card--project">
+              <img slot="image" src="/assets/thumb-digital-id.webp" alt="Digital ID project preview" class="card__image" style="width:100%;object-fit:cover;"  loading="lazy" decoding="async" />
+              <div class="card__content">
               <p class="title-2" style="margin-bottom:var(--space-2);">Digital ID</p>
               <p class="body-sm" style="margin-bottom: var(--space-4);">The digital version existed. It just wasn't useful. Ending the physical program was the precondition. Redesigning the experience was the work.</p>
               <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-4);">
-                <span class="tag">Healthcare</span><span class="tag">Express Scripts</span>
+                <sl-tag variant="neutral" size="small">Healthcare</sl-tag><sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
               </div>
               <p class="body-xs" style="color:var(--text-accent); display:flex; align-items:center; gap:var(--space-2);">View case study <i class="ph ph-arrow-right" aria-hidden="true"></i></p>
             </div>
+            </sl-card>
           </a>
         </div>
 

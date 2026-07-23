@@ -10,45 +10,51 @@
   <link rel="stylesheet" href="../design-tokens.css" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../assets/icons/phosphor.css" />
+  <link rel="stylesheet" href="../assets/shoelace/light.css" />
+  <link rel="stylesheet" href="../assets/shoelace/theme.css" />
+  <script type="module" src="../assets/shoelace/shoelace-bundle.js"></script>
 </head>
 <body><section class="section hero bg-lav">
     <div class="section__inner">
-      <a href="../work.html" class="btn btn--tertiary hero__back"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back</a>
+      <sl-button href="../work.html" variant="text" class="hero__back">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            Back
+          </sl-button>
       <div class="grid">
         <div class="col-12">
           <h1 class="hero__title">Cost Optimization</h1>
           <p class="body-xl hero__body">A legacy savings UI rebuilt into a decision platform across three phases. The original experience surfaced every eligible savings option simultaneously. Members reviewed, hesitated, and left. Not because the savings weren't real, but because the structure made acting on them feel harder than it was.</p>
           <div class="tag-group hero__tags">
-            <span class="tag">Healthcare</span>
-            <span class="tag">Express Scripts</span>
+            <sl-tag variant="neutral" size="small">Healthcare</sl-tag>
+            <sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
           </div>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-briefcase" aria-hidden="true"></i></div>
               <p class="label label--upper">Role</p>
               <p class="title-2">UX Design Advisor</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-devices" aria-hidden="true"></i></div>
               <p class="label label--upper">Platform</p>
               <p class="title-2">Responsive · Native</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-trophy" aria-hidden="true"></i></div>
               <p class="label label--upper">Award</p>
               <p class="title-2">2024 CEO Standout</p>
               </div>
-          </div>
+          </sl-card>
         </div>
       </div>
     </div>
@@ -97,8 +103,14 @@
 
   <section class="section section--sm bg-sage-300"><div class="section__inner">
     <div class="nav-strip">
-      <a href="../work.html" class="btn btn--tertiary"><i class="ph ph-arrow-left" aria-hidden="true"></i> All Projects</a>
-      <a href="digital-id.html" class="btn btn--primary">Next: Digital ID <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      <sl-button href="../work.html" variant="text">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            All Projects
+          </sl-button>
+      <sl-button href="digital-id.html" variant="primary">
+            Next: Digital ID
+            <span slot="suffix"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </sl-button>
     </div>
   </div></section>
 

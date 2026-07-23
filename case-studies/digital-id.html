@@ -10,48 +10,54 @@
   <link rel="stylesheet" href="../design-tokens.css" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../assets/icons/phosphor.css" />
+  <link rel="stylesheet" href="../assets/shoelace/light.css" />
+  <link rel="stylesheet" href="../assets/shoelace/theme.css" />
+  <script type="module" src="../assets/shoelace/shoelace-bundle.js"></script>
 </head>
 <body>
   <!-- BACK LINK -->
 <!-- HERO -->
   <section class="section hero bg-lav">
     <div class="section__inner">
-      <a href="../work.html" class="btn btn--tertiary hero__back"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back</a>
+      <sl-button href="../work.html" variant="text" class="hero__back">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            Back
+          </sl-button>
       <div class="grid">
         <div class="col-12">
           <h1 class="hero__title">Digital ID</h1>
           <p class="body-xl hero__body">This wasn't a redesign. It was a transformation. From a physical artifact members received in the mail to a digital experience they carry in their pocket.</p>
           <div class="tag-group hero__tags">
-            <span class="tag">Healthcare</span>
-            <span class="tag">Express Scripts</span>
+            <sl-tag variant="neutral" size="small">Healthcare</sl-tag>
+            <sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
           </div>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-briefcase" aria-hidden="true"></i></div>
               <p class="label label--upper">Role</p>
               <p class="title-2">UX Strategy Lead</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-devices" aria-hidden="true"></i></div>
               <p class="label label--upper">Platform</p>
               <p class="title-2">Responsive · Native</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-users-three" aria-hidden="true"></i></div>
               <p class="label label--upper">Scope</p>
               <p class="title-2">Enterprise · Multi-LOB</p>
               </div>
-          </div>
+          </sl-card>
         </div>
       </div>
     </div>
@@ -118,46 +124,46 @@
         <div class="col-12">
           <div class="grid">
             <div class="col-12 col-md-4 col--flex">
-              <div class="card"><div class="card__body">
+              <sl-card><div class="card__body">
                 <div class="icon-badge icon-badge--sage"><i class="ph ph-user-focus" aria-hidden="true"></i></div>
                 <p class="title-3">Provider check-in</p>
                 <p class="body-xs">Presenting at a provider's office where it needs to be instantly visible and trustworthy.</p>
-              </div></div>
+              </div></sl-card>
             </div>
             <div class="col-12 col-md-4 col--flex">
-              <div class="card"><div class="card__body">
+              <sl-card><div class="card__body">
                 <div class="icon-badge icon-badge--sage"><i class="ph ph-prescription" aria-hidden="true"></i></div>
                 <p class="title-3">Pharmacy counter</p>
                 <p class="body-xs">Needs to display the right data, fast, with the ability to share or show without hunting.</p>
-              </div></div>
+              </div></sl-card>
             </div>
             <div class="col-12 col-md-4 col--flex">
-              <div class="card"><div class="card__body">
+              <sl-card><div class="card__body">
                 <div class="icon-badge icon-badge--sage"><i class="ph ph-users" aria-hidden="true"></i></div>
                 <p class="title-3">Sharing with a dependent</p>
                 <p class="body-xs">Managing household coverage. The person-picker needs to be fast and intuitive.</p>
-              </div></div>
+              </div></sl-card>
             </div>
             <div class="col-12 col-md-4 col--flex">
-              <div class="card"><div class="card__body">
+              <sl-card><div class="card__body">
                 <div class="icon-badge icon-badge--sage"><i class="ph ph-download-simple" aria-hidden="true"></i></div>
                 <p class="title-3">Offline access</p>
                 <p class="body-xs">Downloading for places where connectivity isn't guaranteed.</p>
-              </div></div>
+              </div></sl-card>
             </div>
             <div class="col-12 col-md-4 col--flex">
-              <div class="card"><div class="card__body">
+              <sl-card><div class="card__body">
                 <div class="icon-badge icon-badge--sage"><i class="ph ph-wallet" aria-hidden="true"></i></div>
                 <p class="title-3">Digital wallet</p>
                 <p class="body-xs">Adding to Apple Wallet or Google Wallet where members already keep their important cards.</p>
-              </div></div>
+              </div></sl-card>
             </div>
             <div class="col-12 col-md-4 col--flex">
-              <div class="card"><div class="card__body">
+              <sl-card><div class="card__body">
                 <div class="icon-badge icon-badge--sage"><i class="ph ph-clock-countdown" aria-hidden="true"></i></div>
                 <p class="title-3">Pre-effective access</p>
                 <p class="body-xs">Accessing coverage information before benefits are even effective yet.</p>
-              </div></div>
+              </div></sl-card>
               </div>
           </div>
         </div>
@@ -254,43 +260,43 @@
       <div class="grid">
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-credit-card" aria-hidden="true"></i></div>
               <h4 class="title-1">The visual card is the dominant mental model.</h4>
               <p class="body-sm">When a text-based alternative view was introduced, an estimated 1% or fewer of members engaged with it. Of those, roughly half switched back to the image view. The card image is not a preference. It is the expectation.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-share-network" aria-hidden="true"></i></div>
               <h4 class="title-1">Saving is the primary job.</h4>
               <p class="body-sm">Wallet add, share sheet, download, and print consistently drove the highest estimated interaction volume. These aren't supporting features, they are the reason members come to the experience.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-users-three" aria-hidden="true"></i></div>
               <h4 class="title-1">Household management is real and frequent.</h4>
               <p class="body-sm">Person-picker interactions of switching between a subscriber's card and a dependent's represented a meaningful share of total sessions. Members routinely manage cards for their whole household.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-megaphone-simple" aria-hidden="true"></i></div>
               <h4 class="title-1">Outreach moves behavior.</h4>
               <p class="body-sm">Email campaigns directed at the ID card experience produced estimated session spikes with strong click-through rates. Members weren't avoiding the feature. They weren't aware of it.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
       </div>
@@ -303,31 +309,31 @@
       <p class="label label--upper section-label--lg">Outcomes</p>
       <div class="grid">
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--full">
+          <sl-card class="card--full">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-chart-line-up" aria-hidden="true"></i></div>
               <p class="title-1">Traffic increase</p>
               <p class="body-sm">Dedicated nav entry point drove majority of usage to new location almost immediately post-launch.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--full">
+          <sl-card class="card--full">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-wallet" aria-hidden="true"></i></div>
               <p class="title-1">Strong wallet &amp; share adoption</p>
               <p class="body-sm">Estimated strong adoption of wallet and share features across native platforms.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--full">
+          <sl-card class="card--full">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-buildings" aria-hidden="true"></i></div>
               <p class="title-1">Scalable identity foundation</p>
               <p class="body-sm">Reusable identity utility now actively being built across the entire organization.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
       </div>
     </div>
@@ -352,12 +358,14 @@
   <section class="section section--sm bg-sage-300">
     <div class="section__inner">
       <div class="nav-strip">
-        <a href="../work.html" class="btn btn--tertiary">
-          <i class="ph ph-arrow-left" aria-hidden="true"></i> All Projects
-        </a>
-        <a href="check-coverage.html" class="btn btn--primary">
-          Next: Check Coverage <i class="ph ph-arrow-right" aria-hidden="true"></i>
-        </a>
+        <sl-button href="../work.html" variant="text">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            All Projects
+          </sl-button>
+        <sl-button href="check-coverage.html" variant="primary">
+            Next: Check Coverage
+            <span slot="suffix"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </sl-button>
       </div>
     </div>
   </section>

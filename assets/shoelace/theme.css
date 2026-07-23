@@ -1,0 +1,90 @@
+/* ============================================================
+   SHOELACE THEME OVERRIDE
+   Maps Shoelace's --sl-* design tokens onto this site's own
+   design-tokens.css values, so sl-* components inherit the brand
+   identity instead of Shoelace's default blue/gray look.
+   Load AFTER assets/shoelace/light.css.
+   ============================================================ */
+:root {
+  /* Primary — Persian Blue */
+  --sl-color-primary-50:  var(--blue-50);
+  --sl-color-primary-100: var(--blue-100);
+  --sl-color-primary-200: var(--blue-200);
+  --sl-color-primary-300: var(--blue-200);
+  --sl-color-primary-400: var(--blue-300);
+  --sl-color-primary-500: var(--blue-300);
+  --sl-color-primary-600: var(--blue-400);
+  --sl-color-primary-700: var(--blue-500);
+  --sl-color-primary-800: var(--blue-600);
+  --sl-color-primary-900: var(--blue-600);
+  --sl-color-primary-950: var(--blue-600);
+
+  /* Neutral — Carbon Black (the "slate" family now holds Carbon values) */
+  --sl-color-neutral-0:    var(--white);
+  --sl-color-neutral-50:   var(--slate-50);
+  --sl-color-neutral-100:  var(--slate-100);
+  --sl-color-neutral-200:  var(--slate-200);
+  --sl-color-neutral-300:  var(--slate-300);
+  --sl-color-neutral-400:  var(--slate-325);
+  --sl-color-neutral-500:  var(--slate-350);
+  --sl-color-neutral-600:  var(--slate-400);
+  --sl-color-neutral-700:  var(--slate-400);
+  --sl-color-neutral-800:  var(--slate-500);
+  --sl-color-neutral-900:  var(--slate-500);
+  --sl-color-neutral-950:  var(--slate-600);
+  --sl-color-neutral-1000: var(--black);
+
+  /* Typography — Shoelace's "sans" role covers button/tag/form/UI chrome
+     text, which on this site is --font-ui (DM Mono), not paragraph copy. */
+  --sl-font-sans: var(--font-ui), monospace;
+  --sl-font-mono: var(--font-ui), monospace;
+
+  /* Radius — matches this site's Astryx-derived scale */
+  --sl-border-radius-small:   var(--radius-sm);
+  --sl-border-radius-medium:  var(--radius-md);
+  --sl-border-radius-large:   var(--radius-lg);
+  --sl-border-radius-x-large: var(--radius-xl);
+  --sl-border-radius-pill:    var(--radius-full);
+
+  /* Shadows */
+  --sl-shadow-x-small: var(--shadow-sm);
+  --sl-shadow-small:   var(--shadow-sm);
+  --sl-shadow-medium:  var(--shadow-md);
+  --sl-shadow-large:   var(--shadow-lg);
+  --sl-shadow-x-large: var(--shadow-lg);
+
+  /* Focus ring — match the site's own focus style */
+  --sl-focus-ring-color: var(--focus-color);
+  --sl-focus-ring-width: 3px;
+  --sl-focus-ring: 0 0 0 var(--sl-focus-ring-width) var(--sl-focus-ring-color);
+}
+
+/* sl-tag: exact brand colors rather than Shoelace's generated shades,
+   reusing the variant names that already fit closest — neutral/lav for
+   periwinkle, primary for the blue "Research" category, danger for pink. */
+sl-tag[variant="neutral"]::part(base) {
+  background-color: var(--lav-100);
+  color: var(--lav-600);
+  border-color: transparent;
+}
+sl-tag[variant="primary"]::part(base) {
+  background-color: var(--blue-100);
+  color: var(--blue-600);
+  border-color: transparent;
+}
+sl-tag[variant="danger"]::part(base) {
+  background-color: var(--rose-100);
+  color: var(--rose-600);
+  border-color: transparent;
+}
+
+/* sl-card modifiers, matching the old .card--meta/.card--full padding */
+sl-card.card--meta::part(base) {
+  padding: var(--space-5);
+}
+sl-card.card--meta .icon-badge {
+  margin-bottom: var(--space-6);
+}
+sl-card.card--meta .label {
+  margin-bottom: var(--space-2);
+}

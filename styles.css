@@ -3303,44 +3303,62 @@ html {
   border-radius: var(--radius-full);
 }
 
-/* --- Card as link --- */
-.card--link {
+/* --- Card as link ---
+   sl-card isn't a link itself, so project cards are now an <a class="card-link">
+   wrapping an <sl-card>. The anchor just provides click/nav semantics; the
+   visual card chrome (radius/border/shadow/hover-lift) lives on the sl-card. */
+.card-link {
   display: block;
   text-decoration: none;
   color: inherit;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
+}
+
+.card-link:visited {
+  color: inherit;
+}
+
+.card-link sl-card::part(base) {
   transition: box-shadow var(--duration-base) var(--ease-out),
               transform var(--duration-base) var(--ease-spring);
 }
 
-.card--link:hover {
+.card-link:hover sl-card::part(base) {
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
-  color: inherit;
-}
-
-.card--link:visited {
-  color: inherit;
 }
 
 /* "View case study" affordance — arrow nudges right, text underlines on hover */
-.card--link .ph-arrow-right {
+.card-link .ph-arrow-right {
   display: inline-block;
   transition: transform var(--duration-base) var(--ease-out);
 }
-.card--link:hover p:has(.ph-arrow-right) {
+.card-link:hover p:has(.ph-arrow-right) {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.card--link:hover .ph-arrow-right {
+.card-link:hover .ph-arrow-right {
   transform: translateX(4px);
 }
 
-/* card--link .card__body inherits padding from .card wrapper — no extra padding needed */
+/* Base look for every sl-card on the site, matching the old .card tokens */
+sl-card::part(base) {
+  border-radius: var(--radius-lg);
+  border-color: var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+sl-card.card--project::part(base) {
+  overflow: hidden;
+  padding: 0;
+}
+
+sl-card.card--project::part(image) {
+  margin: 0;
+}
+
+sl-card.card--project .card__content {
+  padding: var(--card-padding-desktop);
+}
 
 /* --- Breadcrumb additions --- */
 .breadcrumb__link {
