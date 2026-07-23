@@ -1794,7 +1794,8 @@ img {
   gap: var(--space-3);
 }
 
-.footer__link {
+.footer__link,
+.footer__link:visited {
   font-family: var(--font-ui);
   font-size: var(--text-title-3);
   font-weight: var(--weight-light);
@@ -1803,7 +1804,8 @@ img {
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.footer__link:hover {
+.footer__link:hover,
+.footer__link:visited:hover {
   color: var(--rose-300);
 }
 
