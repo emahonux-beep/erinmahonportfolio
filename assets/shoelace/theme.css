@@ -6,18 +6,18 @@
    Load AFTER assets/shoelace/light.css.
    ============================================================ */
 :root {
-  /* Primary — Persian Blue */
-  --sl-color-primary-50:  var(--blue-50);
-  --sl-color-primary-100: var(--blue-100);
-  --sl-color-primary-200: var(--blue-200);
-  --sl-color-primary-300: var(--blue-200);
-  --sl-color-primary-400: var(--blue-300);
-  --sl-color-primary-500: var(--blue-300);
-  --sl-color-primary-600: var(--blue-400);
-  --sl-color-primary-700: var(--blue-500);
-  --sl-color-primary-800: var(--blue-600);
-  --sl-color-primary-900: var(--blue-600);
-  --sl-color-primary-950: var(--blue-600);
+  /* Primary — Bubblegum Pink */
+  --sl-color-primary-50:  var(--rose-50);
+  --sl-color-primary-100: var(--rose-100);
+  --sl-color-primary-200: var(--rose-200);
+  --sl-color-primary-300: var(--rose-200);
+  --sl-color-primary-400: var(--rose-300);
+  --sl-color-primary-500: var(--rose-300);
+  --sl-color-primary-600: var(--rose-400);
+  --sl-color-primary-700: var(--rose-500);
+  --sl-color-primary-800: var(--rose-600);
+  --sl-color-primary-900: var(--rose-600);
+  --sl-color-primary-950: var(--rose-600);
 
   /* Neutral — Carbon Black (the "slate" family now holds Carbon values) */
   --sl-color-neutral-0:    var(--white);
