@@ -1430,7 +1430,7 @@ img {
     to bottom,
     var(--rose-300),
     var(--lav-300),
-    var(--sage-300)
+    var(--rose-500)
   );
   border-radius: var(--radius-full);
 }
@@ -1515,7 +1515,7 @@ img {
     to bottom,
     var(--rose-200),
     var(--lav-200),
-    var(--sage-200)
+    var(--rose-100)
   );
 }
 
@@ -1693,9 +1693,9 @@ img {
 }
 
 .form__status--success {
-  background-color: var(--sage-50);
-  color: var(--sage-600);
-  border: 1px solid var(--sage-200);
+  background-color: var(--rose-50);
+  color: var(--rose-600);
+  border: 1px solid var(--rose-200);
 }
 
 .form__status--error {
@@ -2376,7 +2376,7 @@ blockquote p,
 }
 
 .accent-bar--lav  { background-color: var(--lav-300); }
-.accent-bar--sage { background-color: var(--sage-300); }
+.accent-bar--sage { background-color: var(--rose-300); }
 .accent-bar--center { margin-inline: auto; }
 
 /* Section label with line — eyebrow above a heading */
@@ -2608,7 +2608,7 @@ html {
    ============================================================ */
 
 .cta-banner {
-  background-color: var(--sage-200);
+  background-color: var(--rose-100);
   padding-block: var(--space-16);
 }
 
@@ -2722,7 +2722,7 @@ html {
 }
 
 /* Color variants */
-.icon-card__icon--sage  { background-color: var(--sage-200); }
+.icon-card__icon--sage  { background-color: var(--rose-100); }
 .icon-card__icon--rose  { background-color: var(--rose-200); }
 .icon-card__icon--lav   { background-color: var(--lav-200);  }
 
@@ -3875,7 +3875,7 @@ section.hero.bg-lav .meta {
 .icon-badge--xl  { width: 56px; height: 56px; font-size: 1.75rem; border-radius: var(--radius-lg); }
 
 .icon-badge--rose  { background: var(--rose-100);  color: var(--rose-600);  }
-.icon-badge--sage  { background: var(--sage-50);   color: var(--slate-400); }
+.icon-badge--sage  { background: var(--rose-300);  color: var(--slate-400); }
 .icon-badge--lav   { background: var(--lav-100);   color: var(--lav-600);   }
 .icon-badge--slate { background: var(--slate-100); color: var(--slate-500); }
 .icon-badge--dark  { background: var(--slate-500); color: var(--cream-200); }
@@ -4007,9 +4007,9 @@ section.hero.bg-lav .meta {
   gap: var(--space-4);
 }
 
-/* Section background — sage-300 brand green */
+/* Section background — bubblegum pink */
 .bg-sage-300 {
-  background-color: var(--sage-300);
+  background-color: var(--rose-300);
 }
 
 /* Col flex helper — makes card fill grid cell height */
