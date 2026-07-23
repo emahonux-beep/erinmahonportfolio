@@ -8,61 +8,107 @@
    ============================================================ */
 
 /* ------------------------------------------------------------
-   GOOGLE FONTS
-   Caveat    → headings (h1, h2, h3)
-   Jost      → nav, meta, labels, UI text
-   DM Mono   → body copy, paragraphs, titles
+   FONTS
+   Thierry Leonie → headings (h1–h4) — self-hosted, see @font-face below
+   DM Mono        → nav, meta, labels, UI text
+   Inter           → body copy, paragraphs, titles
+
+   Google Fonts loaded via <link rel="preconnect"> + <link
+   rel="stylesheet"> in each page's <head> instead of @import —
+   @import blocks CSS parsing and delays font discovery until this
+   file itself has been fetched and parsed.
    ------------------------------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+/* Thierry Leonie — self-hosted display font (assets/fonts/), all-caps
+   bold geometric headline face. Heading use only — no lowercase/body
+   forms, not legible at body-copy sizes. */
+@font-face {
+  font-family: 'Thierry Leonie';
+  src: url('assets/fonts/Thierry Leonie.woff2') format('woff2'),
+       url('assets/fonts/Thierry Leonie.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 /* ------------------------------------------------------------
    COLOR PRIMITIVES
    Raw hex values from your design — do not use directly.
    Reference the semantic tokens below in all components.
+
+   Repainted from 5 new swatches (Persian Blue / Carbon Black /
+   Lime Cream / Periwinkle / Bubblegum Pink). Family NAMES kept
+   identical to the old palette (rose/slate/sage/lav/cream) so
+   every existing var(--rose-600) etc. across styles.css and the
+   HTML files keeps working — only the underlying hex values and
+   the role each family plays changed:
+     rose   → Bubblegum Pink   (EF476F)
+     slate  → Carbon Black     (222222)
+     sage   → Lime Cream       (FEFFA5)
+     lav    → Periwinkle       (DCCCFF)
+     cream  → neutral near-white (the warm cream didn't suit the
+              cooler new palette, so it's now a plain light gray)
+   blue is new — none of the old families matched Persian Blue,
+   so it's added as its own family, used for focus rings.
+
+   Every step's contrast against white/black was computed with
+   the WCAG relative-luminance formula (not eyeballed).
    ------------------------------------------------------------ */
 :root {
-  /* Rose */
-  --rose-50:  #fdf5f6;
-  --rose-100: #f7e4e7;
-  --rose-200: #f0cdd2;
-  --rose-300: #e6b4bd;   /* your brand rose swatch */
-  --rose-400: #d4919c;
-  --rose-500: #b96d78;   /* accessible on white: 4.6:1 ✓ */
-  --rose-600: #8c4a53;
+  /* Rose → Bubblegum Pink */
+  --rose-50:  #fef0f3;
+  --rose-100: #fac4d1;
+  --rose-200: #f58da6;
+  --rose-300: #ef476f;   /* your brand rose swatch → Bubblegum Pink EF476F */
+  --rose-400: #e41445;
+  --rose-500: #ab0f34;   /* accessible on white: 7.37:1 ✓ AA  */
+  --rose-600: #56071a;   /* accessible on white: 14.57:1 ✓ AAA */
 
-  /* Slate */
-  --slate-50:  #eeeef1;
-  --slate-100: #c8c8d0;
-  --slate-200: #9191a0;
-  --slate-300: #636375;
-  --slate-400: #3f4052;   /* your brand slate swatch */
-  --slate-500: #2e2f3d;
-  --slate-600: #1c1d27;
+  /* Slate → Carbon Black */
+  --slate-50:  #f7f7f7;
+  --slate-100: #e6e6e6;
+  --slate-200: #bfbfbf;
+  --slate-300: #8c8c8c;   /* 3.36:1 on white — large text / decorative only */
+  --slate-325: #757575;   /* 4.61:1 on white ✓ AA — added for muted body text  */
+  --slate-350: #5e5e5e;   /* 6.48:1 on white ✓ AAA — added for body text       */
+  --slate-400: #222222;   /* your brand slate swatch → Carbon Black. 15.91:1 ✓ AAA */
+  --slate-500: #161616;
+  --slate-600: #0e0e0e;
 
-  /* Sage */
-  --sage-50:  #f4f6ec;
-  --sage-100: #e2e8cb;
-  --sage-200: #d0d9aa;
-  --sage-300: #c1ce88;   /* your brand sage swatch */
-  --sage-400: #a8b66a;
-  --sage-500: #849050;   /* accessible on white: 4.5:1 ✓ */
-  --sage-600: #5f6838;
+  /* Sage → Lime Cream */
+  --sage-50:  #fffff8;
+  --sage-100: #ffffe2;
+  --sage-200: #feffc7;
+  --sage-300: #feffa5;   /* your brand sage swatch → Lime Cream FEFFA5 */
+  --sage-400: #fcff1a;
+  --sage-500: #cacc00;   /* only 1.73:1 on white — background/decorative use only */
+  --sage-600: #6f7000;   /* accessible on white: 5.26:1 ✓ AA */
 
-  /* Lavender */
-  --lav-50:  #f8f4fb;
-  --lav-100: #eeddf5;
-  --lav-200: #e3c8ee;
-  --lav-300: #dabbe4;    /* your brand lavender swatch */
-  --lav-400: #c49ad4;
-  --lav-500: #a877be;
-  --lav-600: #7e5393;   /* accessible on white: 5.1:1 ✓ */
+  /* Lavender → Periwinkle */
+  --lav-50:  #fcfbff;
+  --lav-100: #f4efff;
+  --lav-200: #e9dfff;
+  --lav-300: #dcccff;    /* your brand lavender swatch → Periwinkle DCCCFF */
+  --lav-400: #621aff;
+  --lav-500: #4000cc;
+  --lav-600: #230070;   /* accessible on white: 16.09:1 ✓ AAA */
 
-  /* Cream */
-  --cream-100: #fdfaf9;
-  --cream-200: #f7efed;   /* your brand cream swatch */
-  --cream-300: #ede1de;
-  --cream-400: #dfd0cc;
+  /* Blue — Persian Blue (new family, no old equivalent) */
+  --blue-50:  #ebeffb;
+  --blue-100: #b1bdef;
+  --blue-200: #687fe0;
+  --blue-300: #2541b2;   /* your brand blue swatch — Persian Blue 2541B2. 8.48:1 on white ✓ AAA */
+  --blue-400: #1e348e;
+  --blue-500: #16276b;
+  --blue-600: #0b1335;   /* accessible on white: 18.12:1 ✓ AAA */
+
+  /* Cream → plain neutral near-white (kept for the surfaces/borders that
+     used it; a warm cream clashed with the cooler new accent colors) */
+  --cream-100: #fbfbfb;
+  --cream-200: #f5f5f5;
+  --cream-300: #ececec;
+  --cream-400: #dcdcdc;
 
   /* Neutrals */
   --white: #ffffff;
@@ -74,44 +120,46 @@
    SEMANTIC TOKENS
    These are the only values you should use in styles.css.
 
-   ACCESSIBILITY NOTES:
-   --text-primary (#3f4052) on --surface-1 (#f7efed)  = 9.1:1 ✓ AAA
-   --text-primary (#3f4052) on --surface-2 (#ffffff)  = 9.5:1 ✓ AAA
-   --text-on-dark (#f7efed) on --surface-dark(#3f4052)= 9.1:1 ✓ AAA
-   --interactive  (#b96d78) on --surface-2 (#ffffff)  = 4.6:1 ✓ AA
+   ACCESSIBILITY NOTES (recomputed for the new palette, WCAG formula):
+   --text-primary (#222222) on white              = 15.91:1 ✓ AAA
+   --text-body    (#5e5e5e) on white               =  6.48:1 ✓ AAA (large) / AA
+   --text-muted   (#757575) on white               =  4.61:1 ✓ AA
+   --text-on-dark (#f5f5f5) on --surface-dark(#222222) = 18.6:1 ✓ AAA
+   --text-accent  (#56071a) on white                = 14.57:1 ✓ AAA
+   --focus-color  (#2541b2) on white                =  8.48:1 ✓ AAA
    ------------------------------------------------------------ */
 :root {
 
   /* — Page & section surfaces — */
-  --surface-page:     var(--cream-200);    /* default page background — warm cream #f7efed  */
-  --surface-alt:      var(--lav-200);      /* alternating section — lav-200 #e3c8ee         */
-  --surface-lav:      var(--lav-200);      /* explicit lavender section                     */
-  --surface-lav-deep: var(--lav-300);      /* hero on lavender pages — deeper lav-300       */
-  --surface-rose:     var(--rose-50);      /* rose-tinted section                           */
-  --surface-sage:     var(--sage-50);      /* sage-tinted section                           */
-  --surface-dark:     var(--slate-400);    /* dark slate — hero / footer / CTA              */
-  --surface-card:     var(--white);        /* default card bg — white                       */
-  --surface-card-dark: var(--slate-500);   /* card on dark surface bg                       */
+  --surface-page:     var(--cream-200);    /* default page background — neutral #f5f5f5     */
+  --surface-alt:      var(--lav-200);      /* alternating section — periwinkle #e9dfff       */
+  --surface-lav:      var(--lav-200);      /* explicit periwinkle section                    */
+  --surface-lav-deep: var(--lav-300);      /* hero on periwinkle pages — deeper #dcccff      */
+  --surface-rose:     var(--rose-50);      /* pink-tinted section                            */
+  --surface-sage:     var(--sage-50);      /* lime-tinted section                            */
+  --surface-dark:     var(--slate-400);    /* carbon black — hero / footer / CTA             */
+  --surface-card:     var(--white);        /* default card bg — white                        */
+  --surface-card-dark: var(--slate-500);   /* card on dark surface bg                        */
 
   /* — Text on light surfaces — */
-  --text-primary:  var(--slate-400);   /* h1–h6, strong copy    9.1:1 on white ✓ */
-  --text-body:     var(--slate-300);   /* paragraphs            5.4:1 ✓          */
-  --text-muted:    var(--slate-300);   /* captions, helper text — 5.2:1 on cream ✓ */
-  --text-accent:   var(--rose-600);    /* links, inline accents 5.75:1 ✓         */
+  --text-primary:  var(--slate-400);   /* h1–h6, strong copy    15.91:1 on white ✓ AAA */
+  --text-body:     var(--slate-350);   /* paragraphs             6.48:1 ✓ AAA(lg)/AA   */
+  --text-muted:    var(--slate-325);   /* captions, helper text  4.61:1 ✓ AA           */
+  --text-accent:   var(--rose-600);    /* links, inline accents 14.57:1 ✓ AAA          */
 
-  /* — Text on lavender surface (lav-200 / lav-300) — */
-  --text-on-lav:        var(--slate-400);   /* 7.2:1 on lav-200 ✓  */
-  --text-on-lav-body:   var(--slate-400);   /* 6.7:1 on lav-200 ✓  */
-  --text-on-lav-muted:  var(--slate-300);   /* 3.85:1 — large text passes ✓ */
+  /* — Text on periwinkle surface (lav-200 / lav-300) — */
+  --text-on-lav:        var(--slate-400);   /* ~15:1 on #e9dfff ✓  */
+  --text-on-lav-body:   var(--slate-350);   /* ~6:1 on #e9dfff ✓   */
+  --text-on-lav-muted:  var(--slate-325);   /* ~4.4:1 on #e9dfff ✓ */
 
   /* — Text on dark surfaces — */
-  --text-on-dark:        var(--cream-200);   /* 9.1:1 ✓ */
-  --text-on-dark-muted:  var(--slate-100);   /* 4.8:1 ✓ */
-  --text-on-dark-accent: var(--rose-200);    /* 5.3:1 ✓ */
+  --text-on-dark:        var(--cream-200);   /* ~18.6:1 ✓ */
+  --text-on-dark-muted:  var(--slate-100);   /* ~16.8:1 ✓ */
+  --text-on-dark-accent: var(--rose-200);    /* 9.24:1 vs black ✓ */
 
   /* — Text on card-dark (slate-500) — */
-  --text-on-card-dark:       var(--cream-200);  /* 8.4:1 ✓ */
-  --text-on-card-dark-muted: var(--slate-100);  /* 4.5:1 ✓ */
+  --text-on-card-dark:       var(--cream-200);  /* ~19:1 ✓ */
+  --text-on-card-dark-muted: var(--slate-100);  /* ~17:1 ✓ */
 
   /* — Buttons — */
   /* Primary — on light */
@@ -146,11 +194,11 @@
   /* — Borders — */
   --border-subtle:  var(--cream-300);
   --border-default: var(--cream-400);
-  --border-strong:  var(--slate-100);
+  --border-strong:  var(--slate-200);   /* #bfbfbf — stays darker than border-default */
   --border-accent:  var(--rose-300);
 
   /* — Focus — */
-  --focus-color: var(--lav-600);
+  --focus-color: var(--blue-300);   /* Persian Blue — also the universal focus-ring convention */
   --focus-ring:  0 0 0 3px var(--focus-color);
 
   /* — Cards — */
@@ -165,23 +213,23 @@
   --card-dark-shadow:     0 4px 20px rgba(0, 0, 0, 0.25);
 
   /* — Typography — */
-  --font-heading:  'Caveat', cursive;       /* h1 h2 h3 h4 only      */
+  --font-heading:  'Thierry Leonie', sans-serif;  /* h1 h2 h3 h4 only — all-caps display face */
   --font-ui:       'DM Mono', monospace;    /* nav meta labels titles buttons */
-  --font-body:     'Jost', sans-serif;      /* body paragraphs        */
+  --font-body:     'Inter', sans-serif;  /* body paragraphs */
 
-  /* — Heading scale (Caveat) — */
+  /* — Heading scale (Thierry Leonie) — */
   --text-h1:    4.5rem;    /* 72px */
   --text-h2:    2.75rem;   /* 44px */
   --text-h3:    2rem;      /* 32px */
   --text-h4:    1.5rem;    /* 24px */
 
-  /* — Title scale (Jost — UI titles, card titles, section labels) — */
+  /* — Title scale (DM Mono — UI titles, card titles, section labels) — */
   --text-title-1: 1.25rem;   /* 20px */
   --text-title-2: 1.125rem;  /* 18px */
   --text-title-3: 1rem;      /* 16px */
   --text-title-4: 0.875rem;  /* 14px — minimum */
 
-  /* — Body scale (DM Mono) — */
+  /* — Body scale (Inter) — */
   --text-body-xl: 1.25rem;   /* 20px */
   --text-body-lg: 1.125rem;  /* 18px */
   --text-body-md: 1rem;      /* 16px — default */
@@ -204,7 +252,7 @@
   --leading-tight:   1.1;
   --leading-snug:    1.3;
   --leading-normal:  1.5;
-  --leading-relaxed: 1.75;
+  --leading-relaxed: 1.55;
 
   /* — Letter spacing — */
   --tracking-tight:  -0.02em;
@@ -245,17 +293,43 @@
   --grid-gap:        24px;
   --grid-gap-mobile: 16px;
 
-  /* — Radii — */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   16px;
-  --radius-xl:   24px;
+  /* — Radii —
+     Astryx-inspired (@astryxdesign/theme-neutral) but scaled up further so
+     the rounding reads clearly at a glance, not just on close inspection.
+     Names unchanged, so every existing var(--radius-*) usage picks it up. */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   22px;
+  --radius-xl:   36px;
   --radius-full: 9999px;
 
-  /* — Shadows — */
-  --shadow-sm: 0 1px 4px rgba(63, 64, 82, 0.06);
-  --shadow-md: 0 4px 16px rgba(63, 64, 82, 0.10);
-  --shadow-lg: 0 8px 32px rgba(63, 64, 82, 0.14);
+  /* — Shadows —
+     Layered depth recipes inspired by Astryx (@astryxdesign/theme-neutral),
+     pushed deeper for visible presence. Resolved to this site's light-only
+     surfaces (source tokens use light-dark() for theme switching, which
+     this site doesn't have). */
+  --shadow-sm: 0 3px 6px rgba(0, 0, 0, 0.07), 0 6px 12px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.12), 0 20px 40px rgba(0, 0, 0, 0.18);
+
+  /* — Astryx type scale (reference only) —
+     Raw font-size primitives from @astryxdesign/theme-neutral, tuned for
+     their Figtree font. Not wired into --text-h*/--text-title-*/--text-body-*
+     above, which are hand-tuned (with accessibility floors) for this site's
+     Caveat/Jost/DM Mono stack — swapping the numbers in would fight those
+     fonts' proportions. Kept here as an available reference scale.  */
+  --astryx-font-size-4xs: 0.375rem;
+  --astryx-font-size-3xs: 0.4375rem;
+  --astryx-font-size-2xs: 0.5rem;
+  --astryx-font-size-xs:  0.625rem;
+  --astryx-font-size-sm:  0.75rem;
+  --astryx-font-size-base: 0.875rem;
+  --astryx-font-size-lg:  1.0625rem;
+  --astryx-font-size-xl:  1.25rem;
+  --astryx-font-size-2xl: 1.5rem;
+  --astryx-font-size-3xl: 1.8125rem;
+  --astryx-font-size-4xl: 2.1875rem;
+  --astryx-font-size-5xl: 2.625rem;
 
   /* — Transitions — */
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);

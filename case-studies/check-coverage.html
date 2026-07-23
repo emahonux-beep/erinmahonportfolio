@@ -4,50 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Check Coverage — Erin Mahon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
   <link rel="stylesheet" href="../design-tokens.css" />
   <link rel="stylesheet" href="../styles.css" />
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+  <link rel="stylesheet" href="../assets/icons/phosphor.css" />
+  <link rel="stylesheet" href="../assets/shoelace/light.css" />
+  <link rel="stylesheet" href="../assets/shoelace/theme.css" />
+  <script type="module" src="../assets/shoelace/shoelace-bundle.js"></script>
 </head>
 <body>
   <!-- CASE STUDY HERO -->
   <section class="section hero bg-lav">
     <div class="section__inner">
-      <a href="../work.html" class="btn btn--tertiary hero__back"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back</a>
+      <sl-button href="../work.html" variant="text" class="hero__back">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            Back
+          </sl-button>
       <div class="grid">
         <div class="col-12">
           <h1 class="hero__title">Check Coverage</h1>
           <p class="body-xl hero__body">Check Coverage started as a compliance obligation. It became something members actually relied on. That shift didn't happen in a single sprint — it happened over three years of research, analytics, and design decisions that kept moving the product closer to how members actually think.</p>
           <div class="tag-group hero__tags">
-            <span class="tag">Healthcare</span>
-            <span class="tag">Express Scripts</span>
+            <sl-tag variant="neutral" size="small">Healthcare</sl-tag>
+            <sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
           </div>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-briefcase" aria-hidden="true"></i></div>
               <p class="label label--upper">Role</p>
               <p class="title-2">UX Design Advisor</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-calendar-blank" aria-hidden="true"></i></div>
               <p class="label label--upper">Timeline</p>
               <p class="title-2">2022 – 2025</p>
               </div>
-          </div>
+          </sl-card>
         </div>
         <div class="col-12 col-md-4 col--flex">
-          <div class="card card--meta">
+          <sl-card class="card--meta">
             <div class="card__body">
               <div class="icon-badge icon-badge--sage"><i class="ph ph-devices" aria-hidden="true"></i></div>
               <p class="label label--upper">Platform</p>
               <p class="title-2">Responsive · Native</p>
               </div>
-          </div>
+          </sl-card>
         </div>
       </div>
     </div>
@@ -56,7 +65,7 @@
   <!-- HERO IMAGE PLACEHOLDER -->
   <section class="section section--sm bg-white">
     <div class="section__inner">
-      <img src="/assets/thumb-check-coverage.png" alt="Check Coverage — full-width case study banner" style="width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:var(--radius-lg);" />
+      <img src="/assets/thumb-check-coverage.webp" alt="Check Coverage — full-width case study banner" style="width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:var(--radius-lg);"  fetchpriority="high" decoding="async" />
     </div>
   </section>
 
@@ -101,7 +110,7 @@
         </div>
         <div class="col-12 col-md-5">
           <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-legacy.png" alt="Legacy Price a Medication flow screenshot" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);" />
+            <img src="/assets/cs-check-coverage-legacy.webp" alt="Legacy Price a Medication flow screenshot" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);"  loading="lazy" decoding="async" />
             <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Legacy "Price a Medication" flow</figcaption>
           </figure>
         </div>
@@ -119,53 +128,53 @@
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
             <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-currency-dollar" aria-hidden="true"></i></div>
             <h4 class="title-1">Price comes first.</h4>
             <p class="body-sm" >Members orient to cost immediately, then use coverage details to explain why that number looks the way it does. Coverage without a price feels incomplete. A price without an explanation feels untrustworthy.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
             <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-chat-circle-text" aria-hidden="true"></i></div>
             <h4 class="title-1">Language shapes confidence more than precision.</h4>
             <p class="body-sm" >Members responded better to "not covered" than to "outside plan." Better to "in network" than to "recommended pharmacy." Getting this right wasn't about simplification. It was about meeting members where their mental model already was.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
             <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-arrows-left-right" aria-hidden="true"></i></div>
             <h4 class="title-1">Comparison is the job.</h4>
             <p class="body-sm" >Members didn't want to be guided through a decision funnel. They wanted to scan options, evaluate tradeoffs, and choose. Every time we watched members use the tool, they bypassed category framing and went straight to prices.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
             <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-warning" aria-hidden="true"></i></div>
             <h4 class="title-1">Confidence breaks at transitions.</h4>
             <p class="body-sm" >Confusion spiked at specific moments. A new prescription, a brand switching to generic, a deductible resetting, a pharmacy change. These were the moments that drove calls. The design goal shifted from reducing confusion generally to preventing surprise specifically.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
         <div class="col-12 col-md-4 col--flex">
-          <div class="card">
+          <sl-card>
             <div class="card__body">
             <div class="icon-badge icon-badge--sage icon-badge--lg"><i class="ph ph-timer" aria-hidden="true"></i></div>
             <h4 class="title-1">The window is narrow.</h4>
             <p class="body-sm" >Check Coverage is most useful after a medication is discussed and before a member reaches the pharmacy counter. That window shaped every entry point, every piece of messaging, and every information hierarchy decision.</p>
             </div>
-          </div>
+          </sl-card>
         </div>
 
       </div>
@@ -185,7 +194,7 @@
         </div>
         <div class="col-12 col-md-5">
           <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-interstitial.png" alt="Early iterations showing mid-flow interstitial" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);" />
+            <img src="/assets/cs-check-coverage-interstitial.webp" alt="Early iterations showing mid-flow interstitial" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);"  loading="lazy" decoding="async" />
             <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Early iterations showing the mid-flow interstitial</figcaption>
           </figure>
         </div>
@@ -199,13 +208,13 @@
       <div class="grid">
         <div class="col-12 col-md-6">
           <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-list.png" alt="Mobile explorations, a list-based approach" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-lg);" />
+            <img src="/assets/cs-check-coverage-list.webp" alt="Mobile explorations, a list-based approach" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-lg);"  loading="lazy" decoding="async" />
             <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Mobile explorations, a list-based approach</figcaption>
           </figure>
         </div>
         <div class="col-12 col-md-6">
           <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-card.png" alt="Mobile explorations, a card-based approach" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-lg);" />
+            <img src="/assets/cs-check-coverage-card.webp" alt="Mobile explorations, a card-based approach" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-lg);"  loading="lazy" decoding="async" />
             <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Mobile explorations, a card-based approach</figcaption>
           </figure>
         </div>
@@ -298,12 +307,14 @@
   <section class="section section--sm bg-sage-300">
     <div class="section__inner">
       <div class="nav-strip">
-        <a href="../work.html" class="btn btn--tertiary">
-          <i class="ph ph-arrow-left" aria-hidden="true"></i> All Projects
-        </a>
-        <a href="digital-id.html" class="btn btn--primary">
-          Next: Digital ID <i class="ph ph-arrow-right" aria-hidden="true"></i>
-        </a>
+        <sl-button href="../work.html" variant="text">
+            <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
+            All Projects
+          </sl-button>
+        <sl-button href="digital-id.html" variant="primary">
+            Next: Digital ID
+            <span slot="suffix"><i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </sl-button>
       </div>
     </div>
   </section>
@@ -312,30 +323,30 @@
   <style>
     .pw-gate {
       position: fixed; inset: 0; z-index: 9998;
-      background: var(--cream-200, #f7efed);
+      background: var(--cream-200, #f5f5f5);
       display: flex; align-items: center; justify-content: center;
     }
     .pw-box {
       width: min(420px, 90vw);
       background: var(--white, #fff);
       border-radius: var(--radius-xl, 24px);
-      border: 1px solid var(--border-subtle, #ede1de);
+      border: 1px solid var(--border-subtle, #ececec);
       padding: 48px 40px;
       display: flex; flex-direction: column; gap: 24px;
     }
     .pw-label {
       font-family: var(--font-ui, "DM Mono", monospace);
       font-size: 0.7rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--slate-300, #636375);
+      text-transform: uppercase; color: var(--slate-300, #8c8c8c);
     }
     .pw-heading {
-      font-family: var(--font-heading, "Caveat", cursive);
-      font-size: 2rem; color: var(--slate-400, #3f4052);
+      font-family: var(--font-heading, "Thierry Leonie", sans-serif);
+      font-size: 2rem; color: var(--slate-400, #222222);
       margin: 0;
     }
     .pw-sub {
-      font-family: var(--font-body, "Jost", sans-serif);
-      font-size: 0.9375rem; color: var(--slate-300, #636375);
+      font-family: var(--font-body, "Inter", sans-serif);
+      font-size: 0.9375rem; color: var(--slate-300, #8c8c8c);
       margin: 0; line-height: 1.6;
     }
     .pw-input {
@@ -343,18 +354,18 @@
       font-family: var(--font-ui, "DM Mono", monospace);
       font-size: 0.9375rem;
       padding: 12px 16px;
-      border: 1.5px solid var(--border-default, #dfd0cc);
+      border: 1.5px solid var(--border-default, #dcdcdc);
       border-radius: var(--radius-md, 8px);
-      background: var(--cream-100, #fdfaf9);
-      color: var(--slate-400, #3f4052);
+      background: var(--cream-100, #fbfbfb);
+      color: var(--slate-400, #222222);
       outline: none;
       transition: border-color 0.2s ease;
     }
-    .pw-input:focus { border-color: var(--slate-400, #3f4052); }
-    .pw-input.pw-error { border-color: var(--rose-500, #b96d78); }
+    .pw-input:focus { border-color: var(--slate-400, #222222); }
+    .pw-input.pw-error { border-color: var(--rose-500, #ab0f34); }
     .pw-btn {
       width: 100%;
-      background: var(--slate-400, #3f4052);
+      background: var(--slate-400, #222222);
       color: var(--white, #fff);
       border: none; border-radius: var(--radius-full, 9999px);
       padding: 13px 24px;
@@ -363,10 +374,10 @@
       cursor: pointer;
       transition: background 0.2s ease;
     }
-    .pw-btn:hover { background: var(--slate-500, #2e2f3d); }
+    .pw-btn:hover { background: var(--slate-500, #161616); }
     .pw-err-msg {
-      font-family: var(--font-body, "Jost", sans-serif);
-      font-size: 0.875rem; color: var(--rose-500, #b96d78);
+      font-family: var(--font-body, "Inter", sans-serif);
+      font-size: 0.875rem; color: var(--rose-500, #ab0f34);
       margin: 0; display: none;
     }
   </style>

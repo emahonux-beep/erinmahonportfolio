@@ -108,6 +108,7 @@ input, textarea, select {
 /* ---- Headings — Caveat ---- */
 h1 {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h1);
   font-weight: var(--weight-bold);
   line-height: var(--leading-tight);
@@ -117,6 +118,7 @@ h1 {
 
 h2 {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h2);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
@@ -126,6 +128,7 @@ h2 {
 
 h3 {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h3);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
@@ -134,6 +137,7 @@ h3 {
 
 h4 {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h4);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
@@ -423,6 +427,7 @@ hr {
 
 .nav__logo-name {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: 1.375rem;
   font-weight: var(--weight-semibold);
   color: var(--text-on-dark);
@@ -449,6 +454,7 @@ hr {
 
 .footer__logo-name {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: 1.25rem;
   font-weight: var(--weight-semibold);
   color: var(--text-on-dark);
@@ -624,9 +630,9 @@ hr {
      .bg-dark   → slate-400
    ============================================================ */
 
-.bg-page  { background-color: var(--surface-dark); }   /* cream #f7efed */
+.bg-page  { background-color: var(--surface-page); }    /* neutral #f5f5f5 — was pointing at --surface-dark, unused elsewhere so harmless, fixed anyway */
 .bg-white { background-color: var(--white); }           /* pure white sections */
-.bg-lav   { background-color: var(--surface-lav); }     /* lav-200 #e3c8ee */
+.bg-lav   { background-color: var(--surface-lav); }     /* periwinkle #e9dfff */
 .bg-rose  { background-color: var(--surface-rose); }
 .bg-sage  { background-color: var(--surface-sage); }
 .bg-dark  {
@@ -900,6 +906,7 @@ hr {
 
 .card__title {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h4);                  /* 24px */
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
@@ -1289,19 +1296,20 @@ img {
   white-space: nowrap;
   line-height: 1.5;
 
-  /* Default: sage */
-  background-color: var(--sage-100);
-  color: var(--sage-600);
+  /* Default: periwinkle — actual rendered default is set by the later
+     .tag rule below; kept in sync here for consistency. */
+  background-color: var(--lav-100);
+  color: var(--lav-600);
 }
 
 .tag--sage {
-  background-color: var(--sage-100);
-  color: var(--sage-600);
+  background-color: var(--blue-100);
+  color: var(--blue-600);
 }
 
 .tag--lav {
-  background-color: var(--sage-100);
-  color: var(--sage-600);
+  background-color: var(--lav-100);
+  color: var(--lav-600);
 }
 
 .tag--slate {
@@ -1474,6 +1482,7 @@ img {
 
 .timeline__role {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-xl);
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
@@ -1741,6 +1750,7 @@ img {
 
 .footer__logo {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h3);
   font-weight: var(--weight-bold);
   color: var(--text-on-dark);
@@ -2073,6 +2083,7 @@ blockquote,
 blockquote p,
 .pullquote__text {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h4);
   font-weight: var(--weight-regular);
   line-height: var(--leading-snug);
@@ -2125,6 +2136,7 @@ blockquote p,
 
 .stat-card__number {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h1);
   font-weight: var(--weight-bold);
   color: var(--accent-rose);
@@ -2278,6 +2290,7 @@ blockquote p,
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h4);
   font-weight: var(--weight-bold);
   color: var(--lav-600);
@@ -2292,6 +2305,7 @@ blockquote p,
 
 .step-card__title {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h4);
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
@@ -2611,6 +2625,7 @@ html {
 
 .cta-banner__heading {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h2);
   font-weight: var(--weight-bold);
   color: var(--slate-500);
@@ -2707,6 +2722,7 @@ html {
 
 .icon-card__title {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h4);
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
@@ -2838,6 +2854,7 @@ html {
 
 .process-list__num {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-style: italic;
   font-size: var(--text-h2);
   font-weight: var(--weight-bold);
@@ -3062,6 +3079,7 @@ html {
 
 .quote-layout__quote {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h2);
   font-weight: var(--weight-bold);
   line-height: var(--leading-snug);
@@ -3074,6 +3092,7 @@ html {
 
 .quote-layout__quote p {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h2);
   font-weight: var(--weight-bold);
   line-height: var(--leading-snug);
@@ -3173,6 +3192,7 @@ html {
 
 .stat-strip__num {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h1);
   font-weight: var(--weight-bold);
   color: var(--rose-600);
@@ -3222,8 +3242,8 @@ html {
   font-size: var(--text-title-4);
   font-weight: var(--weight-regular);
   letter-spacing: var(--tracking-wide);
-  color: var(--sage-600);
-  background: var(--sage-100);
+  color: var(--lav-600);
+  background: var(--lav-100);
   border-radius: var(--radius-full);
   padding: 2px var(--space-3);
 }
@@ -3283,31 +3303,62 @@ html {
   border-radius: var(--radius-full);
 }
 
-/* --- Card as link --- */
-.card--link {
+/* --- Card as link ---
+   sl-card isn't a link itself, so project cards are now an <a class="card-link">
+   wrapping an <sl-card>. The anchor just provides click/nav semantics; the
+   visual card chrome (radius/border/shadow/hover-lift) lives on the sl-card. */
+.card-link {
   display: block;
   text-decoration: none;
   color: inherit;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
+}
+
+.card-link:visited {
+  color: inherit;
+}
+
+.card-link sl-card::part(base) {
   transition: box-shadow var(--duration-base) var(--ease-out),
               transform var(--duration-base) var(--ease-spring);
 }
 
-.card--link:hover {
+.card-link:hover sl-card::part(base) {
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
-  color: inherit;
 }
 
-.card--link:visited {
-  color: inherit;
+/* "View case study" affordance — arrow nudges right, text underlines on hover */
+.card-link .ph-arrow-right {
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.card-link:hover p:has(.ph-arrow-right) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.card-link:hover .ph-arrow-right {
+  transform: translateX(4px);
 }
 
-/* card--link .card__body inherits padding from .card wrapper — no extra padding needed */
+/* Base look for every sl-card on the site, matching the old .card tokens */
+sl-card::part(base) {
+  border-radius: var(--radius-lg);
+  border-color: var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+sl-card.card--project::part(base) {
+  overflow: hidden;
+  padding: 0;
+}
+
+sl-card.card--project::part(image) {
+  margin: 0;
+}
+
+sl-card.card--project .card__content {
+  padding: var(--card-padding-desktop);
+}
 
 /* --- Breadcrumb additions --- */
 .breadcrumb__link {
@@ -3746,18 +3797,18 @@ section.hero.bg-lav .meta {
    ============================================================ */
 
 .tag--rose {
-  background: var(--sage-100);
-  color: var(--sage-600);
+  background: var(--rose-100);
+  color: var(--rose-600);
 }
 
 .tag--sage {
-  background: var(--sage-100);
-  color: var(--sage-600);
+  background: var(--blue-100);   /* was sage/lime — too muddy as a badge color */
+  color: var(--blue-600);
 }
 
 .tag--lav {
-  background: var(--sage-100);
-  color: var(--sage-600);
+  background: var(--lav-100);
+  color: var(--lav-600);
 }
 
 
@@ -3894,6 +3945,7 @@ section.hero.bg-lav .meta {
 
 .numbered-row__num {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h2);
   color: var(--rose-600);
   line-height: 1;
@@ -3998,6 +4050,7 @@ section.hero.bg-lav .meta {
 
 .quote-card__body {
   font-family: var(--font-heading);
+  text-transform: uppercase;
   font-size: var(--text-h3);
   font-weight: var(--weight-regular);
   line-height: var(--leading-snug);
@@ -4012,4 +4065,121 @@ section.hero.bg-lav .meta {
 
 .bg-lav .quote-card__attribution {
   color: var(--text-on-lav-muted);
+}
+
+
+/* ============================================================
+   BACKGROUND ILLUSTRATIONS — decorative brand doodles
+   Absolutely positioned, non-interactive, low-opacity flourishes.
+   Parent needs .illo-host (position:relative + overflow:hidden).
+   ============================================================ */
+.illo-host {
+  position: relative;
+  overflow: hidden;
+}
+
+.illo {
+  position: absolute;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Section content should sit above the decoration layer */
+.illo-host > .section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ============================================================
+   CURRENTLY CARD — rotating "behind the scenes" hero card
+   Replaces the old chaos-to-order hero animation.
+   ============================================================ */
+.currently-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface-dark);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-8);
+}
+
+.currently-card__top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.currently-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--lav-300);
+  flex-shrink: 0;
+  animation: currently-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes currently-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+.currently-card__label {
+  font-family: var(--font-ui);
+  font-size: var(--text-body-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+}
+
+.currently-card__body {
+  min-height: 140px;
+  transition: opacity 0.25s ease;
+}
+
+.currently-card__category {
+  font-family: var(--font-ui);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.currently-card__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  line-height: var(--leading-relaxed);
+}
+
+/* Higher specificity than section.hero.bg-lav p (0-2-2), which otherwise
+   forces the on-periwinkle body color onto every <p> in the hero — this
+   card is a dark surface floating on top of that section and needs its
+   own light text regardless. */
+.hero .currently-card .currently-card__category,
+.hero .currently-card .currently-card__text {
+  color: var(--white);
+}
+
+.currently-card__dots {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.currently-card__pip {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--slate-300);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.currently-card__pip.is-active {
+  width: 22px;
+  background: var(--lav-300);
 }
