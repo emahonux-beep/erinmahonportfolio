@@ -3968,7 +3968,7 @@ section.hero.bg-lav .meta {
 }
 
 .hero__tags {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-4);
 }
 
 /* Numbered list rows — process pattern on lav */
@@ -4019,6 +4019,13 @@ section.hero.bg-lav .meta {
 /* Section background — bubblegum pink */
 .bg-sage-300 {
   background-color: var(--rose-300);
+}
+
+/* Text-variant button reads too close to the pink background — force white */
+.bg-sage-300 sl-button[variant="text"]::part(label),
+.bg-sage-300 sl-button[variant="text"]::part(base),
+.bg-sage-300 sl-button[variant="text"] i {
+  color: var(--white);
 }
 
 /* Col flex helper — makes card fill grid cell height */
