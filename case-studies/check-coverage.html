@@ -6,10 +6,10 @@
   <title>Check Coverage — Erin Mahon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
   <link rel="stylesheet" href="../design-tokens.css" />
   <link rel="stylesheet" href="../styles.css" />
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <link rel="stylesheet" href="../assets/icons/phosphor.css" />
 </head>
 <body>
   <!-- CASE STUDY HERO -->
@@ -315,30 +315,30 @@
   <style>
     .pw-gate {
       position: fixed; inset: 0; z-index: 9998;
-      background: var(--cream-200, #f7efed);
+      background: var(--cream-200, #f5f5f5);
       display: flex; align-items: center; justify-content: center;
     }
     .pw-box {
       width: min(420px, 90vw);
       background: var(--white, #fff);
       border-radius: var(--radius-xl, 24px);
-      border: 1px solid var(--border-subtle, #ede1de);
+      border: 1px solid var(--border-subtle, #ececec);
       padding: 48px 40px;
       display: flex; flex-direction: column; gap: 24px;
     }
     .pw-label {
       font-family: var(--font-ui, "DM Mono", monospace);
       font-size: 0.7rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--slate-300, #636375);
+      text-transform: uppercase; color: var(--slate-300, #8c8c8c);
     }
     .pw-heading {
-      font-family: var(--font-heading, "Caveat", cursive);
-      font-size: 2rem; color: var(--slate-400, #3f4052);
+      font-family: var(--font-heading, "Thierry Leonie", sans-serif);
+      font-size: 2rem; color: var(--slate-400, #222222);
       margin: 0;
     }
     .pw-sub {
-      font-family: var(--font-body, "Jost", sans-serif);
-      font-size: 0.9375rem; color: var(--slate-300, #636375);
+      font-family: var(--font-body, "Inter", sans-serif);
+      font-size: 0.9375rem; color: var(--slate-300, #8c8c8c);
       margin: 0; line-height: 1.6;
     }
     .pw-input {
@@ -346,18 +346,18 @@
       font-family: var(--font-ui, "DM Mono", monospace);
       font-size: 0.9375rem;
       padding: 12px 16px;
-      border: 1.5px solid var(--border-default, #dfd0cc);
+      border: 1.5px solid var(--border-default, #dcdcdc);
       border-radius: var(--radius-md, 8px);
-      background: var(--cream-100, #fdfaf9);
-      color: var(--slate-400, #3f4052);
+      background: var(--cream-100, #fbfbfb);
+      color: var(--slate-400, #222222);
       outline: none;
       transition: border-color 0.2s ease;
     }
-    .pw-input:focus { border-color: var(--slate-400, #3f4052); }
-    .pw-input.pw-error { border-color: var(--rose-500, #b96d78); }
+    .pw-input:focus { border-color: var(--slate-400, #222222); }
+    .pw-input.pw-error { border-color: var(--rose-500, #ab0f34); }
     .pw-btn {
       width: 100%;
-      background: var(--slate-400, #3f4052);
+      background: var(--slate-400, #222222);
       color: var(--white, #fff);
       border: none; border-radius: var(--radius-full, 9999px);
       padding: 13px 24px;
@@ -366,10 +366,10 @@
       cursor: pointer;
       transition: background 0.2s ease;
     }
-    .pw-btn:hover { background: var(--slate-500, #2e2f3d); }
+    .pw-btn:hover { background: var(--slate-500, #161616); }
     .pw-err-msg {
-      font-family: var(--font-body, "Jost", sans-serif);
-      font-size: 0.875rem; color: var(--rose-500, #b96d78);
+      font-family: var(--font-body, "Inter", sans-serif);
+      font-size: 0.875rem; color: var(--rose-500, #ab0f34);
       margin: 0; display: none;
     }
   </style>
