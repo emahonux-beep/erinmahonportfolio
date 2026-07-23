@@ -3875,7 +3875,10 @@ section.hero.bg-lav .meta {
 .icon-badge--xl  { width: 56px; height: 56px; font-size: 1.75rem; border-radius: var(--radius-lg); }
 
 .icon-badge--rose  { background: var(--rose-100);  color: var(--rose-600);  }
-.icon-badge--sage  { background: var(--rose-300);  color: var(--slate-400); }
+.icon-badge--sage  { background: var(--rose-300);  color: var(--white); font-size: 1.4rem; }
+.icon-badge--sage.icon-badge--sm { font-size: 1.15rem; }
+.icon-badge--sage.icon-badge--lg { font-size: 1.75rem; }
+.icon-badge--sage.icon-badge--xl { font-size: 2.1rem; }
 .icon-badge--lav   { background: var(--lav-100);   color: var(--lav-600);   }
 .icon-badge--slate { background: var(--slate-100); color: var(--slate-500); }
 .icon-badge--dark  { background: var(--slate-500); color: var(--cream-200); }
