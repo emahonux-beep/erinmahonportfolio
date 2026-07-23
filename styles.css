@@ -4032,6 +4032,11 @@ section.hero.bg-lav .meta {
   align-items: center;
 }
 
+/* Divider list rows — strip the border off the last row */
+.card__body ul li:last-child {
+  border-bottom: none !important;
+}
+
 /* Content section spacing helpers */
 .section-label {
   margin-bottom: var(--space-2);
