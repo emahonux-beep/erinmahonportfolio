@@ -4062,6 +4062,12 @@ section.hero.bg-lav .meta {
   margin-bottom: var(--space-6);
 }
 
+/* Icon badge sits beside its label in a horizontal row here, not above
+   a title — the bottom margin above throws off vertical centering */
+.card--tinted .icon-badge {
+  margin-bottom: 0;
+}
+
 /* Full-width card (fills grid col) */
 .card--full {
   width: 100%;
