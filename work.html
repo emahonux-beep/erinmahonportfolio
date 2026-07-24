@@ -49,6 +49,7 @@
         <button class="filter-btn" data-filter="government" role="tab" aria-selected="false">Government</button>
         <button class="filter-btn" data-filter="connected-devices" role="tab" aria-selected="false">Connected Devices</button>
         <button class="filter-btn" data-filter="early-work" role="tab" aria-selected="false">Early Work</button>
+        <button class="filter-btn" data-filter="just-for-fun" role="tab" aria-selected="false">Just for Fun</button>
       </div>
     </div>
   </div>
@@ -330,6 +331,51 @@
     </div>
   </section>
 
+  <!-- JUST FOR FUN -->
+  <section class="section bg-white illo-host" id="just-for-fun">
+    <img class="illo" src="/assets/illustrations/doodle-sparkle.svg" alt="" aria-hidden="true" style="width:200px; top:10px; right:-20px;" />
+    <img class="illo" src="/assets/illustrations/doodle-sparkle.svg" alt="" aria-hidden="true" style="width:200px; bottom:10px; left:-20px;" />
+    <div class="section__inner">
+      <h2 class="label label--upper" style="margin-bottom: var(--space-3);">Just for Fun</h2>
+      <p class="body-sm" style="margin-bottom: var(--space-8); color: var(--text-muted);">Side projects built outside the day job, just because.</p>
+      <div class="grid">
+
+        <div class="col-12 col-md-4" data-category="just-for-fun">
+          <a href="https://saltandpawsco.com/index.html" class="card-link" target="_blank" rel="noopener">
+            <sl-card class="card--project">
+              <div slot="image" class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9;">
+                <i class="ph ph-paw-print" style="font-size:2.5rem;color:var(--slate-200);" aria-hidden="true"></i>
+              </div>
+              <div class="card__content">
+              <p class="title-2" style="margin-bottom:var(--space-2);">Salt &amp; Paws Co</p>
+              <p class="body-sm" style="margin-bottom:var(--space-2);">A dog-sitting business site, designed and built for a friend's small business.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><sl-tag variant="neutral" size="small">Personal Project</sl-tag></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">Visit site <i class="ph ph-arrow-square-out" aria-hidden="true"></i></p>
+            </div>
+            </sl-card>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4" data-category="just-for-fun">
+          <a href="https://emahonux-beep.github.io/levelUX/" class="card-link" target="_blank" rel="noopener">
+            <sl-card class="card--project">
+              <div slot="image" class="img-placeholder img-placeholder--rect" style="aspect-ratio:16/9;">
+                <i class="ph ph-graduation-cap" style="font-size:2.5rem;color:var(--slate-200);" aria-hidden="true"></i>
+              </div>
+              <div class="card__content">
+              <p class="title-2" style="margin-bottom:var(--space-2);">LevelUX</p>
+              <p class="body-sm" style="margin-bottom:var(--space-2);">A work-in-progress learning center for people breaking into UX design.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4);"><sl-tag variant="neutral" size="small">Work in Progress</sl-tag></div>
+              <p class="body-xs" style="color:var(--text-accent);display:flex;align-items:center;gap:var(--space-2);">Visit site <i class="ph ph-arrow-square-out" aria-hidden="true"></i></p>
+            </div>
+            </sl-card>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- EARLY WORK -->
   <section class="section bg-white illo-host" id="early-work">
     <img class="illo" src="/assets/illustrations/doodle-sparkle.svg" alt="" aria-hidden="true" style="width:200px; top:10px; right:-20px;" />
@@ -394,7 +440,7 @@
         btn.classList.add('filter-btn--active');
         btn.setAttribute('aria-selected','true');
         const filter = btn.dataset.filter;
-        ['healthcare','government','connected-devices','early-work'].forEach(id => {
+        ['healthcare','government','connected-devices','early-work','just-for-fun'].forEach(id => {
           const s = document.getElementById(id);
           if (s) s.style.display = (filter === 'all' || filter === id) ? '' : 'none';
         });
