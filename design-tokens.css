@@ -282,7 +282,7 @@
   --space-24:  96px;
 
   /* — Layout — */
-  --page-margin:        80px;     /* desktop horizontal page margin */
+  --page-margin:        48px;     /* desktop horizontal page margin */
   --page-margin-mobile: 16px;     /* mobile horizontal page margin  */
   --card-padding-desktop: 24px;
   --card-padding-mobile:  16px;
