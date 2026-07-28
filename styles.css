@@ -3694,6 +3694,14 @@ section.hero.bg-lav .meta {
   }
 }
 
+/* Recognition + Config 2025 collages on the home page — force a shared
+   height so a shorter paragraph next to one doesn't shrink its photos. */
+@media (min-width: 768px) {
+  .collage--home {
+    min-height: 360px;
+  }
+}
+
 /* Hero image — spans both rows on the left */
 .collage__hero {
   grid-column: 1;
