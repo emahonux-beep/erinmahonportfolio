@@ -25,7 +25,7 @@
             <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
             Back
           </sl-button>
-      <button type="button" class="hero-video-trigger" data-video-embed="https://docs.google.com/videos/d/1BEKjzUd_WBGk9kfXXhyDpN9V3bxopzI-5QizUn_XCYw/play?usp=sharing" data-video-title="Check Coverage — Case Study Walkthrough" style="position:absolute; top:110px; right:60px; z-index:1;">
+      <button type="button" class="hero-video-trigger" data-video-embed="https://docs.google.com/videos/d/1BEKjzUd_WBGk9kfXXhyDpN9V3bxopzI-5QizUn_XCYw/play?usp=sharing" data-video-title="Check Coverage — Case Study Walkthrough" style="position:absolute; top:110px; right:8px; z-index:1;">
         <span class="hero-video-trigger__badge" aria-hidden="true"><i class="ph-bold ph-play"></i></span>
         <span class="hero-video-trigger__label">Watch the walkthrough</span>
       </button>
@@ -238,28 +238,55 @@
     <div class="section__inner">
       <p class="label label--upper section-label">The Design Principles That Held</p>
       <h2 class="section-heading section-heading--lg">Less rules, more shared language.</h2>
+
+      <figure style="margin:var(--space-6) 0;">
+        <img src="/assets/cs-check-coverage-medication-detail.webp" alt="Medication detail page showing price, coverage status, and delivery options together" style="width:100%;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
+        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Price, coverage, and delivery options together — these principles, in the current experience</figcaption>
+      </figure>
+
       <div class="grid">
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">01</span>
         </div>
-        <div class="col-12 col-md-11 numbered-row">
+        <div class="col-12 col-md-7 numbered-row">
           <h3 style="margin-bottom:var(--space-3);">Lead with cost, support with explanation.</h3>
           <p class="body-md body--constrained">Price should be visible early. Members should not have to hunt for the number that matters most.</p>
         </div>
+        <div class="col-12 col-md-4 col--flex">
+          <figure style="margin:0;">
+            <img src="/assets/cs-check-coverage-limitations.webp" alt="Pharmacy pricing card showing a 30-day and 90-day supply, both covered with limitations" style="width:100%;border-radius:var(--radius-md);" loading="lazy" decoding="async" />
+            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);">Coverage nuance explained right beside the price</figcaption>
+          </figure>
+        </div>
+
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">02</span>
         </div>
-        <div class="col-12 col-md-11 numbered-row">
+        <div class="col-12 col-md-7 numbered-row">
           <h3 style="margin-bottom:var(--space-3);">Use familiar language, then explain nuance.</h3>
           <p class="body-md body--constrained">Start with words members already know. Earn the right to go deeper.</p>
         </div>
+        <div class="col-12 col-md-4 col--flex">
+          <figure style="margin:0;">
+            <img src="/assets/cs-check-coverage-not-covered.webp" alt="&quot;This medication is not covered&quot; message explaining why in plain language and pointing to alternatives" style="width:100%;border-radius:var(--radius-md);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
+            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);">Plain language, even in the hardest moment</figcaption>
+          </figure>
+        </div>
+
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">03</span>
         </div>
-        <div class="col-12 col-md-11 numbered-row">
+        <div class="col-12 col-md-7 numbered-row">
           <h3 style="margin-bottom:var(--space-3);">Treat comparison as the primary experience.</h3>
           <p class="body-md body--constrained">Comparison is not a feature. It is the job. The interface should make side-by-side evaluation the default.</p>
         </div>
+        <div class="col-12 col-md-4 col--flex">
+          <figure style="margin:0;">
+            <img src="/assets/cs-check-coverage-delivery-options.webp" alt="Delivery options screen comparing recommended pharmacies, 30-day and 90-day pickup, and home delivery" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-radius:var(--radius-md);" loading="lazy" decoding="async" />
+            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);">Options laid out for side-by-side comparison</figcaption>
+          </figure>
+        </div>
+
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">04</span>
         </div>
@@ -284,57 +311,6 @@
       <figure style="margin:0;">
         <img src="/assets/cs-check-coverage-pricing.webp" alt="Medication pricing and coverage detail, desktop and mobile" style="width:100%;object-fit:cover;border-radius:var(--radius-lg);" loading="lazy" decoding="async" />
         <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Medication pricing, visible up front on desktop and mobile</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- CURRENT EXPERIENCE: MEDICATION DETAIL -->
-  <section class="section section--sm bg-lav">
-    <div class="section__inner">
-      <p class="label label--upper section-label">The Experience Today</p>
-      <figure style="margin:0;">
-        <img src="/assets/cs-check-coverage-medication-detail.webp" alt="Medication detail page showing price, coverage status, and delivery options together" style="width:100%;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
-        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Price, coverage, and delivery options together on the medication detail page</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- IMAGE STRIP: COMPARISON + COVERAGE NUANCE -->
-  <section class="section section--sm bg-lav">
-    <div class="section__inner">
-      <div class="grid">
-        <div class="col-12 col-md-6">
-          <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-delivery-options.webp" alt="Delivery options screen comparing recommended pharmacies, 30-day and 90-day pickup, and home delivery" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:var(--radius-lg);" loading="lazy" decoding="async" />
-            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Delivery options laid out for side-by-side comparison</figcaption>
-          </figure>
-        </div>
-        <div class="col-12 col-md-6">
-          <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-limitations.webp" alt="Pharmacy pricing card showing a 30-day and 90-day supply, both covered with limitations" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-lg);" loading="lazy" decoding="async" />
-            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Coverage nuance explained in plain language, one tap away</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLAIN LANGUAGE MESSAGING -->
-  <section class="section section--sm bg-white">
-    <div class="section__inner">
-      <figure style="margin:0;max-width:760px;margin-inline:auto;">
-        <img src="/assets/cs-check-coverage-not-covered.webp" alt="&quot;This medication is not covered&quot; message explaining why in plain language and pointing to alternatives" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
-        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Plain-language messaging when a medication isn't covered</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- CROSS-CHANNEL REINFORCEMENT -->
-  <section class="section section--sm bg-lav">
-    <div class="section__inner">
-      <figure style="margin:0;max-width:320px;margin-inline:auto;">
-        <img src="/assets/cs-check-coverage-email.webp" alt="Email reminding members to compare coverage and costs, check savings opportunities, and find the right pharmacy" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
-        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Reinforcing the tool beyond the product, through lifecycle email</figcaption>
       </figure>
     </div>
   </section>
@@ -372,6 +348,12 @@
           <p class="body-md" style="margin-bottom: var(--space-5);">Most products get redesigned once and then drift. Check Coverage got sustained attention. Research that compounded, analytics that built on itself, design decisions that were made with the context of what came before.</p>
           <p class="body-md" style="margin-bottom: var(--space-5);">The strategic reframe. From disclosure to decision support, from benefit logic to shopping behavior. The pivot that made everything else possible. But the pivot only worked because there was enough accumulated understanding to make it with confidence.</p>
           <p class="body-md" class="body-md body--constrained">Designing in regulated spaces doesn't mean designing defensively. It means earning the right, over time, to make the experience simpler than the system behind it.</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <figure style="margin:0;max-width:280px;margin-inline:auto;">
+            <img src="/assets/cs-check-coverage-email.webp" alt="Email reminding members to compare coverage and costs, check savings opportunities, and find the right pharmacy" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
+            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Reinforcing the tool beyond the product, through lifecycle email</figcaption>
+          </figure>
         </div>
       </div>
     </div>
