@@ -150,48 +150,24 @@
 })();
 
 /* ----------------------------------------------------------
-   VIDEO WALKTHROUGH TRIGGER + MODAL
-   Reusable across any case study. Drop a trigger anywhere in
-   the page (typically near a hero illustration):
+   VIDEO EMBED
+   Reusable across any case study. Drop a container anywhere
+   in the page and it becomes a responsive, inline 16:9 player
+   on load — no click required:
 
-     <button type="button" class="hero-video-trigger"
-             data-video-embed="https://www.loom.com/share/XXXX"
-             data-video-title="Case Study — Walkthrough">
-       <span class="hero-video-trigger__badge" aria-hidden="true">
-         <i class="ph-bold ph-play"></i>
-       </span>
-       <span class="hero-video-trigger__label">Watch the walkthrough</span>
-     </button>
+     <div class="video-embed"
+          data-video-embed="https://www.loom.com/share/XXXX"
+          data-video-title="Case Study — Walkthrough"></div>
 
    data-video-embed accepts a normal share link from Loom,
-   YouTube, or Vimeo — it's normalized into an embeddable URL
-   automatically. Clicking opens a shared lightbox modal with
-   the video in a responsive 16:9 iframe.
+   YouTube, Vimeo, or Google Drive/Docs — it's normalized into
+   an embeddable URL automatically.
 ---------------------------------------------------------- */
 (function () {
   var style = document.createElement('style');
   style.textContent = [
-    '.hero-video-trigger{display:inline-flex;flex-direction:column;align-items:center;gap:var(--space-2,8px);width:104px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;text-align:center;}',
-    '.hero-video-trigger__badge{display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:var(--radius-full,9999px);background:var(--rose-400,#e41445);color:var(--white,#fff);font-size:1.3rem;box-shadow:var(--shadow-md,0 4px 8px rgba(0,0,0,.08),0 8px 20px rgba(0,0,0,.14));transition:transform .2s ease,box-shadow .2s ease;flex-shrink:0;}',
-    '.hero-video-trigger__badge i{margin-left:3px;}', /* optically center the play glyph */
-    '.hero-video-trigger:hover .hero-video-trigger__badge,.hero-video-trigger:focus-visible .hero-video-trigger__badge{transform:scale(1.06);box-shadow:var(--shadow-lg,0 8px 16px rgba(0,0,0,.12),0 20px 40px rgba(0,0,0,.18));}',
-    '.hero-video-trigger:focus-visible{outline:2px solid var(--rose-400,#e41445);outline-offset:4px;border-radius:var(--radius-md,14px);}',
-    '.hero-video-trigger__label{font-family:var(--font-ui,"DM Mono",monospace);font-size:.6875rem;line-height:1.3;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-400,#222);background:var(--white,#fff);padding:6px 10px;border-radius:var(--radius-md,14px);box-shadow:var(--shadow-sm,0 3px 6px rgba(0,0,0,.07),0 6px 12px rgba(0,0,0,.12));}',
-    '.hero-video-slot{align-items:center;justify-content:center;}',
-    '@media (max-width:640px){' +
-      '.hero-video-slot{justify-content:flex-start;}' +
-      '.hero-video-trigger{position:static !important;flex-direction:row;width:auto;gap:8px;margin:var(--space-5,24px) 0 0;background:var(--rose-400,#e41445);padding:8px 16px 8px 10px;border-radius:var(--radius-full,9999px);box-shadow:var(--shadow-sm,0 3px 6px rgba(0,0,0,.07),0 6px 12px rgba(0,0,0,.12));}' +
-      '.hero-video-trigger__badge{width:24px;height:24px;background:none;box-shadow:none;color:var(--white,#fff);font-size:.85rem;}' +
-      '.hero-video-trigger__label{background:none;box-shadow:none;padding:0;color:var(--white,#fff);}' +
-    '}',
-    '.video-modal{position:fixed;inset:0;z-index:9990;display:none;align-items:center;justify-content:center;padding:24px;}',
-    '.video-modal.is-open{display:flex;}',
-    '.video-modal__backdrop{position:absolute;inset:0;background:rgba(20,18,24,.72);}',
-    '.video-modal__dialog{position:relative;width:100%;max-width:960px;background:var(--slate-500,#161616);border-radius:var(--radius-lg,22px);overflow:hidden;box-shadow:var(--shadow-lg,0 8px 16px rgba(0,0,0,.12),0 20px 40px rgba(0,0,0,.18));}',
-    '.video-modal__close{position:absolute;top:12px;right:12px;z-index:1;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:var(--radius-full,9999px);background:rgba(255,255,255,.12);color:#fff;border:none;cursor:pointer;font-size:1.1rem;transition:background .2s ease;}',
-    '.video-modal__close:hover,.video-modal__close:focus-visible{background:rgba(255,255,255,.22);}',
-    '.video-modal__frame-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;}',
-    '.video-modal__frame-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}'
+    '.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:var(--slate-500,#161616);border-radius:var(--radius-lg,22px);overflow:hidden;box-shadow:var(--shadow-lg,0 8px 16px rgba(0,0,0,.12),0 20px 40px rgba(0,0,0,.18));}',
+    '.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}'
   ].join('');
   document.head.appendChild(style);
 
@@ -232,61 +208,15 @@
     }
   }
 
-  var modal, iframeWrap, closeBtn, lastFocused;
-
-  function buildModal() {
-    modal = document.createElement('div');
-    modal.className = 'video-modal';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.innerHTML =
-      '<div class="video-modal__backdrop" data-video-close></div>' +
-      '<div class="video-modal__dialog">' +
-        '<button type="button" class="video-modal__close" data-video-close aria-label="Close video">' +
-          '<i class="ph-bold ph-x" aria-hidden="true"></i>' +
-        '</button>' +
-        '<div class="video-modal__frame-wrap"></div>' +
-      '</div>';
-    document.body.appendChild(modal);
-    iframeWrap = modal.querySelector('.video-modal__frame-wrap');
-    closeBtn = modal.querySelector('.video-modal__close');
-
-    modal.querySelectorAll('[data-video-close]').forEach(function (el) {
-      el.addEventListener('click', closeModal);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-    });
-  }
-
-  function openModal(embedUrl, title) {
-    if (!modal) buildModal();
-    lastFocused = document.activeElement;
-    var iframe = document.createElement('iframe');
-    iframe.src = toEmbedUrl(embedUrl);
-    iframe.title = title || 'Video walkthrough';
-    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-    iframe.allowFullscreen = true;
-    iframeWrap.innerHTML = '';
-    iframeWrap.appendChild(iframe);
-    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    closeBtn.focus();
-  }
-
-  function closeModal() {
-    if (!modal) return;
-    modal.classList.remove('is-open');
-    iframeWrap.innerHTML = ''; // stop playback
-    document.body.style.overflow = '';
-    if (lastFocused && lastFocused.focus) lastFocused.focus();
-  }
-
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('[data-video-embed]').forEach(function (trigger) {
-      trigger.addEventListener('click', function () {
-        openModal(trigger.getAttribute('data-video-embed'), trigger.getAttribute('data-video-title'));
-      });
+    document.querySelectorAll('.video-embed[data-video-embed]').forEach(function (host) {
+      var iframe = document.createElement('iframe');
+      iframe.src = toEmbedUrl(host.getAttribute('data-video-embed'));
+      iframe.title = host.getAttribute('data-video-title') || 'Video walkthrough';
+      iframe.loading = 'lazy';
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.allowFullscreen = true;
+      host.appendChild(iframe);
     });
   });
 })();
