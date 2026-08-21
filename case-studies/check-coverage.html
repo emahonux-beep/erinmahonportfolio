@@ -34,7 +34,7 @@
             <sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
           </div>
         </div>
-        <div class="col-12 col-md-5 col--flex" style="align-items:center; justify-content:center;">
+        <div class="col-12 col-md-5 col--flex hero-video-slot">
           <button type="button" class="hero-video-trigger" data-video-embed="https://docs.google.com/videos/d/1BEKjzUd_WBGk9kfXXhyDpN9V3bxopzI-5QizUn_XCYw/play?usp=sharing" data-video-title="Check Coverage — Case Study Walkthrough">
             <span class="hero-video-trigger__badge" aria-hidden="true"><i class="ph-bold ph-play"></i></span>
             <span class="hero-video-trigger__label">Watch the walkthrough</span>
@@ -121,7 +121,14 @@
         </div>
         <div class="col-12 col-md-5">
           <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-legacy.webp" alt="Legacy Price a Medication flow screenshot" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);"  loading="lazy" decoding="async" />
+            <div class="browser-mockup">
+              <div class="browser-mockup__bar" aria-hidden="true">
+                <span class="browser-mockup__dot"></span>
+                <span class="browser-mockup__dot"></span>
+                <span class="browser-mockup__dot"></span>
+              </div>
+              <img src="/assets/cs-check-coverage-delivery-options.webp" alt="Legacy Price a Medication flow — delivery options screen on the original Express Scripts interface" class="browser-mockup__img" style="aspect-ratio:4/3;" loading="lazy" decoding="async" />
+            </div>
             <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Legacy "Price a Medication" flow</figcaption>
           </figure>
         </div>
@@ -278,15 +285,9 @@
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">03</span>
         </div>
-        <div class="col-12 col-md-7 numbered-row">
+        <div class="col-12 col-md-11 numbered-row">
           <h3 style="margin-bottom:var(--space-3);">Treat comparison as the primary experience.</h3>
           <p class="body-md body--constrained">Comparison is not a feature. It is the job. The interface should make side-by-side evaluation the default.</p>
-        </div>
-        <div class="col-12 col-md-4 col--flex">
-          <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-delivery-options.webp" alt="Delivery options screen comparing recommended pharmacies, 30-day and 90-day pickup, and home delivery" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border-radius:var(--radius-md);" loading="lazy" decoding="async" />
-            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);">Options laid out for side-by-side comparison</figcaption>
-          </figure>
         </div>
 
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">

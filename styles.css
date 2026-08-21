@@ -4146,6 +4146,44 @@ section.hero.bg-lav .meta {
 
 
 /* ============================================================
+   BROWSER MOCKUP — wraps a screenshot in a lightweight browser
+   chrome (dot bar) so product screenshots read as "the tool" in
+   context rather than a bare cropped image.
+   ============================================================ */
+.browser-mockup {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.browser-mockup__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--slate-50);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.browser-mockup__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: var(--slate-200);
+  flex-shrink: 0;
+}
+
+.browser-mockup__img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+
+/* ============================================================
    BACKGROUND ILLUSTRATIONS — decorative brand doodles
    Absolutely positioned, non-interactive, low-opacity flourishes.
    Parent needs .illo-host (position:relative + overflow:hidden).
