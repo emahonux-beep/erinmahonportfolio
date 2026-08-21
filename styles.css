@@ -4459,6 +4459,13 @@ section.hero.bg-lav .meta {
   padding: var(--space-8) 0 var(--space-10);
 }
 
+/* Showcase background — a soft, on-brand gradient so a device
+   gallery reads as its own distinct section rather than blending
+   into the flat bg-lav/bg-white of the sections around it. */
+.gallery--showcase {
+  background: linear-gradient(135deg, var(--rose-50) 0%, var(--lav-50) 55%, var(--sage-50) 100%);
+}
+
 .gallery__track {
   display: flex;
   flex-wrap: wrap;
