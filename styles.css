@@ -4423,6 +4423,72 @@ section.hero.bg-lav .meta {
   }
 }
 
+/* Devices variant — pre-rendered laptop/phone mockup PNGs (transparent
+   background, shadow and bezel already baked in). Shown at natural
+   proportions instead of cropped into a uniform frame. */
+.gallery--devices .gallery__track {
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 640px) {
+  .gallery--devices .gallery__track {
+    flex-wrap: wrap;
+  }
+}
+
+.gallery--devices .gallery__item {
+  aspect-ratio: auto;
+  background: none;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  display: block;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.gallery--devices .gallery__item:hover {
+  box-shadow: none;
+}
+
+.gallery--devices .gallery__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex: none;
+  object-fit: contain;
+}
+
+.gallery--devices .gallery__item--laptop {
+  width: 300px;
+  margin: var(--space-4) -30px;
+}
+
+.gallery--devices .gallery__item--phone {
+  width: 120px;
+  margin: var(--space-4) -14px;
+}
+
+.gallery--devices .gallery__track > .gallery__item:first-child {
+  margin-left: 0;
+}
+
+.gallery--devices .gallery__track > .gallery__item:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 640px) {
+  .gallery--devices .gallery__item--laptop {
+    width: 220px;
+    margin: var(--space-3) -20px;
+  }
+  .gallery--devices .gallery__item--phone {
+    width: 92px;
+    margin: var(--space-3) -10px;
+  }
+}
+
 
 /* ============================================================
    BACKGROUND ILLUSTRATIONS — decorative brand doodles
