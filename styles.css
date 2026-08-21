@@ -4281,6 +4281,150 @@ section.hero.bg-lav .meta {
 
 
 /* ============================================================
+   GALLERY — a fanned, overlapping showcase of several screens
+   in one composition, instead of one image per block of text.
+   Each .gallery__item takes an inline --rot / --lift pair for a
+   hand-arranged scatter; hover lifts it to the front.
+   ============================================================ */
+.gallery {
+  padding: var(--space-8) 0 var(--space-10);
+}
+
+.gallery__track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-5);
+  row-gap: var(--space-8);
+}
+
+.gallery__item {
+  --rot: 0deg;
+  --lift: 0px;
+  position: relative;
+  width: 200px;
+  aspect-ratio: 3/4;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  margin: var(--space-5) -22px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+  transform: rotate(var(--rot)) translateY(var(--lift));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Device chrome — a small dot-bar header so each screen reads as
+   an actual browser/app window, not a bare cropped image. */
+.gallery__item-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 9px;
+  background: var(--slate-50);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.gallery__item-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--slate-200);
+  flex-shrink: 0;
+}
+
+.gallery__item:hover {
+  transform: rotate(0deg) translateY(calc(var(--lift) - 10px)) scale(1.05);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-subtle);
+  z-index: 5;
+}
+
+.gallery__item img {
+  display: block;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: cover;
+  object-position: top;
+}
+
+.gallery--legacy .gallery__item img {
+  filter: grayscale(55%) contrast(0.95);
+  transition: filter 0.25s ease;
+}
+
+.gallery--legacy .gallery__item:hover img {
+  filter: grayscale(0%);
+}
+
+.gallery__caption {
+  text-align: center;
+  color: var(--slate-300);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* Once cards wrap onto multiple rows, drop the vertical lift so a
+   lifted card from one row can't overlap/clip the row above it. */
+@media (max-width: 900px) {
+  .gallery__item {
+    transform: rotate(var(--rot));
+  }
+  .gallery__item:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery__item {
+    width: 132px;
+    margin: var(--space-4) -16px;
+  }
+}
+
+/* Loose variant — for content that needs to stay fully readable
+   (e.g. lo-fi concept sketches), so less overlap and no forced crop. */
+.gallery--loose .gallery__item {
+  width: 240px;
+  aspect-ratio: auto;
+  margin: var(--space-5) 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery--loose .gallery__item:hover {
+  transform: rotate(0deg) translateY(calc(var(--lift) - 6px));
+}
+
+@media (max-width: 900px) {
+  .gallery--loose .gallery__item:hover {
+    transform: rotate(0deg);
+  }
+}
+
+.gallery--loose .gallery__caption-item {
+  text-align: center;
+  color: var(--slate-300);
+  padding: var(--space-2) var(--space-3);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .gallery--loose .gallery__item {
+    width: 200px;
+    margin: var(--space-4) -4px;
+  }
+}
+
+
+/* ============================================================
    BACKGROUND ILLUSTRATIONS — decorative brand doodles
    Absolutely positioned, non-interactive, low-opacity flourishes.
    Parent needs .illo-host (position:relative + overflow:hidden).
