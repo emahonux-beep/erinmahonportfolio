@@ -25,18 +25,20 @@
             <span slot="prefix"><i class="ph ph-arrow-left" aria-hidden="true"></i></span>
             Back
           </sl-button>
-      <button type="button" class="hero-video-trigger" data-video-embed="https://docs.google.com/videos/d/1BEKjzUd_WBGk9kfXXhyDpN9V3bxopzI-5QizUn_XCYw/play?usp=sharing" data-video-title="Check Coverage — Case Study Walkthrough" style="position:absolute; top:110px; right:60px; z-index:1;">
-        <span class="hero-video-trigger__badge" aria-hidden="true"><i class="ph-bold ph-play"></i></span>
-        <span class="hero-video-trigger__label">Watch the walkthrough</span>
-      </button>
       <div class="grid">
-        <div class="col-12">
+        <div class="col-12 col-md-7">
           <h1 class="hero__title">Check Coverage</h1>
           <p class="body-xl hero__body">Check Coverage started as a compliance obligation. It became something members actually relied on. That shift didn't happen in a single sprint — it happened over three years of research, analytics, and design decisions that kept moving the product closer to how members actually think.</p>
           <div class="tag-group hero__tags">
             <sl-tag variant="neutral" size="small">Healthcare</sl-tag>
             <sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
           </div>
+        </div>
+        <div class="col-12 col-md-5 col--flex hero-video-slot">
+          <button type="button" class="hero-video-trigger" data-video-embed="https://docs.google.com/videos/d/1BEKjzUd_WBGk9kfXXhyDpN9V3bxopzI-5QizUn_XCYw/play?usp=sharing" data-video-title="Check Coverage — Case Study Walkthrough">
+            <span class="hero-video-trigger__badge" aria-hidden="true"><i class="ph-bold ph-play"></i></span>
+            <span class="hero-video-trigger__label">Watch the walkthrough</span>
+          </button>
         </div>
         <div class="col-12 col-md-4 col--flex">
           <sl-card class="card--meta">
@@ -119,7 +121,14 @@
         </div>
         <div class="col-12 col-md-5">
           <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-legacy.webp" alt="Legacy Price a Medication flow screenshot" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);"  loading="lazy" decoding="async" />
+            <div class="browser-mockup">
+              <div class="browser-mockup__bar" aria-hidden="true">
+                <span class="browser-mockup__dot"></span>
+                <span class="browser-mockup__dot"></span>
+                <span class="browser-mockup__dot"></span>
+              </div>
+              <img src="/assets/cs-check-coverage-delivery-options.webp" alt="Legacy Price a Medication flow — delivery options screen on the original Express Scripts interface" class="browser-mockup__img" style="aspect-ratio:4/3;" loading="lazy" decoding="async" />
+            </div>
             <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Legacy "Price a Medication" flow</figcaption>
           </figure>
         </div>
@@ -238,21 +247,41 @@
     <div class="section__inner">
       <p class="label label--upper section-label">The Design Principles That Held</p>
       <h2 class="section-heading section-heading--lg">Less rules, more shared language.</h2>
+
+      <figure style="margin:var(--space-6) 0;">
+        <img src="/assets/cs-check-coverage-medication-detail.webp" alt="Medication detail page showing price, coverage status, and delivery options together" style="width:100%;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
+        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Price, coverage, and delivery options together — these principles, in the current experience</figcaption>
+      </figure>
+
       <div class="grid">
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">01</span>
         </div>
-        <div class="col-12 col-md-11 numbered-row">
+        <div class="col-12 col-md-7 numbered-row">
           <h3 style="margin-bottom:var(--space-3);">Lead with cost, support with explanation.</h3>
           <p class="body-md body--constrained">Price should be visible early. Members should not have to hunt for the number that matters most.</p>
         </div>
+        <div class="col-12 col-md-4 col--flex">
+          <figure style="margin:0;">
+            <img src="/assets/cs-check-coverage-limitations.webp" alt="Pharmacy pricing card showing a 30-day and 90-day supply, both covered with limitations" style="width:100%;border-radius:var(--radius-md);" loading="lazy" decoding="async" />
+            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);">Coverage nuance explained right beside the price</figcaption>
+          </figure>
+        </div>
+
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">02</span>
         </div>
-        <div class="col-12 col-md-11 numbered-row">
+        <div class="col-12 col-md-7 numbered-row">
           <h3 style="margin-bottom:var(--space-3);">Use familiar language, then explain nuance.</h3>
           <p class="body-md body--constrained">Start with words members already know. Earn the right to go deeper.</p>
         </div>
+        <div class="col-12 col-md-4 col--flex">
+          <figure style="margin:0;">
+            <img src="/assets/cs-check-coverage-not-covered.webp" alt="&quot;This medication is not covered&quot; message explaining why in plain language and pointing to alternatives" style="width:100%;border-radius:var(--radius-md);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
+            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);">Plain language, even in the hardest moment</figcaption>
+          </figure>
+        </div>
+
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">03</span>
         </div>
@@ -260,6 +289,7 @@
           <h3 style="margin-bottom:var(--space-3);">Treat comparison as the primary experience.</h3>
           <p class="body-md body--constrained">Comparison is not a feature. It is the job. The interface should make side-by-side evaluation the default.</p>
         </div>
+
         <div class="col-12 col-md-1 col--flex" style="align-items:flex-start;padding-top:var(--space-2);">
           <span class="numbered-row__num">04</span>
         </div>
@@ -284,57 +314,6 @@
       <figure style="margin:0;">
         <img src="/assets/cs-check-coverage-pricing.webp" alt="Medication pricing and coverage detail, desktop and mobile" style="width:100%;object-fit:cover;border-radius:var(--radius-lg);" loading="lazy" decoding="async" />
         <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Medication pricing, visible up front on desktop and mobile</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- CURRENT EXPERIENCE: MEDICATION DETAIL -->
-  <section class="section section--sm bg-lav">
-    <div class="section__inner">
-      <p class="label label--upper section-label">The Experience Today</p>
-      <figure style="margin:0;">
-        <img src="/assets/cs-check-coverage-medication-detail.webp" alt="Medication detail page showing price, coverage status, and delivery options together" style="width:100%;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
-        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-3);text-align:center;">Price, coverage, and delivery options together on the medication detail page</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- IMAGE STRIP: COMPARISON + COVERAGE NUANCE -->
-  <section class="section section--sm bg-lav">
-    <div class="section__inner">
-      <div class="grid">
-        <div class="col-12 col-md-6">
-          <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-delivery-options.webp" alt="Delivery options screen comparing recommended pharmacies, 30-day and 90-day pickup, and home delivery" style="width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:var(--radius-lg);" loading="lazy" decoding="async" />
-            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Delivery options laid out for side-by-side comparison</figcaption>
-          </figure>
-        </div>
-        <div class="col-12 col-md-6">
-          <figure style="margin:0;">
-            <img src="/assets/cs-check-coverage-limitations.webp" alt="Pharmacy pricing card showing a 30-day and 90-day supply, both covered with limitations" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-lg);" loading="lazy" decoding="async" />
-            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Coverage nuance explained in plain language, one tap away</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLAIN LANGUAGE MESSAGING -->
-  <section class="section section--sm bg-white">
-    <div class="section__inner">
-      <figure style="margin:0;max-width:760px;margin-inline:auto;">
-        <img src="/assets/cs-check-coverage-not-covered.webp" alt="&quot;This medication is not covered&quot; message explaining why in plain language and pointing to alternatives" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
-        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Plain-language messaging when a medication isn't covered</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- CROSS-CHANNEL REINFORCEMENT -->
-  <section class="section section--sm bg-lav">
-    <div class="section__inner">
-      <figure style="margin:0;max-width:320px;margin-inline:auto;">
-        <img src="/assets/cs-check-coverage-email.webp" alt="Email reminding members to compare coverage and costs, check savings opportunities, and find the right pharmacy" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
-        <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Reinforcing the tool beyond the product, through lifecycle email</figcaption>
       </figure>
     </div>
   </section>
@@ -373,11 +352,107 @@
           <p class="body-md" style="margin-bottom: var(--space-5);">The strategic reframe. From disclosure to decision support, from benefit logic to shopping behavior. The pivot that made everything else possible. But the pivot only worked because there was enough accumulated understanding to make it with confidence.</p>
           <p class="body-md" class="body-md body--constrained">Designing in regulated spaces doesn't mean designing defensively. It means earning the right, over time, to make the experience simpler than the system behind it.</p>
         </div>
+        <div class="col-12 col-md-4">
+          <figure style="margin:0;max-width:280px;margin-inline:auto;">
+            <img src="/assets/cs-check-coverage-email.webp" alt="Email reminding members to compare coverage and costs, check savings opportunities, and find the right pharmacy" style="width:100%;border-radius:var(--radius-lg);border:1px solid var(--border-subtle);" loading="lazy" decoding="async" />
+            <figcaption class="body-xs" style="color:var(--slate-300);margin-top:var(--space-2);text-align:center;">Reinforcing the tool beyond the product, through lifecycle email</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- NEXT PROJECT -->
+  <!-- NEXT STEPS -->
+  <section class="section bg-white">
+    <div class="section__inner">
+      <div class="grid">
+        <div class="col-12 col-md-8">
+          <p class="label label--upper section-label">What's Next</p>
+          <h2 class="section-heading">Knowing isn't always enough. The next horizon is what to do about it.</h2>
+          <p class="body-md body--constrained">Three years of research kept surfacing the same gap: members don't just need to know whether something's covered — they need a path forward when it isn't, or when it's covered with strings attached. These are the directions scoped next, each grounded in a pattern the data made hard to ignore.</p>
+        </div>
+      </div>
+      <div class="grid" style="margin-top:var(--space-6);">
+
+        <!-- Concept 1: cash-price fallback when nothing's covered -->
+        <div class="col-12 col-md-6 col--flex">
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <span class="lofi-badge lofi-badge--rose"><i class="ph-bold ph-x-circle" aria-hidden="true"></i> Not covered</span>
+              <div class="lofi-bar" style="width:75%;"></div>
+              <div class="lofi-bar" style="width:50%;"></div>
+              <div class="lofi-divider">
+                <div class="lofi-bar" style="width:45%;background:var(--slate-200);margin-bottom:8px;"></div>
+                <div class="lofi-price">$42<span style="font-size:1rem;">.00</span></div>
+              </div>
+              <span class="lofi-btn">Fill at this price</span>
+            </div>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>A path when nothing's covered.</strong> A cash-price fallback turns a dead end into an informed choice.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Concept 2: name the path (step therapy vs. prior auth) -->
+        <div class="col-12 col-md-6 col--flex">
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <div class="lofi-bar lofi-bar--lg" style="width:60%;"></div>
+              <div class="lofi-row">
+                <span class="lofi-radio lofi-radio--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span>
+                <div style="flex:1;">
+                  <div class="lofi-bar" style="width:55%;margin-bottom:6px;"></div>
+                  <div class="lofi-bar" style="width:80%;height:6px;"></div>
+                </div>
+              </div>
+              <div class="lofi-row">
+                <span class="lofi-radio"></span>
+                <div style="flex:1;">
+                  <div class="lofi-bar" style="width:65%;margin-bottom:6px;"></div>
+                  <div class="lofi-bar" style="width:75%;height:6px;"></div>
+                </div>
+              </div>
+              <span class="lofi-btn" style="margin-top:auto;">Continue</span>
+            </div>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>Name the path, not just the block.</strong> Step therapy and prior authorization are different asks — say which one applies.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Concept 3: proactive savings nudge -->
+        <div class="col-12 col-md-6 col--flex">
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <span class="lofi-badge lofi-badge--lav"><i class="ph-bold ph-sparkle" aria-hidden="true"></i> Smart recommendation</span>
+              <div class="lofi-bar" style="width:85%;"></div>
+              <div class="lofi-bar" style="width:60%;"></div>
+              <div style="display:flex;flex-direction:column;gap:10px;margin-top:var(--space-2);">
+                <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:70%;"></div></div>
+                <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:55%;"></div></div>
+                <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:62%;"></div></div>
+              </div>
+            </div>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>Surface savings before members ask.</strong> Notice the search, then proactively suggest alternatives and connected benefits.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Concept 4: multi-part coverage criteria, made visible -->
+        <div class="col-12 col-md-6 col--flex">
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <div class="lofi-bar lofi-bar--lg" style="width:65%;"></div>
+              <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:60%;"></div></div>
+              <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:70%;"></div></div>
+              <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:50%;"></div></div>
+              <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:65%;"></div></div>
+              <span class="lofi-btn" style="margin-top:auto;">Next step</span>
+            </div>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>Make coverage criteria visible.</strong> For therapies like GLP-1s, show what's met and what remains — not just a flag.</figcaption>
+          </figure>
+        </div>
+
+      </div>
+      <p class="body-xs" style="color:var(--slate-300);margin-top:var(--space-6);">These directions are scoped, not shipped — the next phase of Check Coverage's continuous research loop.</p>
+    </div>
+  </section>
+
   <!-- DISCLAIMER -->
   <section class="section section--sm bg-white"><div class="section__inner">
     <p class="body-xs" style="color:var(--slate-300);max-width:70ch;margin-inline:auto;text-align:center;">Some images in this case study are screenshots from my personal Express Scripts account, shown to illustrate real interface details. Names, dates of birth, and provider contact information have been redacted to protect my privacy and the privacy of others.</p>
