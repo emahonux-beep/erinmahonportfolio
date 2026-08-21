@@ -88,3 +88,8 @@ sl-card.card--meta .icon-badge {
 sl-card.card--meta .label {
   margin-bottom: var(--space-2);
 }
+@media (max-width: 600px) {
+  sl-card.card--meta::part(base) {
+    padding: var(--card-padding-mobile);
+  }
+}
