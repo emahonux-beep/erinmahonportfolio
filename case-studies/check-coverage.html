@@ -34,9 +34,8 @@
             <sl-tag variant="neutral" size="small">Express Scripts</sl-tag>
           </div>
         </div>
-        <div class="col-12 col-md-5">
-          <p class="label label--upper" style="margin-bottom:var(--space-3);">Watch the walkthrough</p>
-          <div class="video-embed" data-video-embed="https://docs.google.com/videos/d/1BEKjzUd_WBGk9kfXXhyDpN9V3bxopzI-5QizUn_XCYw/play?usp=sharing" data-video-title="Check Coverage — Case Study Walkthrough"></div>
+        <div class="col-12 col-md-5 col--flex" style="align-items:center;">
+          <div class="video-embed" data-video-embed="https://docs.google.com/videos/d/1BEKjzUd_WBGk9kfXXhyDpN9V3bxopzI-5QizUn_XCYw/play?usp=sharing" data-video-title="Check Coverage — Case Study Walkthrough" style="width:100%;"></div>
         </div>
         <div class="col-12 col-md-4 col--flex">
           <sl-card class="card--meta">
@@ -383,66 +382,71 @@
 
         <!-- Concept 1: cash-price fallback when nothing's covered -->
         <div class="gallery__item" style="--rot:-4deg;--lift:14px;">
-          <div class="lofi-mockup">
-            <span class="lofi-badge lofi-badge--rose"><i class="ph-bold ph-x-circle" aria-hidden="true"></i> Not covered</span>
-            <div class="lofi-bar" style="width:75%;"></div>
-            <div class="lofi-bar" style="width:50%;"></div>
-            <div class="lofi-divider">
-              <div class="lofi-bar" style="width:45%;background:var(--slate-200);margin-bottom:8px;"></div>
-              <div class="lofi-price">$42<span style="font-size:1rem;">.00</span></div>
+          <div class="midfi-mockup">
+            <div class="midfi-results-row">
+              <div class="midfi-result-chip">
+                <span class="midfi-result-chip__label">Price unavailable</span>
+                <span class="midfi-result-chip__status">Not covered</span>
+              </div>
+              <div class="midfi-result-chip">
+                <span class="midfi-result-chip__label">$1,000.00</span>
+                <span class="midfi-result-chip__status">Not covered</span>
+              </div>
             </div>
-            <span class="lofi-btn">Fill at this price</span>
+            <i class="ph-bold ph-arrow-down midfi-arrow" aria-hidden="true"></i>
+            <div class="midfi-resolution">
+              <p class="body-xs">You can fill outside your plan and pay the estimated cash price at this pharmacy. Tell the pharmacist you would still like to fill.</p>
+            </div>
           </div>
           <p class="body-xs gallery__caption-item">A path when nothing's covered</p>
         </div>
 
         <!-- Concept 2: name the path (step therapy vs. prior auth) -->
         <div class="gallery__item" style="--rot:3deg;--lift:-10px;">
-          <div class="lofi-mockup">
-            <div class="lofi-bar lofi-bar--lg" style="width:60%;"></div>
-            <div class="lofi-row">
-              <span class="lofi-radio lofi-radio--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span>
-              <div style="flex:1;">
-                <div class="lofi-bar" style="width:55%;margin-bottom:6px;"></div>
-                <div class="lofi-bar" style="width:80%;height:6px;"></div>
-              </div>
-            </div>
-            <div class="lofi-row">
-              <span class="lofi-radio"></span>
-              <div style="flex:1;">
-                <div class="lofi-bar" style="width:65%;margin-bottom:6px;"></div>
-                <div class="lofi-bar" style="width:75%;height:6px;"></div>
-              </div>
-            </div>
-            <span class="lofi-btn" style="margin-top:auto;">Continue</span>
+          <div class="midfi-mockup">
+            <h4 class="midfi-heading">How to get covered?</h4>
+            <label class="midfi-radio-row midfi-radio-row--selected">
+              <span class="midfi-radio midfi-radio--on"></span>
+              Step therapy
+            </label>
+            <label class="midfi-radio-row">
+              <span class="midfi-radio"></span>
+              Prior authorization
+            </label>
+            <div class="midfi-divider-line"></div>
+            <p class="midfi-heading midfi-heading--sm">This medication is not covered.</p>
+            <p class="body-xs" style="color:var(--slate-300);">Your plan does not have this medication on the formulary. Check alternatives to find another covered treatment option.</p>
           </div>
           <p class="body-xs gallery__caption-item">Name the path, not just the block</p>
         </div>
 
         <!-- Concept 3: proactive savings nudge -->
         <div class="gallery__item" style="--rot:-2deg;--lift:10px;">
-          <div class="lofi-mockup">
-            <span class="lofi-badge lofi-badge--lav"><i class="ph-bold ph-sparkle" aria-hidden="true"></i> Smart recommendation</span>
-            <div class="lofi-bar" style="width:85%;"></div>
-            <div class="lofi-bar" style="width:60%;"></div>
-            <div style="display:flex;flex-direction:column;gap:10px;margin-top:var(--space-2);">
-              <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:70%;"></div></div>
-              <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:55%;"></div></div>
-              <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:62%;"></div></div>
+          <div class="midfi-mockup">
+            <div class="midfi-icon-heading">
+              <i class="ph-bold ph-sparkle" aria-hidden="true"></i>
+              <h4 class="midfi-heading">Smart recommendation</h4>
             </div>
+            <p class="body-xs" style="color:var(--slate-300);">We noticed you were searching for GLPs today. You can do the following to reduce your costs:</p>
+            <ul class="midfi-list">
+              <li>View alternatives</li>
+              <li>Enroll in savings program</li>
+              <li>Move with Peloton</li>
+              <li>Meet with a nutritionist</li>
+            </ul>
           </div>
           <p class="body-xs gallery__caption-item">Surface savings before members ask</p>
         </div>
 
         <!-- Concept 4: multi-part coverage criteria, made visible -->
         <div class="gallery__item" style="--rot:5deg;--lift:-12px;">
-          <div class="lofi-mockup">
-            <div class="lofi-bar lofi-bar--lg" style="width:65%;"></div>
-            <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:60%;"></div></div>
-            <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:70%;"></div></div>
-            <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:50%;"></div></div>
-            <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:65%;"></div></div>
-            <span class="lofi-btn" style="margin-top:auto;">Next step</span>
+          <div class="midfi-mockup">
+            <h4 class="midfi-heading">Criteria for GLP</h4>
+            <div class="midfi-check-row midfi-check-row--on"><span class="midfi-checkbox midfi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span> BMI of 31 or greater</div>
+            <div class="midfi-check-row midfi-check-row--on"><span class="midfi-checkbox midfi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span> Condition</div>
+            <div class="midfi-check-row midfi-check-row--on"><span class="midfi-checkbox midfi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span> Omada enrollment</div>
+            <div class="midfi-check-row"><span class="midfi-checkbox"></span> Omada engagement</div>
+            <span class="midfi-btn midfi-btn--secondary" style="margin-top:auto;">Go to Omada</span>
           </div>
           <p class="body-xs gallery__caption-item">Make coverage criteria visible</p>
         </div>

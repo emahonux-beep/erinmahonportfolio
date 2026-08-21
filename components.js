@@ -151,9 +151,10 @@
 
 /* ----------------------------------------------------------
    VIDEO EMBED
-   Reusable across any case study. Drop a container anywhere
-   in the page and it becomes a responsive, inline 16:9 player
-   on load — no click required:
+   Reusable across any case study. Drop a container anywhere in
+   the page and it becomes a responsive, click-to-play 16:9
+   player — a poster with a brand-colored play button until
+   clicked, then the real embed loads:
 
      <div class="video-embed"
           data-video-embed="https://www.loom.com/share/XXXX"
@@ -161,13 +162,19 @@
 
    data-video-embed accepts a normal share link from Loom,
    YouTube, Vimeo, or Google Drive/Docs — it's normalized into
-   an embeddable URL automatically.
+   an embeddable URL automatically. Optional data-video-poster
+   sets a background image for the facade.
 ---------------------------------------------------------- */
 (function () {
   var style = document.createElement('style');
   style.textContent = [
-    '.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:var(--slate-500,#161616);border-radius:var(--radius-lg,22px);overflow:hidden;box-shadow:var(--shadow-lg,0 8px 16px rgba(0,0,0,.12),0 20px 40px rgba(0,0,0,.18));}',
-    '.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}'
+    '.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:var(--slate-500,#161616) center/cover no-repeat;border-radius:var(--radius-lg,22px);overflow:hidden;box-shadow:var(--shadow-lg,0 8px 16px rgba(0,0,0,.12),0 20px 40px rgba(0,0,0,.18));}',
+    '.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}',
+    '.video-embed__play{position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:rgba(20,18,24,.22);border:none;padding:0;cursor:pointer;}',
+    '.video-embed__play-badge{display:flex;align-items:center;justify-content:center;width:76px;height:76px;border-radius:var(--radius-full,9999px);background:var(--rose-400,#e41445);color:var(--white,#fff);font-size:1.7rem;box-shadow:var(--shadow-lg,0 8px 16px rgba(0,0,0,.12),0 20px 40px rgba(0,0,0,.18));transition:transform .2s ease,box-shadow .2s ease;}',
+    '.video-embed__play-badge i{margin-left:4px;}', /* optically center the play glyph */
+    '.video-embed__play:hover .video-embed__play-badge,.video-embed__play:focus-visible .video-embed__play-badge{transform:scale(1.08);}',
+    '.video-embed__play:focus-visible{outline:2px solid var(--rose-400,#e41445);outline-offset:4px;}'
   ].join('');
   document.head.appendChild(style);
 
@@ -210,13 +217,26 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.video-embed[data-video-embed]').forEach(function (host) {
-      var iframe = document.createElement('iframe');
-      iframe.src = toEmbedUrl(host.getAttribute('data-video-embed'));
-      iframe.title = host.getAttribute('data-video-title') || 'Video walkthrough';
-      iframe.loading = 'lazy';
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-      iframe.allowFullscreen = true;
-      host.appendChild(iframe);
+      var poster = host.getAttribute('data-video-poster');
+      if (poster) host.style.backgroundImage = 'url(' + poster + ')';
+
+      var play = document.createElement('button');
+      play.type = 'button';
+      play.className = 'video-embed__play';
+      play.setAttribute('aria-label', 'Play ' + (host.getAttribute('data-video-title') || 'video'));
+      play.innerHTML = '<span class="video-embed__play-badge" aria-hidden="true"><i class="ph-bold ph-play"></i></span>';
+
+      play.addEventListener('click', function () {
+        var iframe = document.createElement('iframe');
+        iframe.src = toEmbedUrl(host.getAttribute('data-video-embed'));
+        iframe.title = host.getAttribute('data-video-title') || 'Video walkthrough';
+        iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+        iframe.allowFullscreen = true;
+        host.innerHTML = '';
+        host.appendChild(iframe);
+      });
+
+      host.appendChild(play);
     });
   });
 })();
