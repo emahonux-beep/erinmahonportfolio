@@ -373,42 +373,81 @@
         </div>
       </div>
       <div class="grid" style="margin-top:var(--space-6);">
+
+        <!-- Concept 1: cash-price fallback when nothing's covered -->
         <div class="col-12 col-md-6 col--flex">
-          <sl-card>
-            <div class="card__body">
-            <div class="icon-badge icon-badge--rose"><i class="ph-bold ph-hand-coins" aria-hidden="true"></i></div>
-            <h4 class="title-1">A path when nothing's covered.</h4>
-            <p class="body-sm">When every pharmacy comes back "not covered," the tool stops instead of helping. Surfacing the estimated cash price and letting members fill anyway turns a dead end into an informed choice.</p>
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <span class="lofi-badge lofi-badge--rose"><i class="ph-bold ph-x-circle" aria-hidden="true"></i> Not covered</span>
+              <div class="lofi-bar" style="width:75%;"></div>
+              <div class="lofi-bar" style="width:50%;"></div>
+              <div class="lofi-divider">
+                <div class="lofi-bar" style="width:45%;background:var(--slate-200);margin-bottom:8px;"></div>
+                <div class="lofi-price">$42<span style="font-size:1rem;">.00</span></div>
+              </div>
+              <span class="lofi-btn">Fill at this price</span>
             </div>
-          </sl-card>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>A path when nothing's covered.</strong> A cash-price fallback turns a dead end into an informed choice.</figcaption>
+          </figure>
         </div>
+
+        <!-- Concept 2: name the path (step therapy vs. prior auth) -->
         <div class="col-12 col-md-6 col--flex">
-          <sl-card>
-            <div class="card__body">
-            <div class="icon-badge icon-badge--rose"><i class="ph-bold ph-signpost" aria-hidden="true"></i></div>
-            <h4 class="title-1">Name the path, not just the block.</h4>
-            <p class="body-sm">Step therapy and prior authorization are different asks with different next actions. Naming the specific path in place of one generic "not covered" message clears up exactly what a member, or their doctor, needs to do next.</p>
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <div class="lofi-bar lofi-bar--lg" style="width:60%;"></div>
+              <div class="lofi-row">
+                <span class="lofi-radio lofi-radio--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span>
+                <div style="flex:1;">
+                  <div class="lofi-bar" style="width:55%;margin-bottom:6px;"></div>
+                  <div class="lofi-bar" style="width:80%;height:6px;"></div>
+                </div>
+              </div>
+              <div class="lofi-row">
+                <span class="lofi-radio"></span>
+                <div style="flex:1;">
+                  <div class="lofi-bar" style="width:65%;margin-bottom:6px;"></div>
+                  <div class="lofi-bar" style="width:75%;height:6px;"></div>
+                </div>
+              </div>
+              <span class="lofi-btn" style="margin-top:auto;">Continue</span>
             </div>
-          </sl-card>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>Name the path, not just the block.</strong> Step therapy and prior authorization are different asks — say which one applies.</figcaption>
+          </figure>
         </div>
+
+        <!-- Concept 3: proactive savings nudge -->
         <div class="col-12 col-md-6 col--flex">
-          <sl-card>
-            <div class="card__body">
-            <div class="icon-badge icon-badge--rose"><i class="ph-bold ph-sparkle" aria-hidden="true"></i></div>
-            <h4 class="title-1">Surface savings before members ask.</h4>
-            <p class="body-sm">For high-cost therapies, the bigger opportunity isn't a better answer to search — it's noticing the search and proactively surfacing alternatives, savings programs, and benefits already sitting in a member's plan.</p>
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <span class="lofi-badge lofi-badge--lav"><i class="ph-bold ph-sparkle" aria-hidden="true"></i> Smart recommendation</span>
+              <div class="lofi-bar" style="width:85%;"></div>
+              <div class="lofi-bar" style="width:60%;"></div>
+              <div style="display:flex;flex-direction:column;gap:10px;margin-top:var(--space-2);">
+                <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:70%;"></div></div>
+                <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:55%;"></div></div>
+                <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:62%;"></div></div>
+              </div>
             </div>
-          </sl-card>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>Surface savings before members ask.</strong> Notice the search, then proactively suggest alternatives and connected benefits.</figcaption>
+          </figure>
         </div>
+
+        <!-- Concept 4: multi-part coverage criteria, made visible -->
         <div class="col-12 col-md-6 col--flex">
-          <sl-card>
-            <div class="card__body">
-            <div class="icon-badge icon-badge--rose"><i class="ph-bold ph-list-checks" aria-hidden="true"></i></div>
-            <h4 class="title-1">Make coverage criteria visible.</h4>
-            <p class="body-sm">Medications like GLP-1s are often covered under specific, multi-part criteria. Showing exactly which conditions are met, and which remain, replaces a single covered/not-covered flag with something a member can act on.</p>
+          <figure style="margin:0;width:100%;">
+            <div class="lofi-mockup">
+              <div class="lofi-bar lofi-bar--lg" style="width:65%;"></div>
+              <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:60%;"></div></div>
+              <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:70%;"></div></div>
+              <div class="lofi-row"><span class="lofi-checkbox lofi-checkbox--on"><i class="ph-bold ph-check" aria-hidden="true"></i></span><div class="lofi-bar" style="width:50%;"></div></div>
+              <div class="lofi-row"><span class="lofi-checkbox"></span><div class="lofi-bar" style="width:65%;"></div></div>
+              <span class="lofi-btn" style="margin-top:auto;">Next step</span>
             </div>
-          </sl-card>
+            <figcaption class="body-sm" style="margin-top:var(--space-3);"><strong>Make coverage criteria visible.</strong> For therapies like GLP-1s, show what's met and what remains — not just a flag.</figcaption>
+          </figure>
         </div>
+
       </div>
       <p class="body-xs" style="color:var(--slate-300);margin-top:var(--space-6);">These directions are scoped, not shipped — the next phase of Check Coverage's continuous research loop.</p>
     </div>
