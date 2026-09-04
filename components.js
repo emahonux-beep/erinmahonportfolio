@@ -101,7 +101,7 @@
         <a href="mailto:emahonux@gmail.com" class="footer__link">emahonux@gmail.com</a>
         <span>(203) 482-0166</span>
         <a href="https://substack.com/@erinmahon1" target="_blank" rel="noopener" class="footer__link footer__link--external">Substack <i class="ph ph-arrow-square-out" aria-hidden="true"></i></a>
-        <a href="https://drive.google.com/file/d/114j7N9Djo3wzvWJrzw8mImS6576LUo3C/view?usp=sharing" target="_blank" rel="noopener" class="footer__link footer__link--external">Résumé <i class="ph ph-arrow-square-out" aria-hidden="true"></i></a>
+        <a href="/assets/erin-mahon-resume.pdf" target="_blank" rel="noopener" class="footer__link footer__link--external">Résumé <i class="ph ph-arrow-square-out" aria-hidden="true"></i></a>
       </div>
     </div>
 
